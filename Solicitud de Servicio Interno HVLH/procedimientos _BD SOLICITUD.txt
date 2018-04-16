@@ -1,0 +1,25 @@
+CREATE PROCEDURE SP_BUSQUEDA_TRABJADOR
+@PBusqueda varchar(100)
+AS BEGIN
+	SELECT Codigo_TRABAJADOR,Nombres_Trabajador,DNI,DIRECCION_OFICINA FROM TrabajadorPLH
+	WHERE ESTADO_TRABAJADOR='ACTIVO' AND (Nombres_Trabajador LIKE '%'+ @PBusqueda +'%' OR
+											DNI LIKE '%' + @PBusqueda + '%')
+END
+
+
+CREATE PROCEDURE SP_SOLICITUD_REGISTRAR_ACCESO
+@Nombre varchar(100),
+@Usuario varchar(70),
+@Contrasena varchar(100),
+@DireccionOficina varchar(200),
+@Estado char(1),
+@TipoAcceso char(1)
+AS BEGIN
+INSERT INTO ACCESO_SOLICITUD
+			(Nombre,Usuario,Contrasena,DireccionOficina,Estado,TipoAcceso)
+		VALUES(@Nombre,@Usuario,@Contrasena,@DireccionOficina,@Estado,@TipoAcceso)
+END
+GO
+
+Select	*	from	ACCESO_SOLICITUD
+

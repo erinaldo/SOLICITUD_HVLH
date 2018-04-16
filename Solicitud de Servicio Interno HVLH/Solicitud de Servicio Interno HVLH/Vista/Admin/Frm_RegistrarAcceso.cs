@@ -93,5 +93,38 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
             panel1.Enabled = true;
 
         }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+
+            SolicitudDAO soliDao = new SolicitudDAO();
+
+            //Validar Campos:
+            if(txtNombresAccess.Text.Trim()=="" || txtUsuarioAccess.Text.Trim()=="" || txtContrasenaAccess.Text.Trim()==""
+                || cboOficinaAccess.SelectedItem == null || cboTipoAccess.SelectedItem == null)
+            {
+                MessageBox.Show("No puede dejar campos vacíos","Mensaje al Usuario",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+
+            AccesoClass acceso = new AccesoClass();
+            acceso.Nombre = txtNombresAccess.Text;
+            acceso.Usuario = txtUsuarioAccess.Text;
+            acceso.Contrasena = txtContrasenaAccess.Text;
+            acceso.DireccionOficina = cboOficinaAccess.Text;
+            if (cboTipoAccess.Text == "Administrador")
+                acceso.TipoAcceso = "A";
+            else
+                acceso.TipoAcceso = "U";
+
+            if (soliDao.registrarAcceso(acceso))
+                MessageBox.Show("El Acceso ha sido registrado","Mensaje al Usuario",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            else
+            {
+                MessageBox.Show("Ocurrió un error al registrar", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+        
+        }
     }
 }

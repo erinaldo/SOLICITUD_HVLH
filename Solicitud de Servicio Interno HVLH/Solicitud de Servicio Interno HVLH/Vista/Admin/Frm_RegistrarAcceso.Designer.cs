@@ -32,19 +32,19 @@
             this.txtBusquedaTrabajador = new System.Windows.Forms.TextBox();
             this.dgvTrabajadores = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtNombresAccess = new System.Windows.Forms.TextBox();
-            this.txtUsuarioAccess = new System.Windows.Forms.TextBox();
-            this.txtContrasenaAccess = new System.Windows.Forms.TextBox();
-            this.cboOficinaAccess = new System.Windows.Forms.ComboBox();
-            this.cboTipoAccess = new System.Windows.Forms.ComboBox();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.cboTipoAccess = new System.Windows.Forms.ComboBox();
+            this.cboOficinaAccess = new System.Windows.Forms.ComboBox();
+            this.txtContrasenaAccess = new System.Windows.Forms.TextBox();
+            this.txtUsuarioAccess = new System.Windows.Forms.TextBox();
+            this.txtNombresAccess = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajadores)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -101,99 +101,26 @@
             this.panel1.Size = new System.Drawing.Size(916, 203);
             this.panel1.TabIndex = 3;
             // 
-            // label2
+            // btnCancelar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(366, 193);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 23);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "DATOS DE ACCESO";
+            this.btnCancelar.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(720, 152);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(178, 44);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // btnRegistrar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Nombres:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Usuario:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 85);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Contraseña:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 118);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Oficina:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 152);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 20);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Tipo de Acceso:";
-            // 
-            // txtNombresAccess
-            // 
-            this.txtNombresAccess.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombresAccess.Location = new System.Drawing.Point(207, 12);
-            this.txtNombresAccess.Name = "txtNombresAccess";
-            this.txtNombresAccess.Size = new System.Drawing.Size(630, 27);
-            this.txtNombresAccess.TabIndex = 6;
-            // 
-            // txtUsuarioAccess
-            // 
-            this.txtUsuarioAccess.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuarioAccess.Location = new System.Drawing.Point(207, 46);
-            this.txtUsuarioAccess.Name = "txtUsuarioAccess";
-            this.txtUsuarioAccess.Size = new System.Drawing.Size(274, 27);
-            this.txtUsuarioAccess.TabIndex = 7;
-            // 
-            // txtContrasenaAccess
-            // 
-            this.txtContrasenaAccess.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenaAccess.Location = new System.Drawing.Point(207, 78);
-            this.txtContrasenaAccess.Name = "txtContrasenaAccess";
-            this.txtContrasenaAccess.Size = new System.Drawing.Size(274, 27);
-            this.txtContrasenaAccess.TabIndex = 8;
-            this.txtContrasenaAccess.UseSystemPasswordChar = true;
-            // 
-            // cboOficinaAccess
-            // 
-            this.cboOficinaAccess.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboOficinaAccess.FormattingEnabled = true;
-            this.cboOficinaAccess.Location = new System.Drawing.Point(207, 114);
-            this.cboOficinaAccess.Name = "cboOficinaAccess";
-            this.cboOficinaAccess.Size = new System.Drawing.Size(495, 24);
-            this.cboOficinaAccess.TabIndex = 9;
+            this.btnRegistrar.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(524, 152);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(178, 44);
+            this.btnRegistrar.TabIndex = 11;
+            this.btnRegistrar.Text = "Guardar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // cboTipoAccess
             // 
@@ -208,25 +135,99 @@
             this.cboTipoAccess.Sorted = true;
             this.cboTipoAccess.TabIndex = 10;
             // 
-            // btnRegistrar
+            // cboOficinaAccess
             // 
-            this.btnRegistrar.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(524, 152);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(178, 44);
-            this.btnRegistrar.TabIndex = 11;
-            this.btnRegistrar.Text = "Guardar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.cboOficinaAccess.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboOficinaAccess.FormattingEnabled = true;
+            this.cboOficinaAccess.Location = new System.Drawing.Point(207, 114);
+            this.cboOficinaAccess.Name = "cboOficinaAccess";
+            this.cboOficinaAccess.Size = new System.Drawing.Size(495, 24);
+            this.cboOficinaAccess.TabIndex = 9;
             // 
-            // btnCancelar
+            // txtContrasenaAccess
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(720, 152);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(178, 44);
-            this.btnCancelar.TabIndex = 12;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.txtContrasenaAccess.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenaAccess.Location = new System.Drawing.Point(207, 78);
+            this.txtContrasenaAccess.Name = "txtContrasenaAccess";
+            this.txtContrasenaAccess.Size = new System.Drawing.Size(274, 27);
+            this.txtContrasenaAccess.TabIndex = 8;
+            this.txtContrasenaAccess.UseSystemPasswordChar = true;
+            // 
+            // txtUsuarioAccess
+            // 
+            this.txtUsuarioAccess.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuarioAccess.Location = new System.Drawing.Point(207, 46);
+            this.txtUsuarioAccess.Name = "txtUsuarioAccess";
+            this.txtUsuarioAccess.Size = new System.Drawing.Size(274, 27);
+            this.txtUsuarioAccess.TabIndex = 7;
+            // 
+            // txtNombresAccess
+            // 
+            this.txtNombresAccess.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombresAccess.Location = new System.Drawing.Point(207, 12);
+            this.txtNombresAccess.Name = "txtNombresAccess";
+            this.txtNombresAccess.Size = new System.Drawing.Size(630, 27);
+            this.txtNombresAccess.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(24, 152);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(134, 20);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Tipo de Acceso:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 118);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 20);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Oficina:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Contraseña:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(24, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(74, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Usuario:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Nombres:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(366, 193);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(199, 23);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "DATOS DE ACCESO";
             // 
             // Frm_RegistrarAcceso
             // 
