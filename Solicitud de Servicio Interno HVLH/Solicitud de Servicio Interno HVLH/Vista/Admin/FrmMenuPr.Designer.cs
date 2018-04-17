@@ -62,16 +62,16 @@
             this.menuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuVertical.Location = new System.Drawing.Point(0, 0);
             this.menuVertical.Name = "menuVertical";
-            this.menuVertical.Size = new System.Drawing.Size(200, 692);
+            this.menuVertical.Size = new System.Drawing.Size(299, 692);
             this.menuVertical.TabIndex = 0;
             // 
             // SubMenuAcceso
             // 
             this.SubMenuAcceso.Controls.Add(this.btnVerAccesos);
             this.SubMenuAcceso.Controls.Add(this.btnCrearAcceso);
-            this.SubMenuAcceso.Location = new System.Drawing.Point(80, 149);
+            this.SubMenuAcceso.Location = new System.Drawing.Point(177, 111);
             this.SubMenuAcceso.Name = "SubMenuAcceso";
-            this.SubMenuAcceso.Size = new System.Drawing.Size(102, 116);
+            this.SubMenuAcceso.Size = new System.Drawing.Size(96, 83);
             this.SubMenuAcceso.TabIndex = 0;
             this.SubMenuAcceso.Visible = false;
             // 
@@ -84,9 +84,9 @@
             this.btnVerAccesos.ForeColor = System.Drawing.Color.Snow;
             this.btnVerAccesos.Image = ((System.Drawing.Image)(resources.GetObject("btnVerAccesos.Image")));
             this.btnVerAccesos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerAccesos.Location = new System.Drawing.Point(20, 72);
+            this.btnVerAccesos.Location = new System.Drawing.Point(20, 38);
             this.btnVerAccesos.Name = "btnVerAccesos";
-            this.btnVerAccesos.Size = new System.Drawing.Size(75, 32);
+            this.btnVerAccesos.Size = new System.Drawing.Size(54, 32);
             this.btnVerAccesos.TabIndex = 2;
             this.btnVerAccesos.UseVisualStyleBackColor = true;
             this.btnVerAccesos.Click += new System.EventHandler(this.btnVerAccesos_Click);
@@ -100,9 +100,9 @@
             this.btnCrearAcceso.ForeColor = System.Drawing.Color.Snow;
             this.btnCrearAcceso.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearAcceso.Image")));
             this.btnCrearAcceso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCrearAcceso.Location = new System.Drawing.Point(20, 17);
+            this.btnCrearAcceso.Location = new System.Drawing.Point(20, 3);
             this.btnCrearAcceso.Name = "btnCrearAcceso";
-            this.btnCrearAcceso.Size = new System.Drawing.Size(75, 31);
+            this.btnCrearAcceso.Size = new System.Drawing.Size(54, 33);
             this.btnCrearAcceso.TabIndex = 1;
             this.btnCrearAcceso.UseVisualStyleBackColor = true;
             this.btnCrearAcceso.Click += new System.EventHandler(this.btnCrearAcceso_Click);
@@ -118,7 +118,7 @@
             this.btnAccesos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccesos.Location = new System.Drawing.Point(0, 98);
             this.btnAccesos.Name = "btnAccesos";
-            this.btnAccesos.Size = new System.Drawing.Size(200, 45);
+            this.btnAccesos.Size = new System.Drawing.Size(156, 96);
             this.btnAccesos.TabIndex = 0;
             this.btnAccesos.Text = "Acceso ";
             this.btnAccesos.UseVisualStyleBackColor = true;
@@ -143,9 +143,9 @@
             this.BarraTitulo.Controls.Add(this.btnCerrar);
             this.BarraTitulo.Controls.Add(this.btnSlide);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTitulo.Location = new System.Drawing.Point(200, 0);
+            this.BarraTitulo.Location = new System.Drawing.Point(299, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(675, 50);
+            this.BarraTitulo.Size = new System.Drawing.Size(576, 50);
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -155,7 +155,7 @@
             this.btnRestaurar.BackColor = System.Drawing.SystemColors.Control;
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(589, 12);
+            this.btnRestaurar.Location = new System.Drawing.Point(490, 12);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(36, 32);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,7 +169,7 @@
             this.btnMinimizar.BackColor = System.Drawing.SystemColors.Control;
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(548, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(449, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(35, 32);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,7 +183,7 @@
             this.btnMaximinizar.BackColor = System.Drawing.SystemColors.Control;
             this.btnMaximinizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximinizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximinizar.Image")));
-            this.btnMaximinizar.Location = new System.Drawing.Point(589, 12);
+            this.btnMaximinizar.Location = new System.Drawing.Point(490, 12);
             this.btnMaximinizar.Name = "btnMaximinizar";
             this.btnMaximinizar.Size = new System.Drawing.Size(36, 32);
             this.btnMaximinizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -197,7 +197,7 @@
             this.btnCerrar.BackColor = System.Drawing.SystemColors.Control;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(632, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(533, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(36, 32);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -221,9 +221,9 @@
             // Contenedor
             // 
             this.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Contenedor.Location = new System.Drawing.Point(200, 50);
+            this.Contenedor.Location = new System.Drawing.Point(299, 50);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(675, 642);
+            this.Contenedor.Size = new System.Drawing.Size(576, 642);
             this.Contenedor.TabIndex = 2;
             // 
             // FrmMenuPr

@@ -45,6 +45,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cboAreaEspec = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajadores)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +86,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.cboAreaEspec);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnRegistrar);
             this.panel1.Controls.Add(this.cboTipoAccess);
@@ -98,13 +103,13 @@
             this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(12, 228);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(916, 203);
+            this.panel1.Size = new System.Drawing.Size(916, 270);
             this.panel1.TabIndex = 3;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(720, 152);
+            this.btnCancelar.Location = new System.Drawing.Point(719, 219);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(178, 44);
             this.btnCancelar.TabIndex = 12;
@@ -114,7 +119,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(524, 152);
+            this.btnRegistrar.Location = new System.Drawing.Point(523, 219);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(178, 44);
             this.btnRegistrar.TabIndex = 11;
@@ -129,7 +134,7 @@
             this.cboTipoAccess.Items.AddRange(new object[] {
             "Administrador",
             "Usuario"});
-            this.cboTipoAccess.Location = new System.Drawing.Point(207, 148);
+            this.cboTipoAccess.Location = new System.Drawing.Point(207, 183);
             this.cboTipoAccess.Name = "cboTipoAccess";
             this.cboTipoAccess.Size = new System.Drawing.Size(141, 24);
             this.cboTipoAccess.Sorted = true;
@@ -173,7 +178,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 152);
+            this.label7.Location = new System.Drawing.Point(24, 187);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(134, 20);
             this.label7.TabIndex = 5;
@@ -229,11 +234,41 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "DATOS DE ACCESO";
             // 
+            // cboAreaEspec
+            // 
+            this.cboAreaEspec.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboAreaEspec.FormattingEnabled = true;
+            this.cboAreaEspec.Location = new System.Drawing.Point(206, 148);
+            this.cboAreaEspec.Name = "cboAreaEspec";
+            this.cboAreaEspec.Size = new System.Drawing.Size(495, 24);
+            this.cboAreaEspec.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(23, 152);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 20);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Área:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 122);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "BOTON";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Frm_RegistrarAcceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 446);
+            this.ClientSize = new System.Drawing.Size(940, 510);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvTrabajadores);
@@ -268,5 +303,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboAreaEspec;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
     }
 }

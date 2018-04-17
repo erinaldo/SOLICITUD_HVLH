@@ -109,6 +109,39 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
             }
         }
 
+        public List<AreaEspecificaClass> ListarAreaEspecifica(int cod_Oficina)
+        {
+            List<AreaEspecificaClass> listaAreaEspec = new List<AreaEspecificaClass>();
+            using (SqlCommand oComando = new SqlCommand("SP_LISTAR_AREA_ESPECIFICA", oConexion))
+            {
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@CODIGO_OFICINA", cod_Oficina);
+                AreaEspecificaClass areaEspec;
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = oComando.ExecuteReader(CommandBehavior.SingleResult);
+                    while (dr.Read())
+                    {
+                        areaEspec = new AreaEspecificaClass();
+                        areaEspec.CODIGO_AREAESPECIFICA = Convert.ToInt32(dr[0]);
+                        areaEspec.NOMBRE_AREA = dr[1].ToString();
+                        areaEspec.DESCRIPCION_AREA = dr[2].ToString();
+                        areaEspec.ESTADO = dr[3].ToString();
+                        areaEspec.CODIGO_OFICINA = Convert.ToInt32(dr[0]);
+                        listaAreaEspec.Add(areaEspec);
+                    }
+                    dr.Close();
+                    oConexion.Close();
+                }
+                catch (Exception)
+                {
+                    oConexion.Close();
+                }
+                return listaAreaEspec;
+            }
+        }
+
        
 
     }

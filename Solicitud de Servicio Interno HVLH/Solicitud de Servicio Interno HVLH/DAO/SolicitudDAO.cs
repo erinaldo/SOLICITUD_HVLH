@@ -16,6 +16,8 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
         private static string Cadena = ConfigurationManager.ConnectionStrings["AccessSolicitud"].ConnectionString;
         private static SqlConnection oConexion = new SqlConnection(Cadena);
 
+        #region Acceso
+        //Método para registrar un nuevo acceso al sistema:
         public bool registrarAcceso(AccesoClass accesoCls)
         {
 
@@ -30,6 +32,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
                 oComando.Parameters.AddWithValue("@DireccionOficina", accesoCls.DireccionOficina);
                 oComando.Parameters.AddWithValue("@Estado", "A");
                 oComando.Parameters.AddWithValue("@TipoAcceso", accesoCls.TipoAcceso);
+                oComando.Parameters.AddWithValue("@AreaEspec", accesoCls.AreaEspec);
 
                 oConexion.Open();
                 resul = oComando.ExecuteNonQuery() > 0;
@@ -43,6 +46,53 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
             }
 
         }
+        //Método para verificar el Login al Sistema:
+        public AccesoClass ValidarAccesoUser(string usuario, string clave)
+        {
+
+            AccesoClass access = null;
+            using (SqlCommand oComando = new SqlCommand("SP_ACCESO_VALIDAR", oConexion))
+            {
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@Usuario", usuario);
+                oComando.Parameters.AddWithValue("@Contrasena", clave);
+               
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = oComando.ExecuteReader(CommandBehavior.SingleResult);
+                    while (dr.Read())
+                    {
+                        access = new AccesoClass();
+                        access.idAcceso = Convert.ToInt32(dr[0]);
+                        access.Nombre = dr[1].ToString();
+                        access.Usuario = dr[2].ToString();
+                        access.DireccionOficina = dr[4].ToString();
+                        access.TipoAcceso = dr[6].ToString();
+                        access.AreaEspec = dr[7].ToString();      
+                    }
+                    dr.Close();
+                    oConexion.Close();
+                }
+                catch (Exception ex)
+                {
+                    oConexion.Close();
+                    throw ex;
+                }
+                return access;
+            }
+        }
+        
+
+
+
+        #endregion
+
+
+
+
+
+
 
     }
 }

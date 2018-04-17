@@ -7,6 +7,8 @@ using System.Windows.Forms;
 
 
 using Solicitud_de_Servicio_Interno_HVLH.Vista.Admin;
+using Solicitud_de_Servicio_Interno_HVLH.Vista.User;
+using Solicitud_de_Servicio_Interno_HVLH.Vista.Login;
 
 namespace Solicitud_de_Servicio_Interno_HVLH
 {
@@ -20,8 +22,10 @@ namespace Solicitud_de_Servicio_Interno_HVLH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new Frm_RegistrarAcceso());
-            Application.Run(new FrmMenuPr());
+           //Application.Run(new Frm_RegistrarAcceso());
+            //Application.Run(new FrmMenuPr());
+            //Application.Run(new MenuUser());
+            Application.Run(new FrmLogin());
         }
     }
 }

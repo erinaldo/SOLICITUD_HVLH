@@ -23,3 +23,135 @@ GO
 
 Select	*	from	ACCESO_SOLICITUD
 
+
+--- 17/04/18:
+CREATE PROCEDURE SP_ACCESO_VALIDAR
+@Usuario		varchar(100),
+@Contrasena		varchar(100)
+				AS BEGIN
+SELECT * FROM ACCESO_SOLICITUD
+WHERE Usuario = @Usuario And Contrasena=@Contrasena
+	  And Estado ='A'
+				END
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---modificando:
+USE [DB_SOLICITUD]
+GO
+/****** Object:  StoredProcedure [dbo].[SP_SOLICITUD_REGISTRAR_ACCESO]    Script Date: 04/17/2018 14:57:05 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[SP_SOLICITUD_REGISTRAR_ACCESO]
+@Nombre varchar(100),
+@Usuario varchar(70),
+@Contrasena varchar(100),
+@DireccionOficina varchar(200),
+@Estado char(1),
+@TipoAcceso char(1),
+@AreaEspec varchar(100)
+AS BEGIN
+INSERT INTO ACCESO_SOLICITUD
+			(Nombre,Usuario,Contrasena,DireccionOficina,Estado,TipoAcceso,AreaEspec )
+		VALUES(@Nombre,@Usuario,@Contrasena,@DireccionOficina,@Estado,@TipoAcceso,@AreaEspec)
+END
+
+
+
+----------------------
+SELECT * FROM ACCESO_SOLICITUD
+GO
+
+
+
+CREATE PROCEDURE SP_ACCESO_VALIDAR
+@Usuario		varchar(100),
+@Contrasena		varchar(100)
+				AS BEGIN
+SELECT * FROM ACCESO_SOLICITUD
+WHERE Usuario = @Usuario And Contrasena=@Contrasena
+	  And Estado ='A'
+				END
+GO
+
+EXEC SP_ACCESO_VALIDAR '07761592','07761592'
+
+
+CREATE TABLE SOLICITUD
+(
+idSolicitud int identity(1,1),
+idAcceso int NOT NULL,
+Oficina_Solicitante varchar(200) NOT NULL,
+Area_Solicitante    varchar(200) NOT NULL,
+IP_Solicitante varchar(250) NULL,
+MAC_Solicitante varchar(50) NOT NULL,
+NomPC_Solicitante varchar(100) NOT NULL,
+NumTicket int NOT NULL,
+NumTicketString varchar(50) NOT NULL,
+FechaHoraRegistroReal datetime NOT NULL,
+Oficina_Destino varchar(200) NOT NULL,
+Area_Destino varchar(200) NOT NULL,
+Prioridad char(1) NULL
+)
+
+
+USE BDEVALUACIONPERSONALHVLH
+GO
+
+SELECT * FROM DIRECCIONOFICINAPLH
+CREATE TABLE AREA_ESPECIFICA
+(
+CODIGO_AREAESPEC INT IDENTITY(1,1) primary key,
+NOMBRE_AREAESPEC VARCHAR(250) NOT NULL,
+DESCRIP_AREAESPEC VARCHAR(200) NULL,
+ESTADO VARCHAR(20) NOT NULL,
+CODIGO_OFICINA INT 
+)
+GO
+
+ALTER TABLE AREA_ESPECIFICA
+ADD CONSTRAINT FK_AREA_OFICINA 
+FOREIGN KEY (CODIGO_OFICINA) REFERENCES DIRECCIONOFICINAPLH(CODIGO_DIRECCIONOFICINA)
+GO
+
+INSERT INTO AREA_ESPECIFICA VALUES( 'ADMISIÓN','UNIDAD DE ADMISIÓN - ESTADÍSTICA DEL HVLH','ACTIVO',20)
+GO
+
+
+
+ALTER PROCEDURE SP_LISTAR_AREA_ESPECIFICA
+@CODIGO_OFICINA INT
+AS BEGIN
+SELECT * FROM AREA_ESPECIFICA
+WHERE CODIGO_OFICINA=@CODIGO_OFICINA
+END
+GO
+
+
+EXEC SP_LISTAR_AREA_ESPECIFICA '20'
+
+USE DB_SOLICITUD
+
+
+ALTER TABLE ACCESO_SOLICITUD
+Add AreaEspec varchar(100)
+

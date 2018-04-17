@@ -35,8 +35,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
             dgvTrabajadores.Columns.Clear();
             dgvTrabajadores.AutoGenerateColumns = false;
 
-
-
             DataGridViewTextBoxColumn Name = new DataGridViewTextBoxColumn();
             Name.HeaderText = "Nombres Completos";
             Name.DataPropertyName = "NombreCompleto";
@@ -53,11 +51,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
             DireccionOficina.HeaderText = "Oficina";
             DireccionOficina.DataPropertyName = "Direccion_Oficina";
             DireccionOficina.Width = 300;
-            dgvTrabajadores.Columns.Add(DireccionOficina);
-
-           
-
-
+            dgvTrabajadores.Columns.Add(DireccionOficina);           
         }
 
         private void LlenarDirOficina()
@@ -66,7 +60,9 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
 
             var listadoDireccionOfi = TrabajadorDao.ListarDireccionOficina();
             this.cboOficinaAccess.DataSource = listadoDireccionOfi;
+            this.cboOficinaAccess.ValueMember = "CODIGO_DIRECCIONOFICINA";
             this.cboOficinaAccess.DisplayMember = "NOMBRE_DIRECCIONOFICINA";
+            
             this.cboOficinaAccess.AutoCompleteCustomSource.AddRange(new TrabajadorPLHDAO().listaDireccionOficiString().ToArray());
             this.cboOficinaAccess.AutoCompleteMode = AutoCompleteMode.Suggest;
             this.cboOficinaAccess.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -78,6 +74,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
             panel1.Enabled = false;
             if (dgvTrabajadores.RowCount <= 0) return;
 
+            
             //Generar Acceso:
             txtNombresAccess.Text= dgvTrabajadores.CurrentRow.Cells[0].Value.ToString();
 
@@ -90,6 +87,8 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
 
             cboTipoAccess.SelectedIndex = 1;
 
+            llenarAreaEspecXOficina(Convert.ToInt32(cboOficinaAccess.SelectedValue));
+
             panel1.Enabled = true;
 
         }
@@ -101,7 +100,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
 
             //Validar Campos:
             if(txtNombresAccess.Text.Trim()=="" || txtUsuarioAccess.Text.Trim()=="" || txtContrasenaAccess.Text.Trim()==""
-                || cboOficinaAccess.SelectedItem == null || cboTipoAccess.SelectedItem == null)
+                || cboOficinaAccess.SelectedItem == null || cboTipoAccess.SelectedItem == null || cboAreaEspec.SelectedItem==null)
             {
                 MessageBox.Show("No puede dejar campos vacíos","Mensaje al Usuario",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
@@ -117,6 +116,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
             else
                 acceso.TipoAcceso = "U";
 
+            acceso.AreaEspec = cboAreaEspec.Text;
             if (soliDao.registrarAcceso(acceso))
                 MessageBox.Show("El Acceso ha sido registrado","Mensaje al Usuario",MessageBoxButtons.OK,MessageBoxIcon.Information);
             else
@@ -125,6 +125,26 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
                 return;
             }
         
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(cboOficinaAccess.SelectedValue.ToString());
+
+            TrabajadorPLHDAO areaEspecDao = new TrabajadorPLHDAO();
+
+            cboAreaEspec.DataSource = areaEspecDao.ListarAreaEspecifica(Convert.ToInt32(cboOficinaAccess.SelectedValue));
+            this.cboAreaEspec.DisplayMember = "NOMBRE_AREA";
+            this.cboAreaEspec.ValueMember = "CODIGO_AREAESPECIFICA";
+     
+        }
+
+        private void llenarAreaEspecXOficina(int codOficina)
+        {
+            TrabajadorPLHDAO areaEspecDao = new TrabajadorPLHDAO();
+            cboAreaEspec.DataSource = areaEspecDao.ListarAreaEspecifica(codOficina);
+            this.cboAreaEspec.DisplayMember = "NOMBRE_AREA";
+            this.cboAreaEspec.ValueMember = "CODIGO_AREAESPECIFICA";
         }
     }
 }

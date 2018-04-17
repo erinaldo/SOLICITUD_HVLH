@@ -14,6 +14,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Class
         public string DireccionOficina { get; set; }
         public string Estado { get; set; }
         public string TipoAcceso { get; set; }
+        public string AreaEspec { get; set; }
 
 
         

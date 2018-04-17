@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\AccesoClass.cs" />
+    <Compile Include="Class\AreaEspecificaClass.cs" />
     <Compile Include="Class\DireccionOficina.cs" />
     <Compile Include="Class\TrabajadorPLH.cs" />
+    <Compile Include="Class\VarGlobal.cs" />
     <Compile Include="DAO\DireccionOficinaDAO.cs" />
     <Compile Include="DAO\PersonalDAO.cs" />
     <Compile Include="DAO\SolicitudDAO.cs" />
@@ -85,11 +87,29 @@
     <Compile Include="Vista\Admin\Frm_RegistrarAcceso.Designer.cs">
       <DependentUpon>Frm_RegistrarAcceso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Login\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Solicitud.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Solicitud.Designer.cs">
       <DependentUpon>Solicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\User\GenerarSolicitudUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\User\GenerarSolicitudUser.Designer.cs">
+      <DependentUpon>GenerarSolicitudUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\User\MenuUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\User\MenuUser.Designer.cs">
+      <DependentUpon>MenuUser.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,8 +136,17 @@
     <EmbeddedResource Include="Vista\Admin\Frm_RegistrarAcceso.resx">
       <DependentUpon>Frm_RegistrarAcceso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Solicitud.resx">
       <DependentUpon>Solicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\User\GenerarSolicitudUser.resx">
+      <DependentUpon>GenerarSolicitudUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\User\MenuUser.resx">
+      <DependentUpon>MenuUser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -132,9 +161,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Vista\User\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
