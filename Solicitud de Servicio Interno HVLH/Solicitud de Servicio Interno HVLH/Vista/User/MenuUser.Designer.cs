@@ -128,6 +128,7 @@
             this.btnVerMisSolicitudes.TabIndex = 2;
             this.btnVerMisSolicitudes.Text = "Mis Solicitudes";
             this.btnVerMisSolicitudes.UseVisualStyleBackColor = true;
+            this.btnVerMisSolicitudes.Click += new System.EventHandler(this.btnVerMisSolicitudes_Click);
             // 
             // btnGenerarSolicitud
             // 

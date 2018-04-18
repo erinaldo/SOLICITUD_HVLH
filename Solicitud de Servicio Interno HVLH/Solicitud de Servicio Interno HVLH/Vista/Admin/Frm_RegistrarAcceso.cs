@@ -138,7 +138,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
             this.cboAreaEspec.ValueMember = "CODIGO_AREAESPECIFICA";
      
         }
-
         private void llenarAreaEspecXOficina(int codOficina)
         {
             TrabajadorPLHDAO areaEspecDao = new TrabajadorPLHDAO();
@@ -146,5 +145,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
             this.cboAreaEspec.DisplayMember = "NOMBRE_AREA";
             this.cboAreaEspec.ValueMember = "CODIGO_AREAESPECIFICA";
         }
+
+
     }
 }

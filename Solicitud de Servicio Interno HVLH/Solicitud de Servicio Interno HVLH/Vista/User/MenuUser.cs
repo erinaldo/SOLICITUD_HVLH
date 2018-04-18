@@ -71,5 +71,10 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             frmAccs.Show();
 
         }
+
+        private void btnVerMisSolicitudes_Click(object sender, EventArgs e)
+        {
+            AbrirFrmPanel(new VerMisSolicitudesUser());
+        }
     }
 }

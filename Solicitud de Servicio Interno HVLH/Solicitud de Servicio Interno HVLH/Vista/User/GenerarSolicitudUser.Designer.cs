@@ -51,6 +51,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnGenerarSolicitud = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).BeginInit();
             this.Panel_DatosSolicitante.SuspendLayout();
@@ -85,7 +87,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(380, 9);
+            this.label1.Location = new System.Drawing.Point(334, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 23);
             this.label1.TabIndex = 3;
@@ -107,7 +109,6 @@
             // 
             // txtAreaSolicitante
             // 
-            this.txtAreaSolicitante.Enabled = false;
             this.txtAreaSolicitante.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAreaSolicitante.Location = new System.Drawing.Point(144, 104);
             this.txtAreaSolicitante.Name = "txtAreaSolicitante";
@@ -127,7 +128,6 @@
             // 
             // txtOficinaSolicitante
             // 
-            this.txtOficinaSolicitante.Enabled = false;
             this.txtOficinaSolicitante.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOficinaSolicitante.Location = new System.Drawing.Point(144, 75);
             this.txtOficinaSolicitante.Name = "txtOficinaSolicitante";
@@ -136,7 +136,6 @@
             // 
             // txtUsuarioSolicitante
             // 
-            this.txtUsuarioSolicitante.Enabled = false;
             this.txtUsuarioSolicitante.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuarioSolicitante.Location = new System.Drawing.Point(144, 47);
             this.txtUsuarioSolicitante.Name = "txtUsuarioSolicitante";
@@ -178,6 +177,7 @@
             // 
             // panelInfoSolicitud
             // 
+            this.panelInfoSolicitud.Controls.Add(this.button1);
             this.panelInfoSolicitud.Controls.Add(this.cboAreaDestino);
             this.panelInfoSolicitud.Controls.Add(this.cboOficinaDestino);
             this.panelInfoSolicitud.Controls.Add(this.label6);
@@ -190,7 +190,7 @@
             this.panelInfoSolicitud.Controls.Add(this.label9);
             this.panelInfoSolicitud.Location = new System.Drawing.Point(12, 197);
             this.panelInfoSolicitud.Name = "panelInfoSolicitud";
-            this.panelInfoSolicitud.Size = new System.Drawing.Size(815, 318);
+            this.panelInfoSolicitud.Size = new System.Drawing.Size(815, 292);
             this.panelInfoSolicitud.TabIndex = 2;
             // 
             // cboAreaDestino
@@ -294,11 +294,38 @@
             this.label9.TabIndex = 4;
             this.label9.Text = "Datos de la Solicitud";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(74, 127);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnGenerarSolicitud
+            // 
+            this.btnGenerarSolicitud.FlatAppearance.BorderSize = 0;
+            this.btnGenerarSolicitud.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnGenerarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarSolicitud.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarSolicitud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnGenerarSolicitud.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGenerarSolicitud.Location = new System.Drawing.Point(693, 503);
+            this.btnGenerarSolicitud.Name = "btnGenerarSolicitud";
+            this.btnGenerarSolicitud.Size = new System.Drawing.Size(134, 51);
+            this.btnGenerarSolicitud.TabIndex = 3;
+            this.btnGenerarSolicitud.Text = "Generar Solicitud";
+            this.btnGenerarSolicitud.UseVisualStyleBackColor = true;
+            this.btnGenerarSolicitud.Click += new System.EventHandler(this.btnGenerarSolicitud_Click);
+            // 
             // GenerarSolicitudUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(839, 566);
+            this.Controls.Add(this.btnGenerarSolicitud);
             this.Controls.Add(this.panelInfoSolicitud);
             this.Controls.Add(this.Panel_DatosSolicitante);
             this.Controls.Add(this.panel1);
@@ -340,5 +367,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGenerarSolicitud;
     }
 }

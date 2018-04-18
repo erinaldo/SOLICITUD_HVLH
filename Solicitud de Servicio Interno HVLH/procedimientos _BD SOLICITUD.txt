@@ -155,3 +155,138 @@ USE DB_SOLICITUD
 ALTER TABLE ACCESO_SOLICITUD
 Add AreaEspec varchar(100)
 
+
+--
+
+18-04-18
+USE DB_SOLICITUD
+GO
+
+CREATE TABLE SOLICITUD1
+(
+idSolicitud int identity(1,1),
+idAcceso int NOT NULL,
+Oficina_Solicitante varchar(200) NOT NULL,
+Area_Solicitante    varchar(200) NOT NULL,
+IP_Solicitante varchar(250) NULL,
+MAC_Solicitante varchar(50) NOT NULL,
+NomPC_Solicitante varchar(100) NOT NULL,
+NumTicket int NOT NULL,
+NumTicketString varchar(50) NOT NULL,
+FechaHoraRegistroReal datetime NOT NULL,
+Oficina_Destino varchar(200) NOT NULL,
+Area_Destino varchar(200) NOT NULL,
+Prioridad char(1) NULL
+)
+
+
+ALTER TABLE SOLICITUD
+ADD CONSTRAINT FK_SOLICITUD_ACCESO
+FOREIGN KEY (idAcceso) REFERENCES ACCESO_SOLICITUD(idAcceso)
+GO
+
+ALTER TABLE SOLICITUD 
+ADD Estado varchar(30)
+GO
+
+ALTER TABLE SOLICITUD
+ADD CONSTRAINT PK_SOLICITUD_NUMTICKET
+PRIMARY KEY (NumTicketString)
+
+alter PROCEDURE SP_SOLICITUD_GENERAR_NUEVO
+@idAcceso int ,
+@Oficina_Solicitante varchar(200),
+@Area_Solicitante varchar(250),
+@IP_Solicitante varchar(250),
+@MAC_Solicitante varchar(50),
+@NomPC_Solicitante varchar(100),
+@NumTicket int,
+@NumTicketString varchar(50),
+@Oficina_Destino varchar(200),
+@Area_Destino varchar(200),
+@Prioridad char(1),
+@Estado varchar(30)
+AS BEGIN
+		INSERT INTO SOLICITUD (idAcceso,Oficina_Solicitante,Area_Solicitante,IP_Solicitante,MAC_Solicitante,
+								NomPC_Solicitante,NumTicket,NumTicketString,FechaHoraRegistroReal,Oficina_Destino,
+								Area_Destino,Prioridad,Estado)
+		VALUES(@idAcceso,@Oficina_Solicitante,@Area_Solicitante,@IP_Solicitante,@MAC_Solicitante,@NomPC_Solicitante,
+				@NumTicket,@NumTicketString,GETDATE(),@Oficina_Destino,@Area_Destino,@Prioridad,@Estado)						
+END
+GO
+
+
+CREATE PROCEDURE SP_SOLICITUD_GENERAR_TICKET
+@Oficina_Solicitante varchar(200),
+@Area_Solicitante varchar(200)
+AS BEGIN
+		SELECT	COUNT(NumTicket)+ 1 AS NumTicket From SOLICITUD
+		Where	Oficina_Solicitante=@Oficina_Solicitante
+		And		Area_Solicitante=@Area_Solicitante
+END
+GO
+
+
+CREATE TABLE MOVIMIENTO_SOLICITUD
+(
+idMovimiento int primary key identity(1,1),
+NumTicketString  varchar(50),
+Estado varchar(30),
+MotivoSolicitud varchar(MAX),
+PersonalDesignado varchar(MAX),
+DiagnosticoPersonal varchar(MAX),
+FechaHoraMovimiento DATETIME,
+ReqInsumo BIT
+)
+GO
+
+ALTER TABLE MOVIMIENTO_SOLICITUD
+ADD CONSTRAINT FK_NumTicket_idMovimiento
+FOREIGN KEY (NumTicketString) 
+REFERENCES SOLICITUD(NumTicketString)
+go
+
+CREATE PROCEDURE SP_MOVIVIMIENTO_SOLICITUD_GENERAR_NUEVO
+@NumTicketString varchar(50),
+@Estado varchar(30),
+@MotivoSolicitud varchar(MAX),
+@PersonalDesignado varchar(MAX),
+@DiagnosticoPersonal varchar(MAX),
+@ReqInsumo bit
+AS	BEGIN
+		INSERT INTO  MOVIMIENTO_SOLICITUD (NumTicketString,Estado,MotivoSolicitud,
+											PersonalDesignado,DiagnosticoPersonal,
+											FechaHoraMovimiento,ReqInsumo)
+				VALUES (@NumTicketString,@Estado,@MotivoSolicitud,@PersonalDesignado,
+						@DiagnosticoPersonal,GETDATE(),@ReqInsumo)
+END
+GO
+
+
+
+
+alter PROCEDURE SP_SOLICITUD_LISTAR_SALIENTE
+@Oficina_Solicitante varchar(200),
+@Area_Solicitante	 varchar(200)
+AS BEGIN
+SELECT idSolicitud,NumTicket,NumTicketString,FechaHoraRegistroReal,Oficina_Destino,
+		Area_Destino,Prioridad,Estado
+ FROM SOLICITUD
+WHERE Oficina_Solicitante=@Oficina_Solicitante
+AND   Area_Solicitante=@Area_Solicitante
+ORDER BY FechaHoraRegistroReal DESC
+END
+GO
+
+EXEC SP_SOLICITUD_LISTAR_SALIENTE 'OFICINA DE ESTADISTICA E INFORMATICA','INFORMÁTICA'
+GO
+
+
+CREATE PROCEDURE SP_MOVIMIENTO_SOLICITUD_LISTAR
+@NumTicketString varchar(50)
+AS
+BEGIN
+		SELECT * FROM MOVIMIENTO_SOLICITUD
+		WHERE NumTicketString=@NumTicketString
+END
+
