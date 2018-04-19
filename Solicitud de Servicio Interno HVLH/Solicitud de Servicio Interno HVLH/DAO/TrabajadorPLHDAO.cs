@@ -51,6 +51,45 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
             }
         }
 
+
+        public List<TrabajadorPLH> ListarTrabajadorXOficina(string PBusqueda,string Oficina)
+        {
+
+            List<TrabajadorPLH> listaTrabajador = new List<TrabajadorPLH>();
+            using (SqlCommand oComando = new SqlCommand("SP_BUSQUEDA_TRABJADOR", oConexion))
+            {
+
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@PBusqueda", PBusqueda);
+                TrabajadorPLH trabajador;
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = oComando.ExecuteReader(CommandBehavior.SingleResult);
+                    while (dr.Read())
+                    {
+                        if (dr[3].ToString().Equals(Oficina))
+                        {
+                            trabajador = new TrabajadorPLH();
+                            trabajador.Codigo_Trabajador = Convert.ToInt32(dr[0]);
+                            trabajador.NombreCompleto = dr[1].ToString();
+                            trabajador.DNI = dr[2].ToString();
+                            trabajador.Direccion_Oficina = dr[3].ToString();
+                            listaTrabajador.Add(trabajador);
+                        }
+                    }
+                    dr.Close();
+                    oConexion.Close();
+                }
+                catch (Exception)
+                {
+                    oConexion.Close();
+                }
+                return listaTrabajador;
+            }
+        }
+
+
         public List<String> listaDireccionOficiString()
         {
             List<String> listita = new List<String>();

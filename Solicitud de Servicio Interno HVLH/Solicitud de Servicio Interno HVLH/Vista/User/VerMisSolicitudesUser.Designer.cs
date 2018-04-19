@@ -34,20 +34,30 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabMisSolicitudes = new System.Windows.Forms.TabControl();
             this.tabSalientes = new System.Windows.Forms.TabPage();
-            this.tabEntrantes = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnSaliente_AnularSoli = new System.Windows.Forms.Button();
+            this.btnSaliente_CambiarEstado = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDiagnosticoPersonalExtend = new System.Windows.Forms.TextBox();
+            this.txtPersonalDesigExtend = new System.Windows.Forms.TextBox();
+            this.txtMotivoExtend = new System.Windows.Forms.TextBox();
+            this.dgvMovimientoSolicitudEntrantes = new System.Windows.Forms.DataGridView();
+            this.dgvSolicitudesEntrantes = new System.Windows.Forms.DataGridView();
             this.txtAreaSolicitante = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtOficinaSolicitante = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvSolicitudesEntrantes = new System.Windows.Forms.DataGridView();
-            this.dgvMovimientoSolicitudEntrantes = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabEntrantes = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).BeginInit();
             this.tabMisSolicitudes.SuspendLayout();
             this.tabSalientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesEntrantes)).BeginInit();
+            this.panelBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudEntrantes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesEntrantes)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,6 +108,13 @@
             // tabSalientes
             // 
             this.tabSalientes.AutoScroll = true;
+            this.tabSalientes.Controls.Add(this.panelBotones);
+            this.tabSalientes.Controls.Add(this.label7);
+            this.tabSalientes.Controls.Add(this.label6);
+            this.tabSalientes.Controls.Add(this.label3);
+            this.tabSalientes.Controls.Add(this.txtDiagnosticoPersonalExtend);
+            this.tabSalientes.Controls.Add(this.txtPersonalDesigExtend);
+            this.tabSalientes.Controls.Add(this.txtMotivoExtend);
             this.tabSalientes.Controls.Add(this.dgvMovimientoSolicitudEntrantes);
             this.tabSalientes.Controls.Add(this.dgvSolicitudesEntrantes);
             this.tabSalientes.Controls.Add(this.txtAreaSolicitante);
@@ -113,6 +130,181 @@
             this.tabSalientes.Text = "Salientes";
             this.tabSalientes.UseVisualStyleBackColor = true;
             // 
+            // panelBotones
+            // 
+            this.panelBotones.Controls.Add(this.btnSaliente_AnularSoli);
+            this.panelBotones.Controls.Add(this.btnSaliente_CambiarEstado);
+            this.panelBotones.Location = new System.Drawing.Point(15, 325);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(616, 56);
+            this.panelBotones.TabIndex = 25;
+            // 
+            // btnSaliente_AnularSoli
+            // 
+            this.btnSaliente_AnularSoli.FlatAppearance.BorderSize = 0;
+            this.btnSaliente_AnularSoli.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnSaliente_AnularSoli.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaliente_AnularSoli.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaliente_AnularSoli.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSaliente_AnularSoli.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSaliente_AnularSoli.Location = new System.Drawing.Point(151, 3);
+            this.btnSaliente_AnularSoli.Name = "btnSaliente_AnularSoli";
+            this.btnSaliente_AnularSoli.Size = new System.Drawing.Size(134, 51);
+            this.btnSaliente_AnularSoli.TabIndex = 5;
+            this.btnSaliente_AnularSoli.Text = "Anular Solicitud";
+            this.btnSaliente_AnularSoli.UseVisualStyleBackColor = true;
+            this.btnSaliente_AnularSoli.Visible = false;
+            // 
+            // btnSaliente_CambiarEstado
+            // 
+            this.btnSaliente_CambiarEstado.FlatAppearance.BorderSize = 0;
+            this.btnSaliente_CambiarEstado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnSaliente_CambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaliente_CambiarEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaliente_CambiarEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSaliente_CambiarEstado.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSaliente_CambiarEstado.Location = new System.Drawing.Point(-1, 3);
+            this.btnSaliente_CambiarEstado.Name = "btnSaliente_CambiarEstado";
+            this.btnSaliente_CambiarEstado.Size = new System.Drawing.Size(134, 51);
+            this.btnSaliente_CambiarEstado.TabIndex = 4;
+            this.btnSaliente_CambiarEstado.Text = "Evaluar Solicitud";
+            this.btnSaliente_CambiarEstado.UseVisualStyleBackColor = true;
+            this.btnSaliente_CambiarEstado.Visible = false;
+            this.btnSaliente_CambiarEstado.Click += new System.EventHandler(this.btnSaliente_CambiarEstado_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Location = new System.Drawing.Point(28, 481);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 16);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Diagnóstico P:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(28, 431);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 16);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "P. Designado:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.Location = new System.Drawing.Point(28, 387);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 16);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Motivo:";
+            // 
+            // txtDiagnosticoPersonalExtend
+            // 
+            this.txtDiagnosticoPersonalExtend.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiagnosticoPersonalExtend.Location = new System.Drawing.Point(137, 479);
+            this.txtDiagnosticoPersonalExtend.Multiline = true;
+            this.txtDiagnosticoPersonalExtend.Name = "txtDiagnosticoPersonalExtend";
+            this.txtDiagnosticoPersonalExtend.Size = new System.Drawing.Size(641, 40);
+            this.txtDiagnosticoPersonalExtend.TabIndex = 21;
+            // 
+            // txtPersonalDesigExtend
+            // 
+            this.txtPersonalDesigExtend.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonalDesigExtend.Location = new System.Drawing.Point(137, 431);
+            this.txtPersonalDesigExtend.Multiline = true;
+            this.txtPersonalDesigExtend.Name = "txtPersonalDesigExtend";
+            this.txtPersonalDesigExtend.Size = new System.Drawing.Size(641, 40);
+            this.txtPersonalDesigExtend.TabIndex = 20;
+            // 
+            // txtMotivoExtend
+            // 
+            this.txtMotivoExtend.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMotivoExtend.Location = new System.Drawing.Point(137, 387);
+            this.txtMotivoExtend.Multiline = true;
+            this.txtMotivoExtend.Name = "txtMotivoExtend";
+            this.txtMotivoExtend.Size = new System.Drawing.Size(641, 40);
+            this.txtMotivoExtend.TabIndex = 19;
+            // 
+            // dgvMovimientoSolicitudEntrantes
+            // 
+            this.dgvMovimientoSolicitudEntrantes.AllowUserToAddRows = false;
+            this.dgvMovimientoSolicitudEntrantes.AllowUserToDeleteRows = false;
+            this.dgvMovimientoSolicitudEntrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovimientoSolicitudEntrantes.Location = new System.Drawing.Point(15, 219);
+            this.dgvMovimientoSolicitudEntrantes.Name = "dgvMovimientoSolicitudEntrantes";
+            this.dgvMovimientoSolicitudEntrantes.ReadOnly = true;
+            this.dgvMovimientoSolicitudEntrantes.Size = new System.Drawing.Size(768, 101);
+            this.dgvMovimientoSolicitudEntrantes.TabIndex = 18;
+            this.dgvMovimientoSolicitudEntrantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovimientoSolicitudEntrantes_CellDoubleClick);
+            // 
+            // dgvSolicitudesEntrantes
+            // 
+            this.dgvSolicitudesEntrantes.AllowUserToAddRows = false;
+            this.dgvSolicitudesEntrantes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudesEntrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSolicitudesEntrantes.Location = new System.Drawing.Point(15, 78);
+            this.dgvSolicitudesEntrantes.Name = "dgvSolicitudesEntrantes";
+            this.dgvSolicitudesEntrantes.ReadOnly = true;
+            this.dgvSolicitudesEntrantes.Size = new System.Drawing.Size(768, 121);
+            this.dgvSolicitudesEntrantes.TabIndex = 17;
+            this.dgvSolicitudesEntrantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudesEntrantes_CellDoubleClick);
+            // 
+            // txtAreaSolicitante
+            // 
+            this.txtAreaSolicitante.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAreaSolicitante.Location = new System.Drawing.Point(121, 52);
+            this.txtAreaSolicitante.Name = "txtAreaSolicitante";
+            this.txtAreaSolicitante.Size = new System.Drawing.Size(657, 21);
+            this.txtAreaSolicitante.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(11, 55);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Área:";
+            // 
+            // txtOficinaSolicitante
+            // 
+            this.txtOficinaSolicitante.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOficinaSolicitante.Location = new System.Drawing.Point(121, 23);
+            this.txtOficinaSolicitante.Name = "txtOficinaSolicitante";
+            this.txtOficinaSolicitante.Size = new System.Drawing.Size(657, 21);
+            this.txtOficinaSolicitante.TabIndex = 14;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(11, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 17);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Oficina:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(6, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 18);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Datos del Solicitante";
+            // 
             // tabEntrantes
             // 
             this.tabEntrantes.Location = new System.Drawing.Point(4, 26);
@@ -122,78 +314,6 @@
             this.tabEntrantes.TabIndex = 1;
             this.tabEntrantes.Text = "Entrantes";
             this.tabEntrantes.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(6, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 19);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Datos del Solicitante";
-            // 
-            // txtAreaSolicitante
-            // 
-            this.txtAreaSolicitante.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAreaSolicitante.Location = new System.Drawing.Point(121, 52);
-            this.txtAreaSolicitante.Name = "txtAreaSolicitante";
-            this.txtAreaSolicitante.Size = new System.Drawing.Size(657, 23);
-            this.txtAreaSolicitante.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(11, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Área:";
-            // 
-            // txtOficinaSolicitante
-            // 
-            this.txtOficinaSolicitante.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOficinaSolicitante.Location = new System.Drawing.Point(121, 23);
-            this.txtOficinaSolicitante.Name = "txtOficinaSolicitante";
-            this.txtOficinaSolicitante.Size = new System.Drawing.Size(657, 23);
-            this.txtOficinaSolicitante.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(11, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Oficina:";
-            // 
-            // dgvSolicitudesEntrantes
-            // 
-            this.dgvSolicitudesEntrantes.AllowUserToAddRows = false;
-            this.dgvSolicitudesEntrantes.AllowUserToDeleteRows = false;
-            this.dgvSolicitudesEntrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSolicitudesEntrantes.Location = new System.Drawing.Point(10, 94);
-            this.dgvSolicitudesEntrantes.Name = "dgvSolicitudesEntrantes";
-            this.dgvSolicitudesEntrantes.ReadOnly = true;
-            this.dgvSolicitudesEntrantes.Size = new System.Drawing.Size(768, 150);
-            this.dgvSolicitudesEntrantes.TabIndex = 17;
-            this.dgvSolicitudesEntrantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudesEntrantes_CellDoubleClick);
-            // 
-            // dgvMovimientoSolicitudEntrantes
-            // 
-            this.dgvMovimientoSolicitudEntrantes.AllowUserToAddRows = false;
-            this.dgvMovimientoSolicitudEntrantes.AllowUserToDeleteRows = false;
-            this.dgvMovimientoSolicitudEntrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovimientoSolicitudEntrantes.Location = new System.Drawing.Point(10, 276);
-            this.dgvMovimientoSolicitudEntrantes.Name = "dgvMovimientoSolicitudEntrantes";
-            this.dgvMovimientoSolicitudEntrantes.ReadOnly = true;
-            this.dgvMovimientoSolicitudEntrantes.Size = new System.Drawing.Size(768, 101);
-            this.dgvMovimientoSolicitudEntrantes.TabIndex = 18;
             // 
             // VerMisSolicitudesUser
             // 
@@ -212,8 +332,9 @@
             this.tabMisSolicitudes.ResumeLayout(false);
             this.tabSalientes.ResumeLayout(false);
             this.tabSalientes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesEntrantes)).EndInit();
+            this.panelBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudEntrantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesEntrantes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,5 +354,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvSolicitudesEntrantes;
         private System.Windows.Forms.DataGridView dgvMovimientoSolicitudEntrantes;
+        private System.Windows.Forms.TextBox txtDiagnosticoPersonalExtend;
+        private System.Windows.Forms.TextBox txtPersonalDesigExtend;
+        private System.Windows.Forms.TextBox txtMotivoExtend;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelBotones;
+        private System.Windows.Forms.Button btnSaliente_CambiarEstado;
+        private System.Windows.Forms.Button btnSaliente_AnularSoli;
     }
 }

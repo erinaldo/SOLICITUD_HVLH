@@ -17,6 +17,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 {
     public partial class VerMisSolicitudesUser : Form
     {
+        string numTicketSelected = "";
         public VerMisSolicitudesUser()
         {
             InitializeComponent();
@@ -78,8 +79,33 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         }
         private void dgvSolicitudesEntrantes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string numTicketSelected = dgvSolicitudesEntrantes.CurrentRow.Cells[0].Value.ToString();
+            numTicketSelected = dgvSolicitudesEntrantes.CurrentRow.Cells[0].Value.ToString();
             listarMovimientoSolicitud_Entrantes(numTicketSelected);
+
+         
+            
+            
+        }
+
+        private void habilitarBotonesSalientes()
+        {
+            string oficinaDestino = dgvSolicitudesEntrantes.CurrentRow.Cells[2].Value.ToString();
+            string areaDestino = dgvSolicitudesEntrantes.CurrentRow.Cells[3].Value.ToString();
+
+            //Validar si la solicitud es de la misma área:
+            if(VarGlobal.userAccesLogueado.DireccionOficina.Equals(oficinaDestino) &&
+                VarGlobal.userAccesLogueado.AreaEspec.Equals(areaDestino))
+            {
+                string estado = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
+                if (estado.Equals("Solicitado"))
+                    btnSaliente_CambiarEstado.Text = "Evaluar Solicitud";
+                else if (estado.Equals("Evaluado"))
+                    btnSaliente_CambiarEstado.Text = "Iniciar Trabajo";
+                else if (estado.Equals("En Curso")) 
+                    btnSaliente_CambiarEstado.Text = "Concluir Trabajo";
+
+                btnSaliente_CambiarEstado.Visible = true;
+            }
         }
 
         private void listarMovimientoSolicitud_Entrantes(string numticketStr)
@@ -100,7 +126,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             DataGridViewTextBoxColumn FechaHoraMovimiento = new DataGridViewTextBoxColumn();
             FechaHoraMovimiento.HeaderText = "F/H Mov";
             FechaHoraMovimiento.DataPropertyName = "FechaHoraMovimiento";
-            FechaHoraMovimiento.Width = 200;
+            FechaHoraMovimiento.Width = 150;
             dgvMovimientoSolicitudEntrantes.Columns.Add(FechaHoraMovimiento);
 
             DataGridViewTextBoxColumn PersonalDesignado = new DataGridViewTextBoxColumn();
@@ -124,12 +150,36 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
             DataGridViewTextBoxColumn ReqInsumo = new DataGridViewTextBoxColumn();
             ReqInsumo.HeaderText = "Req Insumo?";
-            ReqInsumo.DataPropertyName = "ReqInsumo";
-            ReqInsumo.Width = 200;
+            ReqInsumo.DataPropertyName = "ReqInsumoString";
+            ReqInsumo.Width = 150;
             dgvMovimientoSolicitudEntrantes.Columns.Add(ReqInsumo);
 
-            string ss = ReqInsumo.DataPropertyName = "DiagnosticoPersonal";
-            MessageBox.Show(ss);
+            
+
+        }
+
+        private void dgvMovimientoSolicitudEntrantes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            txtMotivoExtend.Text = dgvMovimientoSolicitudEntrantes.CurrentRow.Cells[0].Value.ToString();
+            txtPersonalDesigExtend.Text = dgvMovimientoSolicitudEntrantes.CurrentRow.Cells[2].Value.ToString();
+            txtDiagnosticoPersonalExtend.Text = dgvMovimientoSolicitudEntrantes.CurrentRow.Cells[3].Value.ToString();
+
+
+            btnSaliente_AnularSoli.Visible = true;
+            habilitarBotonesSalientes();
+
+        }
+
+        private void btnSaliente_CambiarEstado_Click(object sender, EventArgs e)
+        {
+            EvaluarSolicitudUser openCambiarESTADO = new EvaluarSolicitudUser();
+          
+            string motivoSolicitud=dgvMovimientoSolicitudEntrantes.CurrentRow.Cells[0].Value.ToString();
+
+            openCambiarESTADO.NumTicketInicial = numTicketSelected;
+            openCambiarESTADO.MotivoSolicitudInicial = motivoSolicitud;
+            openCambiarESTADO.ShowDialog();
 
         }
     }

@@ -250,7 +250,10 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
                         movimientoSolicitudCls.FechaHoraMovimiento =Convert.ToDateTime(dr[6]);
 
                         movimientoSolicitudCls.ReqInsumo= Convert.ToBoolean(dr[7]);
-                       
+                        bool req = movimientoSolicitudCls.ReqInsumo;
+                        string reqString="";
+                        reqString=(req==true)?"SI":"NO";
+                        movimientoSolicitudCls.ReqInsumoString = reqString;
                         listaMovSolicitud.Add(movimientoSolicitudCls);
                     }
                     dr.Close();

@@ -11,5 +11,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Class
     {
 
         public static AccesoClass userAccesLogueado = null;
+
+        
     }
 }

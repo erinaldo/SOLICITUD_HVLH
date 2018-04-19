@@ -96,6 +96,12 @@
     <Compile Include="Vista\Login\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\User\EvaluarSolicitudUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\User\EvaluarSolicitudUser.Designer.cs">
+      <DependentUpon>EvaluarSolicitudUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\User\GenerarSolicitudUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\User\EvaluarSolicitudUser.resx">
+      <DependentUpon>EvaluarSolicitudUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\User\GenerarSolicitudUser.resx">
       <DependentUpon>GenerarSolicitudUser.cs</DependentUpon>
