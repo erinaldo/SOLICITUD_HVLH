@@ -284,6 +284,7 @@
             this.Controls.Add(this.menuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuUser";
             this.menuVertical.ResumeLayout(false);
             this.subMenuSolicitud.ResumeLayout(false);

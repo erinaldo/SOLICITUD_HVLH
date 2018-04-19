@@ -223,7 +223,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
 
 
         }
-
         public List<MovimientoSolicitud> listarMovimientoSolicitud(string numTicketSTR)
         {
 
@@ -267,6 +266,46 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
             }
         }
 
+
+        #endregion
+
+
+        #region ItemsSIGA
+
+        public List<ItemsSIGA> listarItemsSIGA(string pBusqueda)
+        {
+
+            List<ItemsSIGA> listaItemsSiga = new List<ItemsSIGA>();
+            using (SqlCommand oComando = new SqlCommand("SP_ITEMS_LISTAR", oConexion))
+            {
+
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@Pbusqueda", pBusqueda);
+                ItemsSIGA itemSIGACls;
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = oComando.ExecuteReader(CommandBehavior.SingleResult);
+                    while (dr.Read())
+                    {
+                        itemSIGACls = new ItemsSIGA();
+                        itemSIGACls.TIPO_BIEN = dr[0].ToString();
+                        itemSIGACls.CODSIGA = dr[1].ToString();
+                        itemSIGACls.NOMBRE_ITEM = dr[2].ToString();
+                        itemSIGACls.UNIDAD_MEDIDA = dr[3].ToString();
+                        itemSIGACls.NOMBRE_UNIDAD_MEDIDAD = dr[4].ToString();
+                        listaItemsSiga.Add(itemSIGACls);
+                    }
+                    dr.Close();
+                    oConexion.Close();
+                }
+                catch (Exception)
+                {
+                    oConexion.Close();
+                }
+                return listaItemsSiga;
+            }
+        }
 
         #endregion
 

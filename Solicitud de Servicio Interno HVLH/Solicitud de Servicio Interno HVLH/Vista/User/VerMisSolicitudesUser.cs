@@ -18,6 +18,8 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
     public partial class VerMisSolicitudesUser : Form
     {
         string numTicketSelected = "";
+
+        string estadoSolicitudSelected = "";
         public VerMisSolicitudesUser()
         {
             InitializeComponent();
@@ -80,10 +82,10 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         private void dgvSolicitudesEntrantes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             numTicketSelected = dgvSolicitudesEntrantes.CurrentRow.Cells[0].Value.ToString();
-            listarMovimientoSolicitud_Entrantes(numTicketSelected);
 
-         
-            
+            estadoSolicitudSelected = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
+
+            listarMovimientoSolicitud_Entrantes(numTicketSelected);                                
             
         }
 
@@ -96,15 +98,19 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             if(VarGlobal.userAccesLogueado.DireccionOficina.Equals(oficinaDestino) &&
                 VarGlobal.userAccesLogueado.AreaEspec.Equals(areaDestino))
             {
-                string estado = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
-                if (estado.Equals("Solicitado"))
+
+                
+                //string estado = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
+
+
+                if (estadoSolicitudSelected.Equals("Solicitado"))
                     btnSaliente_CambiarEstado.Text = "Evaluar Solicitud";
-                else if (estado.Equals("Evaluado"))
+                else if (estadoSolicitudSelected.Equals("Evaluado"))
                     btnSaliente_CambiarEstado.Text = "Iniciar Trabajo";
-                else if (estado.Equals("En Curso")) 
+                else if (estadoSolicitudSelected.Equals("En Curso")) 
                     btnSaliente_CambiarEstado.Text = "Concluir Trabajo";
 
-                btnSaliente_CambiarEstado.Visible = true;
+                btnSaliente_CambiarEstado.Visible = true;               
             }
         }
 
@@ -175,8 +181,14 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         {
             EvaluarSolicitudUser openCambiarESTADO = new EvaluarSolicitudUser();
           
-            string motivoSolicitud=dgvMovimientoSolicitudEntrantes.CurrentRow.Cells[0].Value.ToString();
+            
 
+
+
+      //      dgvMovimientoSolicitudEntrantes.Rows[dgvMovimientoSolicitudEntrantes.Rows.Count - 1].Selected = true;
+            string motivoSolicitud = dgvMovimientoSolicitudEntrantes.CurrentRow.Cells[0].Value.ToString();
+
+            
             openCambiarESTADO.NumTicketInicial = numTicketSelected;
             openCambiarESTADO.MotivoSolicitudInicial = motivoSolicitud;
             openCambiarESTADO.ShowDialog();

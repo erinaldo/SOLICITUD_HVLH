@@ -50,7 +50,9 @@
     <Compile Include="Class\AccesoClass.cs" />
     <Compile Include="Class\AreaEspecificaClass.cs" />
     <Compile Include="Class\DireccionOficina.cs" />
+    <Compile Include="Class\ItemsSIGA.cs" />
     <Compile Include="Class\MovimientoSolicitud.cs" />
+    <Compile Include="Class\MovMateriales.cs" />
     <Compile Include="Class\Solicitud.cs" />
     <Compile Include="Class\TrabajadorPLH.cs" />
     <Compile Include="Class\VarGlobal.cs" />

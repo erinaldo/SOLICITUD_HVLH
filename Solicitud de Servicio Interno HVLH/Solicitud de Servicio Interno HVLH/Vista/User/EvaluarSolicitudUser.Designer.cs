@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EvaluarSolicitudUser));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrarGenSolicitud = new System.Windows.Forms.PictureBox();
+            this.btnCerrarEvaluarSolicitud = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMotivoSolicitud_ = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,36 +46,52 @@
             this.txtBuscarPersonal_ = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabMateriales = new System.Windows.Forms.TabPage();
+            this.chk_RequiereInsumos = new System.Windows.Forms.CheckBox();
+            this.dgvMaterialesAsignados = new System.Windows.Forms.DataGridView();
+            this.txtUMSelected = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCantidadSelected = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtItemSelected = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnAddMateriales = new System.Windows.Forms.Button();
+            this.dgvItemsSIGA = new System.Windows.Forms.DataGridView();
+            this.txtBuscarMateriales = new System.Windows.Forms.TextBox();
+            this.lblBuscarMt = new System.Windows.Forms.Label();
             this.txtDiagnosticoPerso_ = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEvaluarSolicitud)).BeginInit();
             this.tabMisSolicitudes.SuspendLayout();
             this.tabPersonalDesig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajadorDesig)).BeginInit();
+            this.tabMateriales.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialesAsignados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemsSIGA)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel1.Controls.Add(this.btnCerrarGenSolicitud);
+            this.panel1.Controls.Add(this.btnCerrarEvaluarSolicitud);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(807, 40);
+            this.panel1.Size = new System.Drawing.Size(1077, 40);
             this.panel1.TabIndex = 2;
             // 
-            // btnCerrarGenSolicitud
+            // btnCerrarEvaluarSolicitud
             // 
-            this.btnCerrarGenSolicitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarGenSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarGenSolicitud.Image")));
-            this.btnCerrarGenSolicitud.Location = new System.Drawing.Point(764, 4);
-            this.btnCerrarGenSolicitud.Name = "btnCerrarGenSolicitud";
-            this.btnCerrarGenSolicitud.Size = new System.Drawing.Size(31, 28);
-            this.btnCerrarGenSolicitud.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrarGenSolicitud.TabIndex = 2;
-            this.btnCerrarGenSolicitud.TabStop = false;
+            this.btnCerrarEvaluarSolicitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarEvaluarSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarEvaluarSolicitud.Image")));
+            this.btnCerrarEvaluarSolicitud.Location = new System.Drawing.Point(1034, 4);
+            this.btnCerrarEvaluarSolicitud.Name = "btnCerrarEvaluarSolicitud";
+            this.btnCerrarEvaluarSolicitud.Size = new System.Drawing.Size(31, 28);
+            this.btnCerrarEvaluarSolicitud.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrarEvaluarSolicitud.TabIndex = 2;
+            this.btnCerrarEvaluarSolicitud.TabStop = false;
+            this.btnCerrarEvaluarSolicitud.Click += new System.EventHandler(this.btnCerrarEvaluarSolicitud_Click);
             // 
             // label1
             // 
@@ -91,26 +107,26 @@
             // txtMotivoSolicitud_
             // 
             this.txtMotivoSolicitud_.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMotivoSolicitud_.Location = new System.Drawing.Point(122, 75);
+            this.txtMotivoSolicitud_.Location = new System.Drawing.Point(314, 45);
             this.txtMotivoSolicitud_.Multiline = true;
             this.txtMotivoSolicitud_.Name = "txtMotivoSolicitud_";
-            this.txtMotivoSolicitud_.Size = new System.Drawing.Size(681, 56);
+            this.txtMotivoSolicitud_.Size = new System.Drawing.Size(717, 56);
             this.txtMotivoSolicitud_.TabIndex = 20;
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(12, 78);
+            this.label5.Location = new System.Drawing.Point(206, 47);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 41);
+            this.label5.Size = new System.Drawing.Size(86, 41);
             this.label5.TabIndex = 19;
             this.label5.Text = "Motivo Solicitud:";
             // 
             // txtNumTicket_
             // 
             this.txtNumTicket_.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumTicket_.Location = new System.Drawing.Point(122, 46);
+            this.txtNumTicket_.Location = new System.Drawing.Point(15, 69);
             this.txtNumTicket_.Name = "txtNumTicket_";
             this.txtNumTicket_.Size = new System.Drawing.Size(171, 21);
             this.txtNumTicket_.TabIndex = 18;
@@ -131,10 +147,10 @@
             this.tabMisSolicitudes.Controls.Add(this.tabPersonalDesig);
             this.tabMisSolicitudes.Controls.Add(this.tabMateriales);
             this.tabMisSolicitudes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMisSolicitudes.Location = new System.Drawing.Point(0, 199);
+            this.tabMisSolicitudes.Location = new System.Drawing.Point(1, 165);
             this.tabMisSolicitudes.Name = "tabMisSolicitudes";
             this.tabMisSolicitudes.SelectedIndex = 0;
-            this.tabMisSolicitudes.Size = new System.Drawing.Size(807, 291);
+            this.tabMisSolicitudes.Size = new System.Drawing.Size(1064, 291);
             this.tabMisSolicitudes.TabIndex = 21;
             // 
             // tabPersonalDesig
@@ -150,7 +166,7 @@
             this.tabPersonalDesig.Location = new System.Drawing.Point(4, 26);
             this.tabPersonalDesig.Name = "tabPersonalDesig";
             this.tabPersonalDesig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPersonalDesig.Size = new System.Drawing.Size(799, 261);
+            this.tabPersonalDesig.Size = new System.Drawing.Size(1056, 261);
             this.tabPersonalDesig.TabIndex = 0;
             this.tabPersonalDesig.Text = "Personal";
             this.tabPersonalDesig.UseVisualStyleBackColor = true;
@@ -163,7 +179,7 @@
             this.btnLimpiarLista.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiarLista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnLimpiarLista.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLimpiarLista.Location = new System.Drawing.Point(94, 224);
+            this.btnLimpiarLista.Location = new System.Drawing.Point(825, 94);
             this.btnLimpiarLista.Name = "btnLimpiarLista";
             this.btnLimpiarLista.Size = new System.Drawing.Size(95, 23);
             this.btnLimpiarLista.TabIndex = 19;
@@ -178,7 +194,7 @@
             this.btnAddLista.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddLista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnAddLista.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAddLista.Location = new System.Drawing.Point(14, 132);
+            this.btnAddLista.Location = new System.Drawing.Point(796, 53);
             this.btnAddLista.Name = "btnAddLista";
             this.btnAddLista.Size = new System.Drawing.Size(134, 35);
             this.btnAddLista.TabIndex = 18;
@@ -202,12 +218,12 @@
             // txtListaPersonal
             // 
             this.txtListaPersonal.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtListaPersonal.Location = new System.Drawing.Point(195, 166);
+            this.txtListaPersonal.Location = new System.Drawing.Point(144, 141);
             this.txtListaPersonal.Multiline = true;
             this.txtListaPersonal.Name = "txtListaPersonal";
             this.txtListaPersonal.ReadOnly = true;
             this.txtListaPersonal.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtListaPersonal.Size = new System.Drawing.Size(584, 89);
+            this.txtListaPersonal.Size = new System.Drawing.Size(634, 89);
             this.txtListaPersonal.TabIndex = 16;
             // 
             // label2
@@ -215,7 +231,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(59, 166);
+            this.label2.Location = new System.Drawing.Point(11, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 16);
             this.label2.TabIndex = 15;
@@ -244,30 +260,178 @@
             // tabMateriales
             // 
             this.tabMateriales.AutoScroll = true;
+            this.tabMateriales.Controls.Add(this.chk_RequiereInsumos);
+            this.tabMateriales.Controls.Add(this.dgvMaterialesAsignados);
+            this.tabMateriales.Controls.Add(this.txtUMSelected);
+            this.tabMateriales.Controls.Add(this.label10);
+            this.tabMateriales.Controls.Add(this.txtCantidadSelected);
+            this.tabMateriales.Controls.Add(this.label9);
+            this.tabMateriales.Controls.Add(this.txtItemSelected);
+            this.tabMateriales.Controls.Add(this.label7);
+            this.tabMateriales.Controls.Add(this.btnAddMateriales);
+            this.tabMateriales.Controls.Add(this.dgvItemsSIGA);
+            this.tabMateriales.Controls.Add(this.txtBuscarMateriales);
+            this.tabMateriales.Controls.Add(this.lblBuscarMt);
             this.tabMateriales.Location = new System.Drawing.Point(4, 26);
             this.tabMateriales.Name = "tabMateriales";
             this.tabMateriales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMateriales.Size = new System.Drawing.Size(799, 261);
+            this.tabMateriales.Size = new System.Drawing.Size(1056, 261);
             this.tabMateriales.TabIndex = 1;
             this.tabMateriales.Text = "Insumos";
             this.tabMateriales.UseVisualStyleBackColor = true;
             // 
+            // chk_RequiereInsumos
+            // 
+            this.chk_RequiereInsumos.AutoSize = true;
+            this.chk_RequiereInsumos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_RequiereInsumos.Location = new System.Drawing.Point(11, 7);
+            this.chk_RequiereInsumos.Name = "chk_RequiereInsumos";
+            this.chk_RequiereInsumos.Size = new System.Drawing.Size(191, 22);
+            this.chk_RequiereInsumos.TabIndex = 28;
+            this.chk_RequiereInsumos.Text = "¿Requiere Materiales?";
+            this.chk_RequiereInsumos.UseVisualStyleBackColor = true;
+            this.chk_RequiereInsumos.CheckedChanged += new System.EventHandler(this.chk_RequiereInsumos_CheckedChanged);
+            // 
+            // dgvMaterialesAsignados
+            // 
+            this.dgvMaterialesAsignados.AllowUserToAddRows = false;
+            this.dgvMaterialesAsignados.AllowUserToDeleteRows = false;
+            this.dgvMaterialesAsignados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterialesAsignados.Enabled = false;
+            this.dgvMaterialesAsignados.Location = new System.Drawing.Point(14, 159);
+            this.dgvMaterialesAsignados.Name = "dgvMaterialesAsignados";
+            this.dgvMaterialesAsignados.ReadOnly = true;
+            this.dgvMaterialesAsignados.Size = new System.Drawing.Size(1015, 149);
+            this.dgvMaterialesAsignados.TabIndex = 26;
+            // 
+            // txtUMSelected
+            // 
+            this.txtUMSelected.Enabled = false;
+            this.txtUMSelected.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUMSelected.Location = new System.Drawing.Point(919, 65);
+            this.txtUMSelected.Name = "txtUMSelected";
+            this.txtUMSelected.Size = new System.Drawing.Size(110, 21);
+            this.txtUMSelected.TabIndex = 25;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.Location = new System.Drawing.Point(840, 67);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 17);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "U. MEDIDA:";
+            // 
+            // txtCantidadSelected
+            // 
+            this.txtCantidadSelected.Enabled = false;
+            this.txtCantidadSelected.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadSelected.Location = new System.Drawing.Point(921, 92);
+            this.txtCantidadSelected.Name = "txtCantidadSelected";
+            this.txtCantidadSelected.Size = new System.Drawing.Size(110, 21);
+            this.txtCantidadSelected.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label9.Location = new System.Drawing.Point(839, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 17);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "CANTIDAD:";
+            // 
+            // txtItemSelected
+            // 
+            this.txtItemSelected.Enabled = false;
+            this.txtItemSelected.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemSelected.Location = new System.Drawing.Point(918, 36);
+            this.txtItemSelected.Name = "txtItemSelected";
+            this.txtItemSelected.Size = new System.Drawing.Size(110, 21);
+            this.txtItemSelected.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Location = new System.Drawing.Point(876, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(36, 17);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "ITEM:";
+            // 
+            // btnAddMateriales
+            // 
+            this.btnAddMateriales.FlatAppearance.BorderSize = 0;
+            this.btnAddMateriales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnAddMateriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMateriales.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMateriales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAddMateriales.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAddMateriales.Location = new System.Drawing.Point(849, 116);
+            this.btnAddMateriales.Name = "btnAddMateriales";
+            this.btnAddMateriales.Size = new System.Drawing.Size(134, 26);
+            this.btnAddMateriales.TabIndex = 19;
+            this.btnAddMateriales.Text = "Agregar a la Lista";
+            this.btnAddMateriales.UseVisualStyleBackColor = true;
+            this.btnAddMateriales.Visible = false;
+            this.btnAddMateriales.Click += new System.EventHandler(this.btnAddMateriales_Click);
+            // 
+            // dgvItemsSIGA
+            // 
+            this.dgvItemsSIGA.AllowUserToAddRows = false;
+            this.dgvItemsSIGA.AllowUserToDeleteRows = false;
+            this.dgvItemsSIGA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItemsSIGA.Enabled = false;
+            this.dgvItemsSIGA.Location = new System.Drawing.Point(8, 33);
+            this.dgvItemsSIGA.Name = "dgvItemsSIGA";
+            this.dgvItemsSIGA.ReadOnly = true;
+            this.dgvItemsSIGA.Size = new System.Drawing.Size(827, 108);
+            this.dgvItemsSIGA.TabIndex = 18;
+            this.dgvItemsSIGA.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemsSIGA_CellClick);
+            // 
+            // txtBuscarMateriales
+            // 
+            this.txtBuscarMateriales.Enabled = false;
+            this.txtBuscarMateriales.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarMateriales.Location = new System.Drawing.Point(350, 8);
+            this.txtBuscarMateriales.Name = "txtBuscarMateriales";
+            this.txtBuscarMateriales.Size = new System.Drawing.Size(639, 21);
+            this.txtBuscarMateriales.TabIndex = 16;
+            this.txtBuscarMateriales.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarMateriales_KeyPress);
+            // 
+            // lblBuscarMt
+            // 
+            this.lblBuscarMt.AutoSize = true;
+            this.lblBuscarMt.Enabled = false;
+            this.lblBuscarMt.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscarMt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblBuscarMt.Location = new System.Drawing.Point(231, 11);
+            this.lblBuscarMt.Name = "lblBuscarMt";
+            this.lblBuscarMt.Size = new System.Drawing.Size(116, 17);
+            this.lblBuscarMt.TabIndex = 15;
+            this.lblBuscarMt.Text = "Buscar Materiales:";
+            // 
             // txtDiagnosticoPerso_
             // 
             this.txtDiagnosticoPerso_.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiagnosticoPerso_.Location = new System.Drawing.Point(122, 137);
+            this.txtDiagnosticoPerso_.Location = new System.Drawing.Point(314, 104);
             this.txtDiagnosticoPerso_.Multiline = true;
             this.txtDiagnosticoPerso_.Name = "txtDiagnosticoPerso_";
-            this.txtDiagnosticoPerso_.Size = new System.Drawing.Size(681, 56);
+            this.txtDiagnosticoPerso_.Size = new System.Drawing.Size(717, 56);
             this.txtDiagnosticoPerso_.TabIndex = 23;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(12, 140);
+            this.label3.Location = new System.Drawing.Point(206, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 40);
+            this.label3.Size = new System.Drawing.Size(102, 40);
             this.label3.TabIndex = 22;
             this.label3.Text = "Diagnóstico Personal:";
             // 
@@ -275,7 +439,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 489);
+            this.ClientSize = new System.Drawing.Size(1077, 515);
             this.Controls.Add(this.txtDiagnosticoPerso_);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tabMisSolicitudes);
@@ -291,11 +455,15 @@
             this.Load += new System.EventHandler(this.EvaluarSolicitudUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEvaluarSolicitud)).EndInit();
             this.tabMisSolicitudes.ResumeLayout(false);
             this.tabPersonalDesig.ResumeLayout(false);
             this.tabPersonalDesig.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajadorDesig)).EndInit();
+            this.tabMateriales.ResumeLayout(false);
+            this.tabMateriales.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterialesAsignados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemsSIGA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,7 +472,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox btnCerrarGenSolicitud;
+        private System.Windows.Forms.PictureBox btnCerrarEvaluarSolicitud;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMotivoSolicitud_;
         private System.Windows.Forms.Label label5;
@@ -322,5 +490,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnLimpiarLista;
         private System.Windows.Forms.Button btnAddLista;
+        private System.Windows.Forms.TextBox txtUMSelected;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtCantidadSelected;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtItemSelected;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnAddMateriales;
+        private System.Windows.Forms.DataGridView dgvItemsSIGA;
+        private System.Windows.Forms.TextBox txtBuscarMateriales;
+        private System.Windows.Forms.Label lblBuscarMt;
+        private System.Windows.Forms.DataGridView dgvMaterialesAsignados;
+        private System.Windows.Forms.CheckBox chk_RequiereInsumos;
     }
 }
