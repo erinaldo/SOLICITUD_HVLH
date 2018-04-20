@@ -167,7 +167,9 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
         private void btnAddMateriales_Click(object sender, EventArgs e)
         {
+            dgvMaterialesAsignados.Enabled = true;
 
+            
 
             newItemMaterial = new MovMateriales();
             newItemMaterial.numTicketString = NumTicketInicial;
@@ -177,6 +179,12 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             newItemMaterial.cantidad = Convert.ToInt32(txtCantidadSelected.Text);
             newItemMaterial.estado = "REQUERIDO";
 
+            foreach (var item in lista_AddMateriales)
+            {
+                if (item.Item_Nombre.Equals(newItemMaterial.Item_Nombre) || item.codSIGA.Equals(newItemMaterial.codSIGA))
+                    return;
+            }
+
             lista_AddMateriales.Add(newItemMaterial);
 
             dgvMaterialesAsignados.DataSource = lista_AddMateriales;
@@ -184,11 +192,11 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             dgvMaterialesAsignados.AutoGenerateColumns = false;
 
 
-            DataGridViewTextBoxColumn numTicketString = new DataGridViewTextBoxColumn();
+           /* DataGridViewTextBoxColumn numTicketString = new DataGridViewTextBoxColumn();
             numTicketString.HeaderText = "N° Atención";
             numTicketString.DataPropertyName = "numTicketString";
             numTicketString.Width = 150;
-            dgvMaterialesAsignados.Columns.Add(numTicketString);
+            dgvMaterialesAsignados.Columns.Add(numTicketString);*/
 
 
             DataGridViewTextBoxColumn codSIGA = new DataGridViewTextBoxColumn();
@@ -200,7 +208,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             DataGridViewTextBoxColumn Item_Nombre = new DataGridViewTextBoxColumn();
             Item_Nombre.HeaderText = "Item Nombre";
             Item_Nombre.DataPropertyName = "Item_Nombre";
-            Item_Nombre.Width = 450;
+            Item_Nombre.Width = 550;
             dgvMaterialesAsignados.Columns.Add(Item_Nombre);
 
             DataGridViewTextBoxColumn Unidad_Medida = new DataGridViewTextBoxColumn();
@@ -214,13 +222,73 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             cantidad.HeaderText = "cantidad";
             cantidad.DataPropertyName = "cantidad";
             cantidad.Width = 100;
-            dgvMaterialesAsignados.Columns.Add(cantidad);
-            
+            dgvMaterialesAsignados.Columns.Add(cantidad);            
         }
 
         private void btnCerrarEvaluarSolicitud_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEvaluarSolicituD_Click(object sender, EventArgs e)
+        {
+
+
+
+            MovimientoSolicitud nuevoMovSolici = new MovimientoSolicitud();
+            Solicitud solicitudClass = new Solicitud();
+            SolicitudDAO solidao = new SolicitudDAO();
+            bool banderaMateriales = false;
+
+            solicitudClass.NumTicketString = NumTicketInicial;
+            nuevoMovSolici.Solicitud = solicitudClass;
+            nuevoMovSolici.Estado = "Evaluado";
+            nuevoMovSolici.MotivoSolicitud = txtMotivoSolicitud_.Text.Trim();
+            nuevoMovSolici.PersonalDesignado = txtListaPersonal.Text.Trim();
+            nuevoMovSolici.DiagnosticoPersonal = txtDiagnosticoPerso_.Text.Trim();
+            nuevoMovSolici.ReqInsumo = chk_RequiereInsumos.Checked;
+            if (solidao.generarMovimientoSolicitud(nuevoMovSolici))
+            {
+
+                if (chk_RequiereInsumos.Checked)
+                {
+                    foreach (var item in lista_AddMateriales)
+                    {
+                        if (solidao.agregarMateriales(item))
+                        {
+                            banderaMateriales = true;
+                        }
+                        else
+                        {
+                            banderaMateriales = false;
+
+                        }
+                    }
+
+                }
+
+                MessageBox.Show("SE EVALUÓ ESTA SOLICITUD");
+            }
+            else
+            {
+                MessageBox.Show("ocurriò un error al evaluar la solicitud");
+            }
+            if(banderaMateriales)
+                MessageBox.Show("se agregaron los materiales correctamente");
+            else
+                MessageBox.Show("no se agregaron los materiales correctamente");
+
+            if (solidao.actualizarEstadoSolicitud(nuevoMovSolici.Estado, NumTicketInicial))
+                MessageBox.Show("se actualizó la solicitud.....");
+            else
+                MessageBox.Show("no se pudo actualizar el estado");
+
+            MessageBox.Show(NumTicketInicial);
+            MessageBox.Show(txtMotivoSolicitud_.Text.Trim());
+            MessageBox.Show(txtListaPersonal.Text.Trim());
+            MessageBox.Show(txtDiagnosticoPerso_.Text.Trim());
+
+            MessageBox.Show(chk_RequiereInsumos.Checked.ToString());
         }
     }
 }

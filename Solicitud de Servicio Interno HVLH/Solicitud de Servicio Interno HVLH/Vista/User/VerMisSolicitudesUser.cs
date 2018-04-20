@@ -98,7 +98,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             if(VarGlobal.userAccesLogueado.DireccionOficina.Equals(oficinaDestino) &&
                 VarGlobal.userAccesLogueado.AreaEspec.Equals(areaDestino))
             {
-
+                
                 
                 //string estado = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
 
@@ -181,10 +181,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         {
             EvaluarSolicitudUser openCambiarESTADO = new EvaluarSolicitudUser();
           
-            
-
-
-
+      
       //      dgvMovimientoSolicitudEntrantes.Rows[dgvMovimientoSolicitudEntrantes.Rows.Count - 1].Selected = true;
             string motivoSolicitud = dgvMovimientoSolicitudEntrantes.CurrentRow.Cells[0].Value.ToString();
 

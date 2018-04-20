@@ -152,7 +152,27 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
 
         }
 
+        //Método para actualizar  el estado de la solicitud:
+        public bool actualizarEstadoSolicitud(string estado, string numTicketStrUpdate)
+        {
+            try
+            {
+                bool resul = false;
+                SqlCommand oComando = new SqlCommand("SP_SOLICITUD_ACTUALIZAR_ESTADO", oConexion);
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@Estado", estado);
+                oComando.Parameters.AddWithValue("@NumTicketString", numTicketStrUpdate);
 
+                oConexion.Open();
+                resul = oComando.ExecuteNonQuery() > 0;
+                oConexion.Close();
+                return resul;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<Solicitud> listarSolicitudesSalientes(string oficinaSolicitante, string areaSolicitante)
         {
 
@@ -269,7 +289,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
 
         #endregion
 
-
         #region ItemsSIGA
 
         public List<ItemsSIGA> listarItemsSIGA(string pBusqueda)
@@ -309,11 +328,35 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
 
         #endregion
 
+        #region MovInsumos
 
+        //Método para generar una lista de Insumos / Materiales:
+        public bool agregarMateriales(MovMateriales movMateriales)
+        {
+            try
+            {
+                bool resul = false;
+                SqlCommand oComando = new SqlCommand("SP_INSUMO_GENERAR", oConexion);
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@NumTicketString", movMateriales.numTicketString);
+                oComando.Parameters.AddWithValue("@codSIGA", movMateriales.codSIGA);
+                oComando.Parameters.AddWithValue("@ItemNombre", movMateriales.Item_Nombre);
+                oComando.Parameters.AddWithValue("@Unidad_Medida", movMateriales.Unidad_Medida);
+                oComando.Parameters.AddWithValue("@cantidad", movMateriales.cantidad);
+                oComando.Parameters.AddWithValue("@estado", movMateriales.estado);
 
+                oConexion.Open();
+                resul = oComando.ExecuteNonQuery() > 0;
+                oConexion.Close();
+                return resul;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
+        #endregion
 
-
-
-    }
+   }
 }

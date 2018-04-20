@@ -330,3 +330,47 @@ GO
 EXEC SP_ITEMS_LISTAR 'cable'
 
 
+
+---------
+CREATE TABLE MOVIMIENTO_INSUMO
+(
+idInsumosReq int identity(1,1),
+numTicketString varchar(50) not null,
+codSIGA varchar(20),
+ItemNombre varchar(max),
+Unidad_Medida varchar(50),
+cantidad int,
+estado varchar(50)
+)
+GO
+
+Alter Table MOVIMIENTO_INSUMO
+Add Constraint FK_INSUMO_SOLICITUD
+FOREIGN KEY(numTicketString) REFERENCES SOLICITUD(NumTicketString)
+GO
+
+
+CREATE PROCEDURE SP_INSUMO_GENERAR
+@numTicketString varchar(50),
+@codSIGA varchar(20),
+@ItemNombre varchar(max),
+@Unidad_Medida varchar(50),
+@cantidad int,
+@estado varchar(50)
+AS	BEGIN
+	INSERT INTO MOVIMIENTO_INSUMO (numTicketString,codSIGA,ItemNombre,Unidad_Medida,cantidad,estado)
+				VALUES(@numTicketString,@codSIGA,@ItemNombre,@Unidad_Medida,@cantidad,@estado)
+END
+GO
+
+
+CREATE PROCEDURE SP_SOLICITUD_ACTUALIZAR_ESTADO
+@Estado varchar(30),
+@NumTicketString varchar(50)
+AS BEGIN
+		UPDATE SOLICITUD SET Estado=@Estado
+		Where NumTicketString=@NumTicketString
+END
+GO
+
+

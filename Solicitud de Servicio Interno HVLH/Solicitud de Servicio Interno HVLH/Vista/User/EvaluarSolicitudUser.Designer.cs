@@ -60,6 +60,7 @@
             this.lblBuscarMt = new System.Windows.Forms.Label();
             this.txtDiagnosticoPerso_ = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnEvaluarSolicituD = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEvaluarSolicitud)).BeginInit();
             this.tabMisSolicitudes.SuspendLayout();
@@ -147,7 +148,7 @@
             this.tabMisSolicitudes.Controls.Add(this.tabPersonalDesig);
             this.tabMisSolicitudes.Controls.Add(this.tabMateriales);
             this.tabMisSolicitudes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMisSolicitudes.Location = new System.Drawing.Point(1, 165);
+            this.tabMisSolicitudes.Location = new System.Drawing.Point(1, 168);
             this.tabMisSolicitudes.Name = "tabMisSolicitudes";
             this.tabMisSolicitudes.SelectedIndex = 0;
             this.tabMisSolicitudes.Size = new System.Drawing.Size(1064, 291);
@@ -435,11 +436,28 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "Diagnóstico Personal:";
             // 
+            // btnEvaluarSolicituD
+            // 
+            this.btnEvaluarSolicituD.FlatAppearance.BorderSize = 0;
+            this.btnEvaluarSolicituD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnEvaluarSolicituD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvaluarSolicituD.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvaluarSolicituD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnEvaluarSolicituD.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEvaluarSolicituD.Location = new System.Drawing.Point(281, 461);
+            this.btnEvaluarSolicituD.Name = "btnEvaluarSolicituD";
+            this.btnEvaluarSolicituD.Size = new System.Drawing.Size(165, 42);
+            this.btnEvaluarSolicituD.TabIndex = 24;
+            this.btnEvaluarSolicituD.Text = "Evaluar Solicitud";
+            this.btnEvaluarSolicituD.UseVisualStyleBackColor = true;
+            this.btnEvaluarSolicituD.Click += new System.EventHandler(this.btnEvaluarSolicituD_Click);
+            // 
             // EvaluarSolicitudUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 515);
+            this.Controls.Add(this.btnEvaluarSolicituD);
             this.Controls.Add(this.txtDiagnosticoPerso_);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tabMisSolicitudes);
@@ -502,5 +520,6 @@
         private System.Windows.Forms.Label lblBuscarMt;
         private System.Windows.Forms.DataGridView dgvMaterialesAsignados;
         private System.Windows.Forms.CheckBox chk_RequiereInsumos;
+        private System.Windows.Forms.Button btnEvaluarSolicituD;
     }
 }
