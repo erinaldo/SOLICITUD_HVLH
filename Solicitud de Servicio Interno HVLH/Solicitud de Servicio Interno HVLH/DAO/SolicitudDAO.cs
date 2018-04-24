@@ -153,14 +153,15 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
         }
 
         //Método para actualizar  el estado de la solicitud:
-        public bool actualizarEstadoSolicitud(string estado, string numTicketStrUpdate)
+        public bool actualizarEstadoSolicitud(string estado, string prioridad, string numTicketStrUpdate)
         {
             try
             {
                 bool resul = false;
-                SqlCommand oComando = new SqlCommand("SP_SOLICITUD_ACTUALIZAR_ESTADO", oConexion);
+                SqlCommand oComando = new SqlCommand("SP_SOLICITUD_ACTUALIZAR_ESTADO_PRIORIDAD", oConexion);
                 oComando.CommandType = CommandType.StoredProcedure;
                 oComando.Parameters.AddWithValue("@Estado", estado);
+                oComando.Parameters.AddWithValue("@Prioridad", prioridad);
                 oComando.Parameters.AddWithValue("@NumTicketString", numTicketStrUpdate);
 
                 oConexion.Open();
@@ -199,6 +200,46 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
                         solicitudCls.Area_Destino=dr[5].ToString();
                         solicitudCls.Prioridad=dr[6].ToString();
                         solicitudCls.Estado=dr[7].ToString();
+                        listaSolicitudes.Add(solicitudCls);
+                    }
+                    dr.Close();
+                    oConexion.Close();
+                }
+                catch (Exception)
+                {
+                    oConexion.Close();
+                }
+                return listaSolicitudes;
+            }
+        }
+
+        public List<Solicitud> listarSolicitudEntrantes(string oficinaDestino, string areaDestino)
+        {
+
+            List<Solicitud> listaSolicitudes = new List<Solicitud>();
+            using (SqlCommand oComando = new SqlCommand("SP_SOLICITUD_LISTAR_ENTRANTE", oConexion))
+            {
+
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@OficinaDestino", oficinaDestino);
+                oComando.Parameters.AddWithValue("@AreaDestino", areaDestino);
+                Solicitud solicitudCls;
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = oComando.ExecuteReader(CommandBehavior.SingleResult);
+                    while (dr.Read())
+                    {
+                        solicitudCls = new Solicitud();
+                        solicitudCls.idSolicitud = Convert.ToInt32(dr[0]);
+                        solicitudCls.NumTicket = Convert.ToInt32(dr[1]);
+                        solicitudCls.NumTicketString = dr[2].ToString();
+                        solicitudCls.FechaHoraRegistroReal = Convert.ToDateTime(dr[3]);
+                        solicitudCls.Oficina_Solicitante = dr[4].ToString();
+                        solicitudCls.Area_Solicitante = dr[5].ToString();
+                        solicitudCls.Prioridad = dr[6].ToString();
+                        solicitudCls.Estado = dr[7].ToString();
+                        solicitudCls.NomPC_Solicitante = dr[8].ToString();
                         listaSolicitudes.Add(solicitudCls);
                     }
                     dr.Close();

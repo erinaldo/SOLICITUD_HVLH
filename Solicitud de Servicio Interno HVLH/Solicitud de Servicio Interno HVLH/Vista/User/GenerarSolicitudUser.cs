@@ -35,8 +35,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             generarStringTicket();
             //  generarNumTicket();
             generarTicketFinal();
-            LlenarDirOficina();
-            MessageBox.Show(Environment.MachineName);
+            LlenarDirOficina();            
         }
         private void llenarInfoSolicitante(){
             txtUsuarioSolicitante.Text = VarGlobal.userAccesLogueado.Nombre;
@@ -50,6 +49,8 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 RefTicket = "OEI-INF";
             else if (VarGlobal.userAccesLogueado.DireccionOficina.Equals("OFICINA DE SERVICIOS GENERALES Y MANTENIMIENTO"))
                 RefTicket = "OSGYM";
+            else if (VarGlobal.userAccesLogueado.DireccionOficina.Equals("OFICINA DE LOGISTICA"))
+                RefTicket = "OL";
         }
         /* private void generarNumTicket()
         {
@@ -197,6 +198,11 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             }
 
             this.Close();
+        }
+
+        private void cboOficinaDestino_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            llenarAreaEspecXOficina(Convert.ToInt32(cboOficinaDestino.SelectedValue));
         }
 
 

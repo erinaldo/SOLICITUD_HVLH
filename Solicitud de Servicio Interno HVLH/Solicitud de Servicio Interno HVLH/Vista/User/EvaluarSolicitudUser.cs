@@ -17,6 +17,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
         public string NumTicketInicial;
         public string MotivoSolicitudInicial;
+        public string prioridadSolicitudInicial; 
 
         MovMateriales newItemMaterial = null;
         List<MovMateriales> lista_AddMateriales = new List<MovMateriales>();
@@ -30,8 +31,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         {
             txtNumTicket_.Text = NumTicketInicial;
             txtMotivoSolicitud_ .Text= MotivoSolicitudInicial;
-
-
+            cboPrioridadSoliEvaluar.Text = prioridadSolicitudInicial;
 
         }
 
@@ -118,7 +118,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             txtCantidadSelected.Enabled = false;            
         }
 
-
         //BUSCAR ITEMS SIGA:
         private void buscarItemsSIGA(string pBusqueda)
         {
@@ -146,8 +145,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             NOMBRE_UNIDAD_MEDIDAD.Width = 150;
             dgvItemsSIGA.Columns.Add(NOMBRE_UNIDAD_MEDIDAD);
         }
-
-
         private void txtBuscarMateriales_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (int)Keys.Enter)
@@ -156,7 +153,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 buscarItemsSIGA(txtBuscarMateriales.Text.Trim());
             }
         }
-
         private void dgvItemsSIGA_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtItemSelected.Text = dgvItemsSIGA.CurrentRow.Cells[0].Value.ToString();
@@ -231,15 +227,12 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         }
 
         private void btnEvaluarSolicituD_Click(object sender, EventArgs e)
-        {
-
-
-
+        {            
             MovimientoSolicitud nuevoMovSolici = new MovimientoSolicitud();
             Solicitud solicitudClass = new Solicitud();
             SolicitudDAO solidao = new SolicitudDAO();
             bool banderaMateriales = false;
-
+            string prioridad = "";
             solicitudClass.NumTicketString = NumTicketInicial;
             nuevoMovSolici.Solicitud = solicitudClass;
             nuevoMovSolici.Estado = "Evaluado";
@@ -247,6 +240,8 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             nuevoMovSolici.PersonalDesignado = txtListaPersonal.Text.Trim();
             nuevoMovSolici.DiagnosticoPersonal = txtDiagnosticoPerso_.Text.Trim();
             nuevoMovSolici.ReqInsumo = chk_RequiereInsumos.Checked;
+            //prioridad:
+            prioridad = cboPrioridadSoliEvaluar.Text;
             if (solidao.generarMovimientoSolicitud(nuevoMovSolici))
             {
 
@@ -278,17 +273,17 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             else
                 MessageBox.Show("no se agregaron los materiales correctamente");
 
-            if (solidao.actualizarEstadoSolicitud(nuevoMovSolici.Estado, NumTicketInicial))
+            if (solidao.actualizarEstadoSolicitud(nuevoMovSolici.Estado,prioridad, NumTicketInicial))
                 MessageBox.Show("se actualizó la solicitud.....");
             else
                 MessageBox.Show("no se pudo actualizar el estado");
 
-            MessageBox.Show(NumTicketInicial);
+          /*  MessageBox.Show(NumTicketInicial);
             MessageBox.Show(txtMotivoSolicitud_.Text.Trim());
             MessageBox.Show(txtListaPersonal.Text.Trim());
             MessageBox.Show(txtDiagnosticoPerso_.Text.Trim());
 
-            MessageBox.Show(chk_RequiereInsumos.Checked.ToString());
+            MessageBox.Show(chk_RequiereInsumos.Checked.ToString());*/
         }
     }
 }

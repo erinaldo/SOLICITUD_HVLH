@@ -43,20 +43,29 @@
             this.txtDiagnosticoPersonalExtend = new System.Windows.Forms.TextBox();
             this.txtPersonalDesigExtend = new System.Windows.Forms.TextBox();
             this.txtMotivoExtend = new System.Windows.Forms.TextBox();
-            this.dgvMovimientoSolicitudEntrantes = new System.Windows.Forms.DataGridView();
-            this.dgvSolicitudesEntrantes = new System.Windows.Forms.DataGridView();
+            this.dgvMovimientoSolicitudSalientes = new System.Windows.Forms.DataGridView();
+            this.dgvSolicitudesSalientes = new System.Windows.Forms.DataGridView();
             this.txtAreaSolicitante = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtOficinaSolicitante = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabEntrantes = new System.Windows.Forms.TabPage();
+            this.panelBotonesEntrantes = new System.Windows.Forms.Panel();
+            this.btnAnularSoliEntrante = new System.Windows.Forms.Button();
+            this.btnCambiarEstadoSolicitudEntrante = new System.Windows.Forms.Button();
+            this.dgvMovSoliEntrante = new System.Windows.Forms.DataGridView();
+            this.dgvSolicitudesEntrantes = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).BeginInit();
             this.tabMisSolicitudes.SuspendLayout();
             this.tabSalientes.SuspendLayout();
             this.panelBotones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudEntrantes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudSalientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesSalientes)).BeginInit();
+            this.tabEntrantes.SuspendLayout();
+            this.panelBotonesEntrantes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovSoliEntrante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesEntrantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,8 +124,8 @@
             this.tabSalientes.Controls.Add(this.txtDiagnosticoPersonalExtend);
             this.tabSalientes.Controls.Add(this.txtPersonalDesigExtend);
             this.tabSalientes.Controls.Add(this.txtMotivoExtend);
-            this.tabSalientes.Controls.Add(this.dgvMovimientoSolicitudEntrantes);
-            this.tabSalientes.Controls.Add(this.dgvSolicitudesEntrantes);
+            this.tabSalientes.Controls.Add(this.dgvMovimientoSolicitudSalientes);
+            this.tabSalientes.Controls.Add(this.dgvSolicitudesSalientes);
             this.tabSalientes.Controls.Add(this.txtAreaSolicitante);
             this.tabSalientes.Controls.Add(this.label5);
             this.tabSalientes.Controls.Add(this.txtOficinaSolicitante);
@@ -232,29 +241,29 @@
             this.txtMotivoExtend.Size = new System.Drawing.Size(641, 40);
             this.txtMotivoExtend.TabIndex = 19;
             // 
-            // dgvMovimientoSolicitudEntrantes
+            // dgvMovimientoSolicitudSalientes
             // 
-            this.dgvMovimientoSolicitudEntrantes.AllowUserToAddRows = false;
-            this.dgvMovimientoSolicitudEntrantes.AllowUserToDeleteRows = false;
-            this.dgvMovimientoSolicitudEntrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovimientoSolicitudEntrantes.Location = new System.Drawing.Point(15, 219);
-            this.dgvMovimientoSolicitudEntrantes.Name = "dgvMovimientoSolicitudEntrantes";
-            this.dgvMovimientoSolicitudEntrantes.ReadOnly = true;
-            this.dgvMovimientoSolicitudEntrantes.Size = new System.Drawing.Size(768, 101);
-            this.dgvMovimientoSolicitudEntrantes.TabIndex = 18;
-            this.dgvMovimientoSolicitudEntrantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovimientoSolicitudEntrantes_CellDoubleClick);
+            this.dgvMovimientoSolicitudSalientes.AllowUserToAddRows = false;
+            this.dgvMovimientoSolicitudSalientes.AllowUserToDeleteRows = false;
+            this.dgvMovimientoSolicitudSalientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovimientoSolicitudSalientes.Location = new System.Drawing.Point(15, 219);
+            this.dgvMovimientoSolicitudSalientes.Name = "dgvMovimientoSolicitudSalientes";
+            this.dgvMovimientoSolicitudSalientes.ReadOnly = true;
+            this.dgvMovimientoSolicitudSalientes.Size = new System.Drawing.Size(768, 101);
+            this.dgvMovimientoSolicitudSalientes.TabIndex = 18;
+            this.dgvMovimientoSolicitudSalientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovimientoSolicitudEntrantes_CellDoubleClick);
             // 
-            // dgvSolicitudesEntrantes
+            // dgvSolicitudesSalientes
             // 
-            this.dgvSolicitudesEntrantes.AllowUserToAddRows = false;
-            this.dgvSolicitudesEntrantes.AllowUserToDeleteRows = false;
-            this.dgvSolicitudesEntrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSolicitudesEntrantes.Location = new System.Drawing.Point(15, 78);
-            this.dgvSolicitudesEntrantes.Name = "dgvSolicitudesEntrantes";
-            this.dgvSolicitudesEntrantes.ReadOnly = true;
-            this.dgvSolicitudesEntrantes.Size = new System.Drawing.Size(768, 121);
-            this.dgvSolicitudesEntrantes.TabIndex = 17;
-            this.dgvSolicitudesEntrantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudesEntrantes_CellDoubleClick);
+            this.dgvSolicitudesSalientes.AllowUserToAddRows = false;
+            this.dgvSolicitudesSalientes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudesSalientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSolicitudesSalientes.Location = new System.Drawing.Point(15, 78);
+            this.dgvSolicitudesSalientes.Name = "dgvSolicitudesSalientes";
+            this.dgvSolicitudesSalientes.ReadOnly = true;
+            this.dgvSolicitudesSalientes.Size = new System.Drawing.Size(768, 121);
+            this.dgvSolicitudesSalientes.TabIndex = 17;
+            this.dgvSolicitudesSalientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudesEntrantes_CellDoubleClick);
             // 
             // txtAreaSolicitante
             // 
@@ -307,6 +316,10 @@
             // 
             // tabEntrantes
             // 
+            this.tabEntrantes.AutoScroll = true;
+            this.tabEntrantes.Controls.Add(this.panelBotonesEntrantes);
+            this.tabEntrantes.Controls.Add(this.dgvMovSoliEntrante);
+            this.tabEntrantes.Controls.Add(this.dgvSolicitudesEntrantes);
             this.tabEntrantes.Location = new System.Drawing.Point(4, 26);
             this.tabEntrantes.Name = "tabEntrantes";
             this.tabEntrantes.Padding = new System.Windows.Forms.Padding(3);
@@ -314,6 +327,73 @@
             this.tabEntrantes.TabIndex = 1;
             this.tabEntrantes.Text = "Entrantes";
             this.tabEntrantes.UseVisualStyleBackColor = true;
+            // 
+            // panelBotonesEntrantes
+            // 
+            this.panelBotonesEntrantes.Controls.Add(this.btnAnularSoliEntrante);
+            this.panelBotonesEntrantes.Controls.Add(this.btnCambiarEstadoSolicitudEntrante);
+            this.panelBotonesEntrantes.Location = new System.Drawing.Point(36, 296);
+            this.panelBotonesEntrantes.Name = "panelBotonesEntrantes";
+            this.panelBotonesEntrantes.Size = new System.Drawing.Size(393, 56);
+            this.panelBotonesEntrantes.TabIndex = 26;
+            // 
+            // btnAnularSoliEntrante
+            // 
+            this.btnAnularSoliEntrante.FlatAppearance.BorderSize = 0;
+            this.btnAnularSoliEntrante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnAnularSoliEntrante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnularSoliEntrante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnularSoliEntrante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnAnularSoliEntrante.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAnularSoliEntrante.Location = new System.Drawing.Point(172, 3);
+            this.btnAnularSoliEntrante.Name = "btnAnularSoliEntrante";
+            this.btnAnularSoliEntrante.Size = new System.Drawing.Size(134, 51);
+            this.btnAnularSoliEntrante.TabIndex = 5;
+            this.btnAnularSoliEntrante.Text = "Anular Solicitud";
+            this.btnAnularSoliEntrante.UseVisualStyleBackColor = true;
+            this.btnAnularSoliEntrante.Visible = false;
+            // 
+            // btnCambiarEstadoSolicitudEntrante
+            // 
+            this.btnCambiarEstadoSolicitudEntrante.FlatAppearance.BorderSize = 0;
+            this.btnCambiarEstadoSolicitudEntrante.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCambiarEstadoSolicitudEntrante.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarEstadoSolicitudEntrante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarEstadoSolicitudEntrante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCambiarEstadoSolicitudEntrante.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCambiarEstadoSolicitudEntrante.Location = new System.Drawing.Point(-1, 3);
+            this.btnCambiarEstadoSolicitudEntrante.Name = "btnCambiarEstadoSolicitudEntrante";
+            this.btnCambiarEstadoSolicitudEntrante.Size = new System.Drawing.Size(134, 51);
+            this.btnCambiarEstadoSolicitudEntrante.TabIndex = 4;
+            this.btnCambiarEstadoSolicitudEntrante.Text = "Evaluar Solicitud";
+            this.btnCambiarEstadoSolicitudEntrante.UseVisualStyleBackColor = true;
+            this.btnCambiarEstadoSolicitudEntrante.Visible = false;
+            this.btnCambiarEstadoSolicitudEntrante.Click += new System.EventHandler(this.btnCambiarEstadoSolicitudEntrante_Click);
+            // 
+            // dgvMovSoliEntrante
+            // 
+            this.dgvMovSoliEntrante.AllowUserToAddRows = false;
+            this.dgvMovSoliEntrante.AllowUserToDeleteRows = false;
+            this.dgvMovSoliEntrante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovSoliEntrante.Location = new System.Drawing.Point(26, 172);
+            this.dgvMovSoliEntrante.Name = "dgvMovSoliEntrante";
+            this.dgvMovSoliEntrante.ReadOnly = true;
+            this.dgvMovSoliEntrante.Size = new System.Drawing.Size(768, 101);
+            this.dgvMovSoliEntrante.TabIndex = 19;
+            this.dgvMovSoliEntrante.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovSoliEntrante_CellDoubleClick);
+            // 
+            // dgvSolicitudesEntrantes
+            // 
+            this.dgvSolicitudesEntrantes.AllowUserToAddRows = false;
+            this.dgvSolicitudesEntrantes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudesEntrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSolicitudesEntrantes.Location = new System.Drawing.Point(6, 22);
+            this.dgvSolicitudesEntrantes.Name = "dgvSolicitudesEntrantes";
+            this.dgvSolicitudesEntrantes.ReadOnly = true;
+            this.dgvSolicitudesEntrantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSolicitudesEntrantes.Size = new System.Drawing.Size(799, 121);
+            this.dgvSolicitudesEntrantes.TabIndex = 18;
+            this.dgvSolicitudesEntrantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudesEntrantes_CellDoubleClick_1);
             // 
             // VerMisSolicitudesUser
             // 
@@ -333,7 +413,11 @@
             this.tabSalientes.ResumeLayout(false);
             this.tabSalientes.PerformLayout();
             this.panelBotones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudEntrantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudSalientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesSalientes)).EndInit();
+            this.tabEntrantes.ResumeLayout(false);
+            this.panelBotonesEntrantes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovSoliEntrante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesEntrantes)).EndInit();
             this.ResumeLayout(false);
 
@@ -352,8 +436,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtOficinaSolicitante;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvSolicitudesEntrantes;
-        private System.Windows.Forms.DataGridView dgvMovimientoSolicitudEntrantes;
+        private System.Windows.Forms.DataGridView dgvSolicitudesSalientes;
+        private System.Windows.Forms.DataGridView dgvMovimientoSolicitudSalientes;
         private System.Windows.Forms.TextBox txtDiagnosticoPersonalExtend;
         private System.Windows.Forms.TextBox txtPersonalDesigExtend;
         private System.Windows.Forms.TextBox txtMotivoExtend;
@@ -363,5 +447,10 @@
         private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Button btnSaliente_CambiarEstado;
         private System.Windows.Forms.Button btnSaliente_AnularSoli;
+        private System.Windows.Forms.DataGridView dgvSolicitudesEntrantes;
+        private System.Windows.Forms.DataGridView dgvMovSoliEntrante;
+        private System.Windows.Forms.Panel panelBotonesEntrantes;
+        private System.Windows.Forms.Button btnAnularSoliEntrante;
+        private System.Windows.Forms.Button btnCambiarEstadoSolicitudEntrante;
     }
 }

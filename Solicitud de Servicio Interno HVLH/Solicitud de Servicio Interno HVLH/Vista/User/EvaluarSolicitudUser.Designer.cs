@@ -61,6 +61,8 @@
             this.txtDiagnosticoPerso_ = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEvaluarSolicituD = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboPrioridadSoliEvaluar = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarEvaluarSolicitud)).BeginInit();
             this.tabMisSolicitudes.SuspendLayout();
@@ -452,11 +454,36 @@
             this.btnEvaluarSolicituD.UseVisualStyleBackColor = true;
             this.btnEvaluarSolicituD.Click += new System.EventHandler(this.btnEvaluarSolicituD_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(12, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(138, 17);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Prioridad de Solicitud:";
+            // 
+            // cboPrioridadSoliEvaluar
+            // 
+            this.cboPrioridadSoliEvaluar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPrioridadSoliEvaluar.FormattingEnabled = true;
+            this.cboPrioridadSoliEvaluar.Items.AddRange(new object[] {
+            "A",
+            "B"});
+            this.cboPrioridadSoliEvaluar.Location = new System.Drawing.Point(15, 124);
+            this.cboPrioridadSoliEvaluar.Name = "cboPrioridadSoliEvaluar";
+            this.cboPrioridadSoliEvaluar.Size = new System.Drawing.Size(171, 25);
+            this.cboPrioridadSoliEvaluar.TabIndex = 26;
+            // 
             // EvaluarSolicitudUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1077, 515);
+            this.Controls.Add(this.cboPrioridadSoliEvaluar);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEvaluarSolicituD);
             this.Controls.Add(this.txtDiagnosticoPerso_);
             this.Controls.Add(this.label3);
@@ -521,5 +548,7 @@
         private System.Windows.Forms.DataGridView dgvMaterialesAsignados;
         private System.Windows.Forms.CheckBox chk_RequiereInsumos;
         private System.Windows.Forms.Button btnEvaluarSolicituD;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboPrioridadSoliEvaluar;
     }
 }
