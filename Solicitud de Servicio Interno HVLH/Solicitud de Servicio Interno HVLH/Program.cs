@@ -25,7 +25,8 @@ namespace Solicitud_de_Servicio_Interno_HVLH
            // Application.Run(new Frm_RegistrarAcceso());
             //Application.Run(new FrmMenuPr());
             //Application.Run(new MenuUser());
-            Application.Run(new FrmLogin());
+          Application.Run(new FrmLogin());
+            //Application.Run(new VERINFORMES_PRUEBA());
         }
     }
 }

@@ -33,10 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +53,7 @@
     <Compile Include="Class\AccesoClass.cs" />
     <Compile Include="Class\AreaEspecificaClass.cs" />
     <Compile Include="Class\DireccionOficina.cs" />
+    <Compile Include="Class\InformeAtendido.cs" />
     <Compile Include="Class\ItemsSIGA.cs" />
     <Compile Include="Class\MovimientoSolicitud.cs" />
     <Compile Include="Class\MovMateriales.cs" />
@@ -116,11 +120,29 @@
     <Compile Include="Vista\User\GenerarSolicitudUser.Designer.cs">
       <DependentUpon>GenerarSolicitudUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\User\Informes\Frm_Inf_SolicitudAtendida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\User\Informes\Frm_Inf_SolicitudAtendida.Designer.cs">
+      <DependentUpon>Frm_Inf_SolicitudAtendida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\User\MenuUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\User\MenuUser.Designer.cs">
       <DependentUpon>MenuUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\User\VERINFORMES_PRUEBA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\User\VERINFORMES_PRUEBA.Designer.cs">
+      <DependentUpon>VERINFORMES_PRUEBA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\User\VerMaterialesUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\User\VerMaterialesUser.Designer.cs">
+      <DependentUpon>VerMaterialesUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\User\VerMisSolicitudesUser.cs">
       <SubType>Form</SubType>
@@ -165,12 +187,23 @@
     <EmbeddedResource Include="Vista\User\GenerarSolicitudUser.resx">
       <DependentUpon>GenerarSolicitudUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\User\Informes\Frm_Inf_SolicitudAtendida.resx">
+      <DependentUpon>Frm_Inf_SolicitudAtendida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\User\Informes\Inf_SolicitudAtendida.rdlc" />
     <EmbeddedResource Include="Vista\User\MenuUser.resx">
       <DependentUpon>MenuUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\User\VERINFORMES_PRUEBA.resx">
+      <DependentUpon>VERINFORMES_PRUEBA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\User\VerMaterialesUser.resx">
+      <DependentUpon>VerMaterialesUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\User\VerMisSolicitudesUser.resx">
       <DependentUpon>VerMisSolicitudesUser.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Solicitud_de_Servicio_Interno_HVLH.Class.InformeAtendido.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

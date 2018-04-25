@@ -374,3 +374,68 @@ END
 GO
 
 
+----- 25/04/18:
+SELECT * FROM MOVIMIENTO_INSUMO
+
+
+select * from 
+GO
+
+CREATE PROCEDURE SP_INSUMO_LISTAR_NROTICKET
+@numTicketString varchar(50)
+AS BEGIN
+		SELECT * FROM MOVIMIENTO_INSUMO
+		WHERE numTicketString=@numTicketString
+		And estado='REQUERIDO'
+END
+GO
+
+CREATE PROCEDURE SP_INSUMO_LISTAR_NROTICKET_UTILIZADO
+@numTicketString varchar(50)
+AS BEGIN
+		SELECT * FROM MOVIMIENTO_INSUMO
+		WHERE numTicketString=@numTicketString
+		And estado='UTILIZADO'
+END
+GO
+
+EXEC SP_INSUMO_LISTAR_NROTICKET 'OEI-INF-00001'
+
+
+
+
+
+
+
+SELECT SOLI.Oficina_Solicitante, SOLI.Area_Solicitante , SOLI.NumTicketString,
+SOLI.FechaHoraRegistroReal, SOLI.Oficina_Destino,SOLI.Area_Destino,SOLI.Estado,
+MOVSO.MotivoSolicitud, MOVSO.PersonalDesignado, MOVSO.DiagnosticoPersonal,MOVSO.FechaHoraMovimiento,
+MOVSO.ReqInsumo,MOVINSU.codSIGA,MOVINSU.ItemNombre,MOVINSU.Unidad_Medida,MOVINSU.cantidad,MOVINSU.estado
+,ACCESS.Nombre FROM SOLICITUD SOLI,MOVIMIENTO_SOLICITUD MOVSO,
+							MOVIMIENTO_INSUMO MOVINSU, ACCESO_SOLICITUD ACCESS
+WHERE SOLI.NumTicketString=MOVSO.NumTicketString
+AND SOLI.NumTicketString='OEI-INF-00001' AND MOVSO.Estado='Atendido'
+AND MOVINSU.numTicketString=SOLI.NumTicketString AND
+MOVINSU.estado='UTILIZADO'
+AND ACCESS.idAcceso=SOLI.idAcceso
+GO
+
+CREATE PROCEDURE SP_INFORME_ATENDIDO_NUMTICKET
+@NumTicketString varchar(50)
+	AS BEGIN
+SELECT 
+ACCESS.Nombre,
+SOLI.Oficina_Solicitante, SOLI.Area_Solicitante , SOLI.NumTicketString,
+SOLI.FechaHoraRegistroReal, SOLI.Oficina_Destino,SOLI.Area_Destino,SOLI.Estado,
+MOVSO.MotivoSolicitud, MOVSO.PersonalDesignado, MOVSO.DiagnosticoPersonal,MOVSO.FechaHoraMovimiento,
+MOVSO.ReqInsumo,MOVINSU.codSIGA,MOVINSU.ItemNombre,MOVINSU.Unidad_Medida,MOVINSU.cantidad,MOVINSU.estado FROM SOLICITUD SOLI,MOVIMIENTO_SOLICITUD MOVSO,
+							MOVIMIENTO_INSUMO MOVINSU, ACCESO_SOLICITUD ACCESS
+WHERE SOLI.NumTicketString=MOVSO.NumTicketString
+AND SOLI.NumTicketString=@NumTicketString AND MOVSO.Estado='Atendido'
+AND MOVINSU.numTicketString=SOLI.NumTicketString AND
+MOVINSU.estado='UTILIZADO'
+AND ACCESS.idAcceso=SOLI.idAcceso
+	END
+	GO
+	
+	EXEC SP_INFORME_ATENDIDO_NUMTICKET  'OEI-INF-00001'

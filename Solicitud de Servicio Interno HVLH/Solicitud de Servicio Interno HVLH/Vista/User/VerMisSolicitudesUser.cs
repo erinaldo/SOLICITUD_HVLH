@@ -167,6 +167,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                     VarGlobal.userAccesLogueado.AreaEspec.Equals(areaDestino))
                 {
                     //string estado = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
+                    btnSaliente_CambiarEstado.Visible = true;
 
                     if (estadoSolicitudSelectedSaliente.Equals("Solicitado"))
                         btnSaliente_CambiarEstado.Text = "Evaluar Solicitud";
@@ -174,20 +175,25 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                         btnSaliente_CambiarEstado.Text = "Iniciar Trabajo";
                     else if (estadoSolicitudSelectedSaliente.Equals("En curso"))
                         btnSaliente_CambiarEstado.Text = "Concluir Trabajo";
-
-                    btnSaliente_CambiarEstado.Visible = true;
+                    else if (estadoSolicitudSelectedSaliente.Equals("Atendido"))
+                        btnSaliente_CambiarEstado.Visible = false;
+                    
                 }
             }
             else if (botonSeleccionado.Equals("Entrante"))
             {
+
+                btnCambiarEstadoSolicitudEntrante.Visible = true;
+
                 if (estadoSolicitudSelectedEntrante.Equals("Solicitado"))
                     btnCambiarEstadoSolicitudEntrante.Text = "Evaluar Solicitud";
                 else if (estadoSolicitudSelectedEntrante.Equals("Evaluado"))
                     btnCambiarEstadoSolicitudEntrante.Text = "Iniciar Trabajo";
                 else if (estadoSolicitudSelectedEntrante.Equals("En curso"))
                     btnCambiarEstadoSolicitudEntrante.Text = "Concluir Trabajo";
+                else if (estadoSolicitudSelectedEntrante.Equals("Atendido"))
+                    btnCambiarEstadoSolicitudEntrante.Visible = false;
 
-                btnCambiarEstadoSolicitudEntrante.Visible = true;
             }
 
         }
@@ -299,6 +305,15 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             btnSaliente_AnularSoli.Visible = true;
             habilitarBotonesSalientes();
 
+            int filas = dgvMovimientoSolicitudSalientes.Rows.Count - 1;
+
+            if (dgvMovimientoSolicitudSalientes.Rows[filas].Cells[5].Value.ToString().Equals("SI") && (estadoSolicitudSelectedSaliente.Equals("Evaluado") ||
+                estadoSolicitudSelectedSaliente.Equals("En curso") || estadoSolicitudSelectedSaliente.Equals("Atendido"))
+                )
+            {
+                btnVerMaterialesSalientes.Visible = true;
+            }
+
         }
 
         private void btnSaliente_CambiarEstado_Click(object sender, EventArgs e)
@@ -313,7 +328,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 openCambiarESTADO.prioridadSolicitudInicial = prioridadSolicitudSelectedSaliente;
                 openCambiarESTADO.ShowDialog();
             }
-            else if (btnCambiarEstadoSolicitudEntrante.Text == "Iniciar Trabajo")
+            else if (btnSaliente_CambiarEstado.Text == "Iniciar Trabajo")
             {
                 int filas = dgvMovimientoSolicitudSalientes.Rows.Count - 1;
                 MovimientoSolicitud nuevoMovSolici = new MovimientoSolicitud();
@@ -341,7 +356,19 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                     MessageBox.Show("se actualizó la solicitud.....");
                 else
                     MessageBox.Show("no se pudo actualizar el estado");
-            }                                 
+            }
+            else if (btnSaliente_CambiarEstado.Text == "Concluir Trabajo")
+            {
+                ConcluirSolicitudUser openConcluirTrabajo = new ConcluirSolicitudUser();
+                openConcluirTrabajo.nroTicket = numTicketSelectedSaliente;
+                openConcluirTrabajo.oficinaAreaSolicitante = oficinaAreaSolicitanteSaliente;
+                int filas = dgvMovimientoSolicitudSalientes.Rows.Count - 1;
+                openConcluirTrabajo.motivoSolicitud = dgvMovimientoSolicitudSalientes.Rows[filas].Cells[0].Value.ToString();
+                openConcluirTrabajo.diagnosticoPersonal = dgvMovimientoSolicitudSalientes.Rows[filas].Cells[3].Value.ToString();
+                openConcluirTrabajo.personalDesignado = dgvMovimientoSolicitudSalientes.Rows[filas].Cells[2].Value.ToString();
+                openConcluirTrabajo.prioridadConcluir = prioridadSolicitudSelectedSaliente;
+                openConcluirTrabajo.ShowDialog();
+            }                               
         }
 
         private void dgvSolicitudesEntrantes_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -365,15 +392,13 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             habilitarBotonesSalientes();
 
             int filas = dgvMovSoliEntrante.Rows.Count-1;
-
-
-            MessageBox.Show(filas.ToString());
-            MessageBox.Show(numTicketSelectedEntrante);
-            MessageBox.Show(dgvMovSoliEntrante.Rows[filas].Cells[0].Value.ToString());
-            MessageBox.Show(dgvMovSoliEntrante.Rows[filas].Cells[2].Value.ToString());
-            MessageBox.Show(dgvMovSoliEntrante.Rows[filas].Cells[3].Value.ToString());
-            MessageBox.Show(dgvMovSoliEntrante.Rows[filas].Cells[5].Value.ToString());
             
+            if(dgvMovSoliEntrante.Rows[filas].Cells[5].Value.ToString().Equals("SI") && (estadoSolicitudSelectedEntrante.Equals("Evaluado") || 
+                estadoSolicitudSelectedEntrante.Equals("En curso") || estadoSolicitudSelectedEntrante.Equals("Atendido"))
+                )
+            {
+                btnVerMaterialesEntrantes.Visible = true;
+            }
         }
 
         private void btnCambiarEstadoSolicitudEntrante_Click(object sender, EventArgs e)
@@ -423,10 +448,35 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 ConcluirSolicitudUser openConcluirTrabajo = new ConcluirSolicitudUser();
                 openConcluirTrabajo.nroTicket = numTicketSelectedEntrante;
                 openConcluirTrabajo.oficinaAreaSolicitante = oficinaAreaSolicitanteEntrante;
+                int filas = dgvMovSoliEntrante.Rows.Count - 1;
+                openConcluirTrabajo.motivoSolicitud = dgvMovSoliEntrante.Rows[filas].Cells[0].Value.ToString();
+                openConcluirTrabajo.diagnosticoPersonal = dgvMovSoliEntrante.Rows[filas].Cells[3].Value.ToString();
+                openConcluirTrabajo.personalDesignado = dgvMovSoliEntrante.Rows[filas].Cells[2].Value.ToString();
+                openConcluirTrabajo.prioridadConcluir = prioridadSolicitudSelectedEntrante;
                 openConcluirTrabajo.ShowDialog();
-
             }           
+        }
 
+        private void btnVerMaterialesEntrantes_Click(object sender, EventArgs e)
+        {
+            if (botonSeleccionado.Equals("Entrante"))
+            {
+                VerMaterialesUser openVerMateriales = new VerMaterialesUser();
+                openVerMateriales.nroTicketMat = numTicketSelectedEntrante;
+                openVerMateriales.estadoReq = estadoSolicitudSelectedEntrante;
+                openVerMateriales.ShowDialog();
+            }
+        }
+
+        private void btnVerMaterialesSalientes_Click(object sender, EventArgs e)
+        {
+            if (botonSeleccionado.Equals("Saliente"))
+            {
+                VerMaterialesUser openVerMateriales = new VerMaterialesUser();
+                openVerMateriales.nroTicketMat = numTicketSelectedSaliente;
+                openVerMateriales.estadoReq = estadoSolicitudSelectedSaliente;
+                openVerMateriales.ShowDialog();
+            }
         }
 
        

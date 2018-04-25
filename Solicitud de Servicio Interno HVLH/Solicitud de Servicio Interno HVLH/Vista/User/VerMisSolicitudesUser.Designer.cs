@@ -35,6 +35,7 @@
             this.tabMisSolicitudes = new System.Windows.Forms.TabControl();
             this.tabSalientes = new System.Windows.Forms.TabPage();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnVerMaterialesSalientes = new System.Windows.Forms.Button();
             this.btnSaliente_AnularSoli = new System.Windows.Forms.Button();
             this.btnSaliente_CambiarEstado = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabEntrantes = new System.Windows.Forms.TabPage();
             this.panelBotonesEntrantes = new System.Windows.Forms.Panel();
+            this.btnVerMaterialesEntrantes = new System.Windows.Forms.Button();
             this.btnAnularSoliEntrante = new System.Windows.Forms.Button();
             this.btnCambiarEstadoSolicitudEntrante = new System.Windows.Forms.Button();
             this.dgvMovSoliEntrante = new System.Windows.Forms.DataGridView();
@@ -141,12 +143,30 @@
             // 
             // panelBotones
             // 
+            this.panelBotones.Controls.Add(this.btnVerMaterialesSalientes);
             this.panelBotones.Controls.Add(this.btnSaliente_AnularSoli);
             this.panelBotones.Controls.Add(this.btnSaliente_CambiarEstado);
             this.panelBotones.Location = new System.Drawing.Point(15, 325);
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(616, 56);
             this.panelBotones.TabIndex = 25;
+            // 
+            // btnVerMaterialesSalientes
+            // 
+            this.btnVerMaterialesSalientes.FlatAppearance.BorderSize = 0;
+            this.btnVerMaterialesSalientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnVerMaterialesSalientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerMaterialesSalientes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerMaterialesSalientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnVerMaterialesSalientes.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVerMaterialesSalientes.Location = new System.Drawing.Point(306, 3);
+            this.btnVerMaterialesSalientes.Name = "btnVerMaterialesSalientes";
+            this.btnVerMaterialesSalientes.Size = new System.Drawing.Size(119, 51);
+            this.btnVerMaterialesSalientes.TabIndex = 6;
+            this.btnVerMaterialesSalientes.Text = "Ver Materiales";
+            this.btnVerMaterialesSalientes.UseVisualStyleBackColor = true;
+            this.btnVerMaterialesSalientes.Visible = false;
+            this.btnVerMaterialesSalientes.Click += new System.EventHandler(this.btnVerMaterialesSalientes_Click);
             // 
             // btnSaliente_AnularSoli
             // 
@@ -330,12 +350,30 @@
             // 
             // panelBotonesEntrantes
             // 
+            this.panelBotonesEntrantes.Controls.Add(this.btnVerMaterialesEntrantes);
             this.panelBotonesEntrantes.Controls.Add(this.btnAnularSoliEntrante);
             this.panelBotonesEntrantes.Controls.Add(this.btnCambiarEstadoSolicitudEntrante);
-            this.panelBotonesEntrantes.Location = new System.Drawing.Point(36, 296);
+            this.panelBotonesEntrantes.Location = new System.Drawing.Point(36, 279);
             this.panelBotonesEntrantes.Name = "panelBotonesEntrantes";
-            this.panelBotonesEntrantes.Size = new System.Drawing.Size(393, 56);
+            this.panelBotonesEntrantes.Size = new System.Drawing.Size(484, 73);
             this.panelBotonesEntrantes.TabIndex = 26;
+            // 
+            // btnVerMaterialesEntrantes
+            // 
+            this.btnVerMaterialesEntrantes.FlatAppearance.BorderSize = 0;
+            this.btnVerMaterialesEntrantes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnVerMaterialesEntrantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerMaterialesEntrantes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerMaterialesEntrantes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnVerMaterialesEntrantes.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnVerMaterialesEntrantes.Location = new System.Drawing.Point(324, 8);
+            this.btnVerMaterialesEntrantes.Name = "btnVerMaterialesEntrantes";
+            this.btnVerMaterialesEntrantes.Size = new System.Drawing.Size(119, 51);
+            this.btnVerMaterialesEntrantes.TabIndex = 7;
+            this.btnVerMaterialesEntrantes.Text = "Ver Materiales";
+            this.btnVerMaterialesEntrantes.UseVisualStyleBackColor = true;
+            this.btnVerMaterialesEntrantes.Visible = false;
+            this.btnVerMaterialesEntrantes.Click += new System.EventHandler(this.btnVerMaterialesEntrantes_Click);
             // 
             // btnAnularSoliEntrante
             // 
@@ -345,7 +383,7 @@
             this.btnAnularSoliEntrante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnularSoliEntrante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnAnularSoliEntrante.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAnularSoliEntrante.Location = new System.Drawing.Point(172, 3);
+            this.btnAnularSoliEntrante.Location = new System.Drawing.Point(173, 7);
             this.btnAnularSoliEntrante.Name = "btnAnularSoliEntrante";
             this.btnAnularSoliEntrante.Size = new System.Drawing.Size(134, 51);
             this.btnAnularSoliEntrante.TabIndex = 5;
@@ -361,7 +399,7 @@
             this.btnCambiarEstadoSolicitudEntrante.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarEstadoSolicitudEntrante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnCambiarEstadoSolicitudEntrante.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCambiarEstadoSolicitudEntrante.Location = new System.Drawing.Point(-1, 3);
+            this.btnCambiarEstadoSolicitudEntrante.Location = new System.Drawing.Point(7, 7);
             this.btnCambiarEstadoSolicitudEntrante.Name = "btnCambiarEstadoSolicitudEntrante";
             this.btnCambiarEstadoSolicitudEntrante.Size = new System.Drawing.Size(134, 51);
             this.btnCambiarEstadoSolicitudEntrante.TabIndex = 4;
@@ -452,5 +490,7 @@
         private System.Windows.Forms.Panel panelBotonesEntrantes;
         private System.Windows.Forms.Button btnAnularSoliEntrante;
         private System.Windows.Forms.Button btnCambiarEstadoSolicitudEntrante;
+        private System.Windows.Forms.Button btnVerMaterialesSalientes;
+        private System.Windows.Forms.Button btnVerMaterialesEntrantes;
     }
 }

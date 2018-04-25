@@ -397,7 +397,153 @@ namespace Solicitud_de_Servicio_Interno_HVLH.DAO
             }
         }
 
+
+        //método para listar los insmos solicitados en primera instancia por la evaluación de la solicitud:
+        //
+        public List<MovMateriales> listarMaterialesAsginado(string numticketStr)
+        {
+            List<MovMateriales> listaMaterialesReq = new List<MovMateriales>();
+            using (SqlCommand oComando = new SqlCommand("SP_INSUMO_LISTAR_NROTICKET", oConexion))
+            {
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@numTicketString", numticketStr);
+                MovMateriales materialesCls;
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = oComando.ExecuteReader(CommandBehavior.SingleResult);
+                    while (dr.Read())
+                    {
+                        materialesCls = new MovMateriales();
+                        materialesCls.idMovMateriales = Convert.ToInt32(dr[0]);
+                        materialesCls.numTicketString = dr[1].ToString();
+                        materialesCls.codSIGA = dr[2].ToString();
+                        materialesCls.Item_Nombre = dr[3].ToString();
+                        materialesCls.Unidad_Medida = dr[4].ToString();
+                        materialesCls.cantidad = Convert.ToInt32(dr[5]);
+                        materialesCls.estado = dr[6].ToString();                        
+                        listaMaterialesReq.Add(materialesCls);
+                    }
+                    dr.Close();
+                    oConexion.Close();
+                }
+                catch (Exception)
+                {
+                    oConexion.Close();
+                }
+                return listaMaterialesReq;
+            }
+        }
+
+
+        //LISTAR MATERIALES UTILIZADOS:
+        public List<MovMateriales> listarMaterialesUtilizados(string numticketStr)
+        {
+            List<MovMateriales> listaMaterialesReq = new List<MovMateriales>();
+            using (SqlCommand oComando = new SqlCommand("SP_INSUMO_LISTAR_NROTICKET_UTILIZADO", oConexion))
+            {
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@numTicketString", numticketStr);
+                MovMateriales materialesCls;
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = oComando.ExecuteReader(CommandBehavior.SingleResult);
+                    while (dr.Read())
+                    {
+                        materialesCls = new MovMateriales();
+                        materialesCls.idMovMateriales = Convert.ToInt32(dr[0]);
+                        materialesCls.numTicketString = dr[1].ToString();
+                        materialesCls.codSIGA = dr[2].ToString();
+                        materialesCls.Item_Nombre = dr[3].ToString();
+                        materialesCls.Unidad_Medida = dr[4].ToString();
+                        materialesCls.cantidad = Convert.ToInt32(dr[5]);
+                        materialesCls.estado = dr[6].ToString();
+                        listaMaterialesReq.Add(materialesCls);
+                    }
+                    dr.Close();
+                    oConexion.Close();
+                }
+                catch (Exception)
+                {
+                    oConexion.Close();
+                }
+                return listaMaterialesReq;
+            }
+        }
+
         #endregion
 
-   }
+        #region Informes Solicitud
+
+        //Listar Informe de Atendido:
+
+        public List<InformeAtendido> verInformeAtendido(string numTicketSTR)
+        {
+
+            List<InformeAtendido> listaInformeAtendido = new List<InformeAtendido>();
+            using (SqlCommand oComando = new SqlCommand("SP_INFORME_ATENDIDO_NUMTICKET", oConexion))
+            {
+
+                oComando.CommandType = CommandType.StoredProcedure;
+                oComando.Parameters.AddWithValue("@NumTicketString", numTicketSTR);
+                InformeAtendido infoAtendidoCls;
+                try
+                {
+                    oConexion.Open();
+                    SqlDataReader dr = oComando.ExecuteReader(CommandBehavior.SingleResult);
+                    while (dr.Read())
+                    {
+                        // < ----- Info - Solicitud----
+                        infoAtendidoCls = new InformeAtendido();
+                        infoAtendidoCls.NombreSolicitante = dr[0].ToString();
+                        infoAtendidoCls.Oficina_Solicitante = dr[1].ToString();
+                        infoAtendidoCls.Area_Solicitante = dr[2].ToString();
+                        infoAtendidoCls.NumTicketString = dr[3].ToString();
+                        infoAtendidoCls.FechaHoraRegistroReal = Convert.ToDateTime(dr[4]);
+                        infoAtendidoCls.Oficina_Destino = dr[5].ToString();
+                        infoAtendidoCls.Area_Destino = dr[6].ToString();
+                        infoAtendidoCls.EstadoSolicitud = dr[7].ToString();
+
+                        //Info - Solicitud -----/>
+
+
+                        // < ----- Movimiento - Solicitud----
+
+                        infoAtendidoCls.MotivoSolicitud = dr[8].ToString();
+                        infoAtendidoCls.PersonalDesignado = dr[9].ToString();
+                        infoAtendidoCls.DiagnosticoPersonal = dr[10].ToString();
+                        infoAtendidoCls.FechaHoraMovimiento = Convert.ToDateTime(dr[11]);
+                        infoAtendidoCls.ReqInsumo = Convert.ToBoolean(dr[12]);
+
+                        //Movimiento - Solicitud -----/>
+
+
+
+                        // < ----- Materiales - Solicitud----
+
+                        infoAtendidoCls.codSIGA = dr[13].ToString();
+                        infoAtendidoCls.ItemNombre = dr[14].ToString();
+                        infoAtendidoCls.Unidad_Medida = dr[15].ToString();
+                        infoAtendidoCls.cantidad = Convert.ToInt32(dr[16]);
+                        infoAtendidoCls.estado = dr[17].ToString();
+
+                        //Materiales - Solicitud -----/>                      
+                     
+                        listaInformeAtendido.Add(infoAtendidoCls);
+                    }
+                    dr.Close();
+                    oConexion.Close();
+                }
+                catch (Exception)
+                {
+                    oConexion.Close();
+                }
+                return listaInformeAtendido;
+            }
+        }
+
+        #endregion
+
+    }
 }
