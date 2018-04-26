@@ -479,6 +479,13 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             }
         }
 
+        private void btnCerrarVerMisSolis_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
        
     }
 }

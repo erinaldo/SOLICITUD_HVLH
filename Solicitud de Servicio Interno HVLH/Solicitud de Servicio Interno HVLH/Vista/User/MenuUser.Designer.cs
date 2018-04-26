@@ -45,6 +45,7 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnSlide = new System.Windows.Forms.PictureBox();
             this.Contenedor = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuVertical.SuspendLayout();
             this.subMenuSolicitud.SuspendLayout();
             this.SubMiCuenta.SuspendLayout();
@@ -66,7 +67,7 @@
             this.menuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuVertical.Location = new System.Drawing.Point(0, 0);
             this.menuVertical.Name = "menuVertical";
-            this.menuVertical.Size = new System.Drawing.Size(250, 606);
+            this.menuVertical.Size = new System.Drawing.Size(250, 654);
             this.menuVertical.TabIndex = 0;
             // 
             // btnUsername
@@ -105,12 +106,13 @@
             this.btnCancelarSolicitud.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarSolicitud.ForeColor = System.Drawing.Color.Snow;
             this.btnCancelarSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarSolicitud.Image")));
-            this.btnCancelarSolicitud.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnCancelarSolicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelarSolicitud.Location = new System.Drawing.Point(3, 119);
             this.btnCancelarSolicitud.Name = "btnCancelarSolicitud";
             this.btnCancelarSolicitud.Size = new System.Drawing.Size(105, 58);
             this.btnCancelarSolicitud.TabIndex = 3;
             this.btnCancelarSolicitud.Text = "Cancelar Solicitud";
+            this.btnCancelarSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarSolicitud.UseVisualStyleBackColor = true;
             // 
             // btnVerMisSolicitudes
@@ -121,12 +123,13 @@
             this.btnVerMisSolicitudes.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerMisSolicitudes.ForeColor = System.Drawing.Color.Snow;
             this.btnVerMisSolicitudes.Image = ((System.Drawing.Image)(resources.GetObject("btnVerMisSolicitudes.Image")));
-            this.btnVerMisSolicitudes.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnVerMisSolicitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVerMisSolicitudes.Location = new System.Drawing.Point(3, 60);
             this.btnVerMisSolicitudes.Name = "btnVerMisSolicitudes";
             this.btnVerMisSolicitudes.Size = new System.Drawing.Size(105, 58);
             this.btnVerMisSolicitudes.TabIndex = 2;
-            this.btnVerMisSolicitudes.Text = "Mis Solicitudes";
+            this.btnVerMisSolicitudes.Text = "Ver Mis Solicitudes";
+            this.btnVerMisSolicitudes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerMisSolicitudes.UseVisualStyleBackColor = true;
             this.btnVerMisSolicitudes.Click += new System.EventHandler(this.btnVerMisSolicitudes_Click);
             // 
@@ -138,12 +141,13 @@
             this.btnGenerarSolicitud.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarSolicitud.ForeColor = System.Drawing.Color.Snow;
             this.btnGenerarSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerarSolicitud.Image")));
-            this.btnGenerarSolicitud.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnGenerarSolicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGenerarSolicitud.Location = new System.Drawing.Point(3, 3);
             this.btnGenerarSolicitud.Name = "btnGenerarSolicitud";
             this.btnGenerarSolicitud.Size = new System.Drawing.Size(108, 58);
             this.btnGenerarSolicitud.TabIndex = 1;
             this.btnGenerarSolicitud.Text = "Generar Solicitud";
+            this.btnGenerarSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerarSolicitud.UseVisualStyleBackColor = true;
             this.btnGenerarSolicitud.Click += new System.EventHandler(this.btnGenerarSolicitud_Click);
             // 
@@ -155,7 +159,7 @@
             this.btnSolicitud.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSolicitud.ForeColor = System.Drawing.Color.Snow;
             this.btnSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("btnSolicitud.Image")));
-            this.btnSolicitud.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnSolicitud.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSolicitud.Location = new System.Drawing.Point(12, 259);
             this.btnSolicitud.Name = "btnSolicitud";
             this.btnSolicitud.Size = new System.Drawing.Size(115, 180);
@@ -182,12 +186,13 @@
             this.btnVerAccesos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerAccesos.ForeColor = System.Drawing.Color.Snow;
             this.btnVerAccesos.Image = ((System.Drawing.Image)(resources.GetObject("btnVerAccesos.Image")));
-            this.btnVerAccesos.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnVerAccesos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVerAccesos.Location = new System.Drawing.Point(3, 60);
             this.btnVerAccesos.Name = "btnVerAccesos";
             this.btnVerAccesos.Size = new System.Drawing.Size(105, 58);
             this.btnVerAccesos.TabIndex = 2;
             this.btnVerAccesos.Text = "Cambiar Contraseña";
+            this.btnVerAccesos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerAccesos.UseVisualStyleBackColor = true;
             // 
             // btnCrearAcceso
@@ -198,12 +203,13 @@
             this.btnCrearAcceso.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearAcceso.ForeColor = System.Drawing.Color.Snow;
             this.btnCrearAcceso.Image = ((System.Drawing.Image)(resources.GetObject("btnCrearAcceso.Image")));
-            this.btnCrearAcceso.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnCrearAcceso.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCrearAcceso.Location = new System.Drawing.Point(3, 3);
             this.btnCrearAcceso.Name = "btnCrearAcceso";
             this.btnCrearAcceso.Size = new System.Drawing.Size(108, 58);
             this.btnCrearAcceso.TabIndex = 1;
             this.btnCrearAcceso.Text = "Información";
+            this.btnCrearAcceso.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCrearAcceso.UseVisualStyleBackColor = true;
             // 
             // btnMiCuenta
@@ -214,12 +220,13 @@
             this.btnMiCuenta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMiCuenta.ForeColor = System.Drawing.Color.Snow;
             this.btnMiCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnMiCuenta.Image")));
-            this.btnMiCuenta.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnMiCuenta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMiCuenta.Location = new System.Drawing.Point(12, 114);
             this.btnMiCuenta.Name = "btnMiCuenta";
             this.btnMiCuenta.Size = new System.Drawing.Size(115, 121);
             this.btnMiCuenta.TabIndex = 1;
             this.btnMiCuenta.Text = "Mi Cuenta";
+            this.btnMiCuenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMiCuenta.UseVisualStyleBackColor = true;
             this.btnMiCuenta.Click += new System.EventHandler(this.btnMiCuenta_Click);
             // 
@@ -240,7 +247,7 @@
             this.barraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulo.Location = new System.Drawing.Point(250, 0);
             this.barraTitulo.Name = "barraTitulo";
-            this.barraTitulo.Size = new System.Drawing.Size(839, 40);
+            this.barraTitulo.Size = new System.Drawing.Size(904, 40);
             this.barraTitulo.TabIndex = 1;
             this.barraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulo_MouseDown);
             // 
@@ -248,7 +255,7 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(798, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(863, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(29, 22);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -271,14 +278,24 @@
             this.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Contenedor.Location = new System.Drawing.Point(250, 40);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(839, 566);
+            this.Contenedor.Size = new System.Drawing.Size(904, 614);
             this.Contenedor.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(250, 641);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(904, 13);
+            this.panel1.TabIndex = 3;
             // 
             // MenuUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 606);
+            this.ClientSize = new System.Drawing.Size(1154, 654);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Contenedor);
             this.Controls.Add(this.barraTitulo);
             this.Controls.Add(this.menuVertical);
@@ -315,5 +332,6 @@
         private System.Windows.Forms.Button btnGenerarSolicitud;
         private System.Windows.Forms.Button btnSolicitud;
         private System.Windows.Forms.Button btnUsername;
+        private System.Windows.Forms.Panel panel1;
     }
 }

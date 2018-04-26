@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConcluirSolicitudUser));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrarGenSolicitud = new System.Windows.Forms.PictureBox();
+            this.btnCerrarConcluirTrabajo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabMisSolicitudes = new System.Windows.Forms.TabControl();
             this.tabPersonal = new System.Windows.Forms.TabPage();
@@ -66,7 +66,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFinalizarTrabajo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarConcluirTrabajo)).BeginInit();
             this.tabMisSolicitudes.SuspendLayout();
             this.tabPersonal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTrabajadorDesig)).BeginInit();
@@ -78,7 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel1.Controls.Add(this.btnCerrarGenSolicitud);
+            this.panel1.Controls.Add(this.btnCerrarConcluirTrabajo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -86,16 +86,17 @@
             this.panel1.Size = new System.Drawing.Size(1086, 40);
             this.panel1.TabIndex = 2;
             // 
-            // btnCerrarGenSolicitud
+            // btnCerrarConcluirTrabajo
             // 
-            this.btnCerrarGenSolicitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarGenSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarGenSolicitud.Image")));
-            this.btnCerrarGenSolicitud.Location = new System.Drawing.Point(1043, 4);
-            this.btnCerrarGenSolicitud.Name = "btnCerrarGenSolicitud";
-            this.btnCerrarGenSolicitud.Size = new System.Drawing.Size(31, 28);
-            this.btnCerrarGenSolicitud.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrarGenSolicitud.TabIndex = 2;
-            this.btnCerrarGenSolicitud.TabStop = false;
+            this.btnCerrarConcluirTrabajo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarConcluirTrabajo.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarConcluirTrabajo.Image")));
+            this.btnCerrarConcluirTrabajo.Location = new System.Drawing.Point(1043, 4);
+            this.btnCerrarConcluirTrabajo.Name = "btnCerrarConcluirTrabajo";
+            this.btnCerrarConcluirTrabajo.Size = new System.Drawing.Size(31, 28);
+            this.btnCerrarConcluirTrabajo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrarConcluirTrabajo.TabIndex = 2;
+            this.btnCerrarConcluirTrabajo.TabStop = false;
+            this.btnCerrarConcluirTrabajo.Click += new System.EventHandler(this.btnCerrarConcluirTrabajo_Click);
             // 
             // label1
             // 
@@ -518,7 +519,7 @@
             this.Load += new System.EventHandler(this.ConcluirSolicitudUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarConcluirTrabajo)).EndInit();
             this.tabMisSolicitudes.ResumeLayout(false);
             this.tabPersonal.ResumeLayout(false);
             this.tabPersonal.PerformLayout();
@@ -535,7 +536,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox btnCerrarGenSolicitud;
+        private System.Windows.Forms.PictureBox btnCerrarConcluirTrabajo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabMisSolicitudes;
         private System.Windows.Forms.TabPage tabPersonal;

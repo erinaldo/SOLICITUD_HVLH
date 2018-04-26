@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUserLogin = new System.Windows.Forms.TextBox();
             this.txtPasswordLogin = new System.Windows.Forms.TextBox();
             this.BarraTitulo.SuspendLayout();
@@ -49,16 +49,6 @@
             this.BarraTitulo.Size = new System.Drawing.Size(612, 44);
             this.BarraTitulo.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(569, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -70,6 +60,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Acceder";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(569, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // txtUserLogin
             // 
             this.txtUserLogin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,6 +78,7 @@
             this.txtUserLogin.Name = "txtUserLogin";
             this.txtUserLogin.Size = new System.Drawing.Size(274, 26);
             this.txtUserLogin.TabIndex = 1;
+            this.txtUserLogin.Text = "07761592";
             // 
             // txtPasswordLogin
             // 
@@ -87,6 +88,7 @@
             this.txtPasswordLogin.Name = "txtPasswordLogin";
             this.txtPasswordLogin.Size = new System.Drawing.Size(274, 26);
             this.txtPasswordLogin.TabIndex = 2;
+            this.txtPasswordLogin.Text = "07761592";
             this.txtPasswordLogin.UseSystemPasswordChar = true;
             this.txtPasswordLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPasswordLogin_KeyPress);
             // 

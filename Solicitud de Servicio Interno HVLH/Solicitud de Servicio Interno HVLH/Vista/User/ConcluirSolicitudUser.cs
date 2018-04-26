@@ -393,5 +393,12 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 }
             
         }
+
+        private void btnCerrarConcluirTrabajo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
 }
