@@ -34,7 +34,10 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         }
         private void btnMiCuenta_Click(object sender, EventArgs e)
         {
-            SubMiCuenta.Visible = true;
+            if (SubMiCuenta.Visible == true)
+                SubMiCuenta.Visible = false;
+            else
+                SubMiCuenta.Visible = true;
         }
 
         private void barraTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -50,7 +53,10 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
         private void btnSolicitud_Click(object sender, EventArgs e)
         {
-            subMenuSolicitud.Visible = true;
+            if (subMenuSolicitud.Visible == true)
+                subMenuSolicitud.Visible = false;
+            else
+                subMenuSolicitud.Visible = true;
         }
 
         private void btnGenerarSolicitud_Click(object sender, EventArgs e)
@@ -75,6 +81,57 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         private void btnVerMisSolicitudes_Click(object sender, EventArgs e)
         {
             AbrirFrmPanel(new VerMisSolicitudesUser());
+        }
+
+        private void btnVerMiInfoUser_Click(object sender, EventArgs e)
+        {
+            string miInformacion = "";
+
+            miInformacion = "Nombre:  " + VarGlobal.userAccesLogueado.Nombre;
+            miInformacion += Environment.NewLine;
+            miInformacion += Environment.NewLine;
+            miInformacion += "Usuario:   " + VarGlobal.userAccesLogueado.Usuario;
+            miInformacion += Environment.NewLine; miInformacion += Environment.NewLine;
+            miInformacion += "Oficina:   " + VarGlobal.userAccesLogueado.DireccionOficina;
+            miInformacion += Environment.NewLine; miInformacion += Environment.NewLine;
+            miInformacion += "Área:        " + VarGlobal.userAccesLogueado.AreaEspec;
+
+            MessageBox.Show(miInformacion,"Mi Información", MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void btnUsername_Click(object sender, EventArgs e)
+        {
+            if (btnOffline.Visible == true)
+                btnOffline.Visible = false;
+            else
+                btnOffline.Visible = true;
+        }
+
+        private void btnOffline_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnSlide_Click(object sender, EventArgs e)
+        {
+            if (menuVertical.Width == 250)
+            {
+                menuVertical.Width = 115;
+            }
+            else
+            {
+                menuVertical.Width = 250;
+            }
+
+            if (pictureBox1.Width == 246)
+            {
+                pictureBox1.Width = 125;
+            }
+            else
+            {
+                pictureBox1.Width = 246;
+            }
+
         }
     }
 }

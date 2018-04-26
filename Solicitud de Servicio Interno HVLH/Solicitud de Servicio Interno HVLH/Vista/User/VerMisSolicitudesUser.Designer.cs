@@ -29,17 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerMisSolicitudesUser));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrarVerMisSolis = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabMisSolicitudes = new System.Windows.Forms.TabControl();
             this.tabSalientes = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvMovimientoSolicitudSalientes = new System.Windows.Forms.DataGridView();
             this.panelBotones = new System.Windows.Forms.Panel();
             this.btnVerMaterialesSalientes = new System.Windows.Forms.Button();
             this.btnSaliente_AnularSoli = new System.Windows.Forms.Button();
@@ -57,26 +65,28 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabEntrantes = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvSolicitudesEntrantes = new System.Windows.Forms.DataGridView();
             this.panelBotonesEntrantes = new System.Windows.Forms.Panel();
             this.btnVerMaterialesEntrantes = new System.Windows.Forms.Button();
             this.btnAnularSoliEntrante = new System.Windows.Forms.Button();
             this.btnCambiarEstadoSolicitudEntrante = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.dgvMovSoliEntrante = new System.Windows.Forms.DataGridView();
-            this.dgvSolicitudesEntrantes = new System.Windows.Forms.DataGridView();
-            this.dgvMovimientoSolicitudSalientes = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarVerMisSolis)).BeginInit();
             this.tabMisSolicitudes.SuspendLayout();
             this.tabSalientes.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudSalientes)).BeginInit();
             this.panelBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesSalientes)).BeginInit();
             this.tabEntrantes.SuspendLayout();
-            this.panelBotonesEntrantes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMovSoliEntrante)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesEntrantes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudSalientes)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelBotonesEntrantes.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovSoliEntrante)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -149,6 +159,57 @@
             this.tabSalientes.Size = new System.Drawing.Size(896, 544);
             this.tabSalientes.TabIndex = 0;
             this.tabSalientes.Text = "Salientes";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvMovimientoSolicitudSalientes);
+            this.panel2.Location = new System.Drawing.Point(0, 200);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(900, 122);
+            this.panel2.TabIndex = 27;
+            // 
+            // dgvMovimientoSolicitudSalientes
+            // 
+            this.dgvMovimientoSolicitudSalientes.AllowUserToAddRows = false;
+            this.dgvMovimientoSolicitudSalientes.AllowUserToDeleteRows = false;
+            this.dgvMovimientoSolicitudSalientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvMovimientoSolicitudSalientes.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvMovimientoSolicitudSalientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMovimientoSolicitudSalientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.dgvMovimientoSolicitudSalientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMovimientoSolicitudSalientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvMovimientoSolicitudSalientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovimientoSolicitudSalientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvMovimientoSolicitudSalientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMovimientoSolicitudSalientes.EnableHeadersVisualStyles = false;
+            this.dgvMovimientoSolicitudSalientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.dgvMovimientoSolicitudSalientes.Location = new System.Drawing.Point(0, 0);
+            this.dgvMovimientoSolicitudSalientes.Name = "dgvMovimientoSolicitudSalientes";
+            this.dgvMovimientoSolicitudSalientes.ReadOnly = true;
+            this.dgvMovimientoSolicitudSalientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMovimientoSolicitudSalientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvMovimientoSolicitudSalientes.RowHeadersWidth = 20;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMovimientoSolicitudSalientes.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvMovimientoSolicitudSalientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMovimientoSolicitudSalientes.Size = new System.Drawing.Size(900, 122);
+            this.dgvMovimientoSolicitudSalientes.TabIndex = 26;
+            this.dgvMovimientoSolicitudSalientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovimientoSolicitudSalientes_CellDoubleClick);
             // 
             // panelBotones
             // 
@@ -282,14 +343,14 @@
             this.dgvSolicitudesSalientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSolicitudesSalientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
             this.dgvSolicitudesSalientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSolicitudesSalientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudesSalientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvSolicitudesSalientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudesSalientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvSolicitudesSalientes.EnableHeadersVisualStyles = false;
@@ -298,18 +359,18 @@
             this.dgvSolicitudesSalientes.Name = "dgvSolicitudesSalientes";
             this.dgvSolicitudesSalientes.ReadOnly = true;
             this.dgvSolicitudesSalientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSolicitudesSalientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudesSalientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvSolicitudesSalientes.RowHeadersWidth = 20;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvSolicitudesSalientes.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSolicitudesSalientes.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvSolicitudesSalientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSolicitudesSalientes.Size = new System.Drawing.Size(918, 121);
             this.dgvSolicitudesSalientes.TabIndex = 17;
@@ -369,23 +430,74 @@
             // tabEntrantes
             // 
             this.tabEntrantes.AutoScroll = true;
+            this.tabEntrantes.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabEntrantes.Controls.Add(this.panel4);
+            this.tabEntrantes.Controls.Add(this.panel3);
             this.tabEntrantes.Controls.Add(this.panelBotonesEntrantes);
-            this.tabEntrantes.Controls.Add(this.dgvMovSoliEntrante);
-            this.tabEntrantes.Controls.Add(this.dgvSolicitudesEntrantes);
             this.tabEntrantes.Location = new System.Drawing.Point(4, 26);
             this.tabEntrantes.Name = "tabEntrantes";
             this.tabEntrantes.Padding = new System.Windows.Forms.Padding(3);
             this.tabEntrantes.Size = new System.Drawing.Size(896, 544);
             this.tabEntrantes.TabIndex = 1;
             this.tabEntrantes.Text = "Entrantes";
-            this.tabEntrantes.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgvSolicitudesEntrantes);
+            this.panel3.Location = new System.Drawing.Point(0, 29);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(894, 179);
+            this.panel3.TabIndex = 27;
+            // 
+            // dgvSolicitudesEntrantes
+            // 
+            this.dgvSolicitudesEntrantes.AllowUserToAddRows = false;
+            this.dgvSolicitudesEntrantes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudesEntrantes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSolicitudesEntrantes.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvSolicitudesEntrantes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSolicitudesEntrantes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.dgvSolicitudesEntrantes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudesEntrantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvSolicitudesEntrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSolicitudesEntrantes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvSolicitudesEntrantes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSolicitudesEntrantes.EnableHeadersVisualStyles = false;
+            this.dgvSolicitudesEntrantes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.dgvSolicitudesEntrantes.Location = new System.Drawing.Point(0, 0);
+            this.dgvSolicitudesEntrantes.Name = "dgvSolicitudesEntrantes";
+            this.dgvSolicitudesEntrantes.ReadOnly = true;
+            this.dgvSolicitudesEntrantes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSolicitudesEntrantes.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvSolicitudesEntrantes.RowHeadersWidth = 20;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvSolicitudesEntrantes.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvSolicitudesEntrantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSolicitudesEntrantes.Size = new System.Drawing.Size(894, 179);
+            this.dgvSolicitudesEntrantes.TabIndex = 18;
+            this.dgvSolicitudesEntrantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudesEntrantes_CellDoubleClick_1);
             // 
             // panelBotonesEntrantes
             // 
             this.panelBotonesEntrantes.Controls.Add(this.btnVerMaterialesEntrantes);
             this.panelBotonesEntrantes.Controls.Add(this.btnAnularSoliEntrante);
             this.panelBotonesEntrantes.Controls.Add(this.btnCambiarEstadoSolicitudEntrante);
-            this.panelBotonesEntrantes.Location = new System.Drawing.Point(36, 279);
+            this.panelBotonesEntrantes.Location = new System.Drawing.Point(36, 388);
             this.panelBotonesEntrantes.Name = "panelBotonesEntrantes";
             this.panelBotonesEntrantes.Size = new System.Drawing.Size(484, 73);
             this.panelBotonesEntrantes.TabIndex = 26;
@@ -440,80 +552,56 @@
             this.btnCambiarEstadoSolicitudEntrante.Visible = false;
             this.btnCambiarEstadoSolicitudEntrante.Click += new System.EventHandler(this.btnCambiarEstadoSolicitudEntrante_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dgvMovSoliEntrante);
+            this.panel4.Location = new System.Drawing.Point(3, 226);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(875, 156);
+            this.panel4.TabIndex = 28;
+            // 
             // dgvMovSoliEntrante
             // 
             this.dgvMovSoliEntrante.AllowUserToAddRows = false;
             this.dgvMovSoliEntrante.AllowUserToDeleteRows = false;
+            this.dgvMovSoliEntrante.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvMovSoliEntrante.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvMovSoliEntrante.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMovSoliEntrante.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.dgvMovSoliEntrante.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMovSoliEntrante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvMovSoliEntrante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovSoliEntrante.Location = new System.Drawing.Point(26, 172);
+            this.dgvMovSoliEntrante.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvMovSoliEntrante.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMovSoliEntrante.EnableHeadersVisualStyles = false;
+            this.dgvMovSoliEntrante.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.dgvMovSoliEntrante.Location = new System.Drawing.Point(0, 0);
             this.dgvMovSoliEntrante.Name = "dgvMovSoliEntrante";
             this.dgvMovSoliEntrante.ReadOnly = true;
-            this.dgvMovSoliEntrante.Size = new System.Drawing.Size(768, 101);
-            this.dgvMovSoliEntrante.TabIndex = 19;
+            this.dgvMovSoliEntrante.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMovSoliEntrante.RowHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvMovSoliEntrante.RowHeadersWidth = 20;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMovSoliEntrante.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvMovSoliEntrante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMovSoliEntrante.Size = new System.Drawing.Size(875, 156);
+            this.dgvMovSoliEntrante.TabIndex = 27;
             this.dgvMovSoliEntrante.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovSoliEntrante_CellDoubleClick);
-            // 
-            // dgvSolicitudesEntrantes
-            // 
-            this.dgvSolicitudesEntrantes.AllowUserToAddRows = false;
-            this.dgvSolicitudesEntrantes.AllowUserToDeleteRows = false;
-            this.dgvSolicitudesEntrantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSolicitudesEntrantes.Location = new System.Drawing.Point(6, 22);
-            this.dgvSolicitudesEntrantes.Name = "dgvSolicitudesEntrantes";
-            this.dgvSolicitudesEntrantes.ReadOnly = true;
-            this.dgvSolicitudesEntrantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitudesEntrantes.Size = new System.Drawing.Size(799, 121);
-            this.dgvSolicitudesEntrantes.TabIndex = 18;
-            this.dgvSolicitudesEntrantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudesEntrantes_CellDoubleClick_1);
-            // 
-            // dgvMovimientoSolicitudSalientes
-            // 
-            this.dgvMovimientoSolicitudSalientes.AllowUserToAddRows = false;
-            this.dgvMovimientoSolicitudSalientes.AllowUserToDeleteRows = false;
-            this.dgvMovimientoSolicitudSalientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvMovimientoSolicitudSalientes.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dgvMovimientoSolicitudSalientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMovimientoSolicitudSalientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            this.dgvMovimientoSolicitudSalientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMovimientoSolicitudSalientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMovimientoSolicitudSalientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovimientoSolicitudSalientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dgvMovimientoSolicitudSalientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMovimientoSolicitudSalientes.EnableHeadersVisualStyles = false;
-            this.dgvMovimientoSolicitudSalientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.dgvMovimientoSolicitudSalientes.Location = new System.Drawing.Point(0, 0);
-            this.dgvMovimientoSolicitudSalientes.Name = "dgvMovimientoSolicitudSalientes";
-            this.dgvMovimientoSolicitudSalientes.ReadOnly = true;
-            this.dgvMovimientoSolicitudSalientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMovimientoSolicitudSalientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMovimientoSolicitudSalientes.RowHeadersWidth = 20;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvMovimientoSolicitudSalientes.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvMovimientoSolicitudSalientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMovimientoSolicitudSalientes.Size = new System.Drawing.Size(900, 122);
-            this.dgvMovimientoSolicitudSalientes.TabIndex = 26;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dgvMovimientoSolicitudSalientes);
-            this.panel2.Location = new System.Drawing.Point(0, 200);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(900, 122);
-            this.panel2.TabIndex = 27;
             // 
             // VerMisSolicitudesUser
             // 
@@ -532,14 +620,16 @@
             this.tabMisSolicitudes.ResumeLayout(false);
             this.tabSalientes.ResumeLayout(false);
             this.tabSalientes.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudSalientes)).EndInit();
             this.panelBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesSalientes)).EndInit();
             this.tabEntrantes.ResumeLayout(false);
-            this.panelBotonesEntrantes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMovSoliEntrante)).EndInit();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudesEntrantes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientoSolicitudSalientes)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.panelBotonesEntrantes.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovSoliEntrante)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -567,8 +657,6 @@
         private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Button btnSaliente_CambiarEstado;
         private System.Windows.Forms.Button btnSaliente_AnularSoli;
-        private System.Windows.Forms.DataGridView dgvSolicitudesEntrantes;
-        private System.Windows.Forms.DataGridView dgvMovSoliEntrante;
         private System.Windows.Forms.Panel panelBotonesEntrantes;
         private System.Windows.Forms.Button btnAnularSoliEntrante;
         private System.Windows.Forms.Button btnCambiarEstadoSolicitudEntrante;
@@ -576,5 +664,9 @@
         private System.Windows.Forms.Button btnVerMaterialesEntrantes;
         private System.Windows.Forms.DataGridView dgvMovimientoSolicitudSalientes;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dgvSolicitudesEntrantes;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dgvMovSoliEntrante;
     }
 }

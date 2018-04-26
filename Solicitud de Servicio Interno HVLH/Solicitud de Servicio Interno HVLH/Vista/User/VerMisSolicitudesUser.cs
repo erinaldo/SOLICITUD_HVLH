@@ -294,27 +294,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
         }
 
-        private void dgvMovimientoSolicitudEntrantes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-            txtMotivoExtend.Text = dgvMovimientoSolicitudSalientes.CurrentRow.Cells[0].Value.ToString();
-            txtPersonalDesigExtend.Text = dgvMovimientoSolicitudSalientes.CurrentRow.Cells[2].Value.ToString();
-            txtDiagnosticoPersonalExtend.Text = dgvMovimientoSolicitudSalientes.CurrentRow.Cells[3].Value.ToString();
-
-            botonSeleccionado = "Saliente";
-            btnSaliente_AnularSoli.Visible = true;
-            habilitarBotonesSalientes();
-
-            int filas = dgvMovimientoSolicitudSalientes.Rows.Count - 1;
-
-            if (dgvMovimientoSolicitudSalientes.Rows[filas].Cells[5].Value.ToString().Equals("SI") && (estadoSolicitudSelectedSaliente.Equals("Evaluado") ||
-                estadoSolicitudSelectedSaliente.Equals("En curso") || estadoSolicitudSelectedSaliente.Equals("Atendido"))
-                )
-            {
-                btnVerMaterialesSalientes.Visible = true;
-            }
-
-        }
 
         private void btnSaliente_CambiarEstado_Click(object sender, EventArgs e)
         {
@@ -369,36 +349,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 openConcluirTrabajo.prioridadConcluir = prioridadSolicitudSelectedSaliente;
                 openConcluirTrabajo.ShowDialog();
             }                               
-        }
-
-        private void dgvSolicitudesEntrantes_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            btnCambiarEstadoSolicitudEntrante.Visible = false;
-
-            numTicketSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[0].Value.ToString();
-            prioridadSolicitudSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[5].Value.ToString();
-            estadoSolicitudSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
-            //oficinaarea_solicitante:
-            oficinaAreaSolicitanteEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[2].Value.ToString() +" - " +  dgvSolicitudesEntrantes.CurrentRow.Cells[3].Value.ToString();
-
-            listarMovimientoSolicitud_Entrantes(numTicketSelectedEntrante);
-
-            
-        }
-
-        private void dgvMovSoliEntrante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            botonSeleccionado = "Entrante";
-            habilitarBotonesSalientes();
-
-            int filas = dgvMovSoliEntrante.Rows.Count-1;
-            
-            if(dgvMovSoliEntrante.Rows[filas].Cells[5].Value.ToString().Equals("SI") && (estadoSolicitudSelectedEntrante.Equals("Evaluado") || 
-                estadoSolicitudSelectedEntrante.Equals("En curso") || estadoSolicitudSelectedEntrante.Equals("Atendido"))
-                )
-            {
-                btnVerMaterialesEntrantes.Visible = true;
-            }
         }
 
         private void btnCambiarEstadoSolicitudEntrante_Click(object sender, EventArgs e)
@@ -482,6 +432,56 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         private void btnCerrarVerMisSolis_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvMovimientoSolicitudSalientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMotivoExtend.Text = dgvMovimientoSolicitudSalientes.CurrentRow.Cells[0].Value.ToString();
+            txtPersonalDesigExtend.Text = dgvMovimientoSolicitudSalientes.CurrentRow.Cells[2].Value.ToString();
+            txtDiagnosticoPersonalExtend.Text = dgvMovimientoSolicitudSalientes.CurrentRow.Cells[3].Value.ToString();
+
+            botonSeleccionado = "Saliente";
+          //  btnSaliente_AnularSoli.Visible = true;
+            habilitarBotonesSalientes();
+
+            int filas = dgvMovimientoSolicitudSalientes.Rows.Count - 1;
+
+            if (dgvMovimientoSolicitudSalientes.Rows[filas].Cells[5].Value.ToString().Equals("SI") && (estadoSolicitudSelectedSaliente.Equals("Evaluado") ||
+                estadoSolicitudSelectedSaliente.Equals("En curso") || estadoSolicitudSelectedSaliente.Equals("Atendido"))
+                )
+            {
+                btnVerMaterialesSalientes.Visible = true;
+            }
+
+
+        }
+
+        private void dgvSolicitudesEntrantes_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            btnCambiarEstadoSolicitudEntrante.Visible = false;
+
+            numTicketSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[0].Value.ToString();
+            prioridadSolicitudSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[5].Value.ToString();
+            estadoSolicitudSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
+            //oficinaarea_solicitante:
+            oficinaAreaSolicitanteEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[2].Value.ToString() + " - " + dgvSolicitudesEntrantes.CurrentRow.Cells[3].Value.ToString();
+
+            listarMovimientoSolicitud_Entrantes(numTicketSelectedEntrante);
+        }
+
+        private void dgvMovSoliEntrante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            botonSeleccionado = "Entrante";
+            habilitarBotonesSalientes();
+
+            int filas = dgvMovSoliEntrante.Rows.Count - 1;
+
+            if (dgvMovSoliEntrante.Rows[filas].Cells[5].Value.ToString().Equals("SI") && (estadoSolicitudSelectedEntrante.Equals("Evaluado") ||
+                estadoSolicitudSelectedEntrante.Equals("En curso") || estadoSolicitudSelectedEntrante.Equals("Atendido"))
+                )
+            {
+                btnVerMaterialesEntrantes.Visible = true;
+            }
         }
 
 

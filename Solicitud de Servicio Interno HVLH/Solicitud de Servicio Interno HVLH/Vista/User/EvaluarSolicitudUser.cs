@@ -38,6 +38,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         private void EvaluarSolicitudUser_Load(object sender, EventArgs e)
         {
             llenarInfoIncial();
+            this.ActiveControl = txtDiagnosticoPerso_;
         }
 
         private void txtBuscarPersonal__TextChanged(object sender, EventArgs e)
@@ -72,49 +73,40 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             dgvTrabajadorDesig.Columns.Add(DireccionOficina);           
         }
 
-        private void dgvTrabajadorDesig_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnAddLista.Visible = true;
-        }
-
-        private void btnAddLista_Click(object sender, EventArgs e)
-        {
-
-            if (txtListaPersonal.Text.Trim().Contains(dgvTrabajadorDesig.CurrentRow.Cells[0].Value.ToString()))
-                return;
-
-            txtListaPersonal.Text += "· "+ dgvTrabajadorDesig.CurrentRow.Cells[0].Value.ToString();
-            txtListaPersonal.Text += Environment.NewLine;
-
-        }
 
         private void chk_RequiereInsumos_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_RequiereInsumos.Checked)
             {
                 lblBuscarMt.Enabled = true; txtBuscarMateriales.Enabled = true;
-                dgvItemsSIGA.Enabled = true;
+                dgvItemsSIGA.Enabled = true; txtCantidadSelected.Enabled = true;
+               
                 
             }
             else
             {
                 lblBuscarMt.Enabled = false; txtBuscarMateriales.Enabled = false;
-                dgvItemsSIGA.Enabled = false;
+                dgvItemsSIGA.Enabled = false; txtCantidadSelected.Enabled = false;
+                lblMaterialesUtilziar.Visible = false; btnAddMaterial.Visible = false;
+                txtItemSelected.Text = ""; txtCantidadSelected.Text = ""; txtUMSelected.Text = "";
+                dgvMaterialesAsignados.Columns.Clear();
+                lista_AddMateriales = new List<MovMateriales>();
             }
 
         }
 
         private void desbloquearInfoMateriales()
-        {
-            btnAddMateriales.Visible = true;
+        {            
+            btnAddMaterial.Visible = true;
             txtCantidadSelected.Enabled = true;
+            txtCantidadSelected.Text = "";
             txtCantidadSelected.Focus();
             
         }
 
         private void bloquearInfoMateriales()
         {
-            btnAddMateriales.Visible = false;
+            btnAddMaterial.Visible = false;
             txtCantidadSelected.Enabled = false;            
         }
 
@@ -128,104 +120,38 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             dgvItemsSIGA.AutoGenerateColumns = false;
 
             DataGridViewTextBoxColumn CODSIGA = new DataGridViewTextBoxColumn();
-            CODSIGA.HeaderText = "COD SIGA";
+            CODSIGA.HeaderText = "COD. SIGA";
             CODSIGA.DataPropertyName = "CODSIGA";
-            CODSIGA.Width = 150;
+            CODSIGA.Width = 90;
             dgvItemsSIGA.Columns.Add(CODSIGA);
 
             DataGridViewTextBoxColumn NOMBRE_ITEM = new DataGridViewTextBoxColumn();
             NOMBRE_ITEM.HeaderText = "ITEM";
             NOMBRE_ITEM.DataPropertyName = "NOMBRE_ITEM";
-            NOMBRE_ITEM.Width = 450;
+            NOMBRE_ITEM.Width = 550;
             dgvItemsSIGA.Columns.Add(NOMBRE_ITEM);
 
             DataGridViewTextBoxColumn NOMBRE_UNIDAD_MEDIDAD = new DataGridViewTextBoxColumn();
-            NOMBRE_UNIDAD_MEDIDAD.HeaderText = "UNIDAD DE MEDIDA";
+            NOMBRE_UNIDAD_MEDIDAD.HeaderText = "U. MEDIDA";
             NOMBRE_UNIDAD_MEDIDAD.DataPropertyName = "NOMBRE_UNIDAD_MEDIDAD";
-            NOMBRE_UNIDAD_MEDIDAD.Width = 150;
+            NOMBRE_UNIDAD_MEDIDAD.Width = 85;
             dgvItemsSIGA.Columns.Add(NOMBRE_UNIDAD_MEDIDAD);
         }
         private void txtBuscarMateriales_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (int)Keys.Enter)
             {
+                if (txtBuscarMateriales.Text.Trim() == "")
+                    return;
+
                 bloquearInfoMateriales();
                 buscarItemsSIGA(txtBuscarMateriales.Text.Trim());
             }
-        }
-        private void dgvItemsSIGA_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtItemSelected.Text = dgvItemsSIGA.CurrentRow.Cells[0].Value.ToString();
-            txtUMSelected.Text = dgvItemsSIGA.CurrentRow.Cells[2].Value.ToString();
-            desbloquearInfoMateriales();
-
-        }
-
-        private void btnAddMateriales_Click(object sender, EventArgs e)
-        {
-            dgvMaterialesAsignados.Enabled = true;
-
-            
-
-            newItemMaterial = new MovMateriales();
-            newItemMaterial.numTicketString = NumTicketInicial;
-            newItemMaterial.codSIGA = dgvItemsSIGA.CurrentRow.Cells[0].Value.ToString();
-            newItemMaterial.Item_Nombre = dgvItemsSIGA.CurrentRow.Cells[1].Value.ToString();
-            newItemMaterial.Unidad_Medida = dgvItemsSIGA.CurrentRow.Cells[2].Value.ToString();
-            newItemMaterial.cantidad = Convert.ToInt32(txtCantidadSelected.Text);
-            newItemMaterial.estado = "REQUERIDO";
-
-            foreach (var item in lista_AddMateriales)
-            {
-                if (item.Item_Nombre.Equals(newItemMaterial.Item_Nombre) || item.codSIGA.Equals(newItemMaterial.codSIGA))
-                    return;
-            }
-
-            lista_AddMateriales.Add(newItemMaterial);
-
-            dgvMaterialesAsignados.DataSource = lista_AddMateriales;
-            dgvMaterialesAsignados.Columns.Clear();
-            dgvMaterialesAsignados.AutoGenerateColumns = false;
-
-
-           /* DataGridViewTextBoxColumn numTicketString = new DataGridViewTextBoxColumn();
-            numTicketString.HeaderText = "N° Atención";
-            numTicketString.DataPropertyName = "numTicketString";
-            numTicketString.Width = 150;
-            dgvMaterialesAsignados.Columns.Add(numTicketString);*/
-
-
-            DataGridViewTextBoxColumn codSIGA = new DataGridViewTextBoxColumn();
-            codSIGA.HeaderText = "Cod SIGA";
-            codSIGA.DataPropertyName = "codSIGA";
-            codSIGA.Width = 150;
-            dgvMaterialesAsignados.Columns.Add(codSIGA);
-
-            DataGridViewTextBoxColumn Item_Nombre = new DataGridViewTextBoxColumn();
-            Item_Nombre.HeaderText = "Item Nombre";
-            Item_Nombre.DataPropertyName = "Item_Nombre";
-            Item_Nombre.Width = 550;
-            dgvMaterialesAsignados.Columns.Add(Item_Nombre);
-
-            DataGridViewTextBoxColumn Unidad_Medida = new DataGridViewTextBoxColumn();
-            Unidad_Medida.HeaderText = "Unidad de Medida";
-            Unidad_Medida.DataPropertyName = "Unidad_Medida";
-            Unidad_Medida.Width = 120;
-            dgvMaterialesAsignados.Columns.Add(Unidad_Medida);
-
-
-            DataGridViewTextBoxColumn cantidad = new DataGridViewTextBoxColumn();
-            cantidad.HeaderText = "cantidad";
-            cantidad.DataPropertyName = "cantidad";
-            cantidad.Width = 100;
-            dgvMaterialesAsignados.Columns.Add(cantidad);            
-        }
-
+        }       
         private void btnCerrarEvaluarSolicitud_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnEvaluarSolicituD_Click(object sender, EventArgs e)
         {            
             MovimientoSolicitud nuevoMovSolici = new MovimientoSolicitud();
@@ -284,6 +210,257 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             MessageBox.Show(txtDiagnosticoPerso_.Text.Trim());
 
             MessageBox.Show(chk_RequiereInsumos.Checked.ToString());*/
+        }
+        private void txtBuscarPersonal__KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (int)Keys.Enter)
+            {
+                if (dgvTrabajadorDesig.Rows.Count <= 0)
+                    return;
+
+                if (txtListaPersonal.Text.Trim().Contains(dgvTrabajadorDesig.CurrentRow.Cells[0].Value.ToString()))
+                    return;
+
+                txtListaPersonal.Text += "· " + dgvTrabajadorDesig.CurrentRow.Cells[0].Value.ToString();
+                txtListaPersonal.Text += Environment.NewLine;
+            }
+        }
+        private void btnAddLista_Click(object sender, EventArgs e)
+        {
+            if (dgvTrabajadorDesig.Rows.Count <= 0)
+                return;
+
+            if (txtListaPersonal.Text.Trim().Contains(dgvTrabajadorDesig.CurrentRow.Cells[0].Value.ToString()))
+                return;
+
+            txtListaPersonal.Text += "· " + dgvTrabajadorDesig.CurrentRow.Cells[0].Value.ToString();
+            txtListaPersonal.Text += Environment.NewLine;
+
+        }
+        private void btnLimpiarLista_Click(object sender, EventArgs e)
+        {
+            txtListaPersonal.Text = "";
+            txtBuscarPersonal_.Text = "";
+            txtBuscarPersonal_.Focus();
+        }
+        private void dgvItemsSIGA_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvItemsSIGA.Rows.Count <= 0)
+                return;
+
+
+            txtItemSelected.Text = dgvItemsSIGA.CurrentRow.Cells[0].Value.ToString();
+            txtUMSelected.Text = dgvItemsSIGA.CurrentRow.Cells[2].Value.ToString();
+            desbloquearInfoMateriales();
+        
+        }
+        private void btnAddMaterial_Click(object sender, EventArgs e)
+        {
+            if (txtCantidadSelected.Text.Trim() == "")
+                return;
+            dgvMaterialesAsignados.Enabled = true;
+
+            newItemMaterial = new MovMateriales();
+            newItemMaterial.numTicketString = NumTicketInicial;
+            newItemMaterial.codSIGA = dgvItemsSIGA.CurrentRow.Cells[0].Value.ToString();
+            newItemMaterial.Item_Nombre = dgvItemsSIGA.CurrentRow.Cells[1].Value.ToString();
+            newItemMaterial.Unidad_Medida = dgvItemsSIGA.CurrentRow.Cells[2].Value.ToString();
+            newItemMaterial.cantidad = Convert.ToInt32(txtCantidadSelected.Text);
+            newItemMaterial.estado = "REQUERIDO";
+
+            foreach (var item in lista_AddMateriales)
+            {
+                if (item.Item_Nombre.Equals(newItemMaterial.Item_Nombre) || item.codSIGA.Equals(newItemMaterial.codSIGA))
+                    return;
+            }
+
+            lista_AddMateriales.Add(newItemMaterial);
+            dgvMaterialesAsignados.DataSource = lista_AddMateriales;
+            dgvMaterialesAsignados.Columns.Clear();
+            dgvMaterialesAsignados.AutoGenerateColumns = false;
+            /*DataGridViewTextBoxColumn numTicketString = new DataGridViewTextBoxColumn();
+             numTicketString.HeaderText = "N° Atención";
+             numTicketString.DataPropertyName = "numTicketString";
+             numTicketString.Width = 150;
+             dgvMaterialesAsignados.Columns.Add(numTicketString);*/
+
+
+            DataGridViewTextBoxColumn codSIGA = new DataGridViewTextBoxColumn();
+            codSIGA.HeaderText = "COD. SIGA";
+            codSIGA.DataPropertyName = "codSIGA";
+            codSIGA.Width = 90;
+            dgvMaterialesAsignados.Columns.Add(codSIGA);
+
+            DataGridViewTextBoxColumn Item_Nombre = new DataGridViewTextBoxColumn();
+            Item_Nombre.HeaderText = "ITEM";
+            Item_Nombre.DataPropertyName = "Item_Nombre";
+            Item_Nombre.Width = 550;
+            dgvMaterialesAsignados.Columns.Add(Item_Nombre);
+
+            DataGridViewTextBoxColumn Unidad_Medida = new DataGridViewTextBoxColumn();
+            Unidad_Medida.HeaderText = "U. MEDIDA";
+            Unidad_Medida.DataPropertyName = "Unidad_Medida";
+            Unidad_Medida.Width = 85;
+            dgvMaterialesAsignados.Columns.Add(Unidad_Medida);
+
+
+            DataGridViewTextBoxColumn cantidad = new DataGridViewTextBoxColumn();
+            cantidad.HeaderText = "CANTIDAD";
+            cantidad.DataPropertyName = "cantidad";
+            cantidad.Width = 80;
+            dgvMaterialesAsignados.Columns.Add(cantidad);
+
+            DataGridViewButtonColumn colBotones = new DataGridViewButtonColumn();
+            colBotones.Name = "colBtnDelete";
+            colBotones.HeaderText = "Eliminar Material";
+            colBotones.Width = 100;
+            this.dgvMaterialesAsignados.Columns.Add(colBotones);
+
+            lblMaterialesUtilziar.Visible = true;
+        }
+        private void txtCantidadSelected_KeyPress(object sender, KeyPressEventArgs e)        
+        {
+
+            if (txtCantidadSelected.Text.Trim() == "")
+                return;
+
+            if (e.KeyChar == (int)Keys.Enter)
+            {
+                dgvMaterialesAsignados.Enabled = true;
+
+
+
+                newItemMaterial = new MovMateriales();
+                newItemMaterial.numTicketString = NumTicketInicial;
+                newItemMaterial.codSIGA = dgvItemsSIGA.CurrentRow.Cells[0].Value.ToString();
+                newItemMaterial.Item_Nombre = dgvItemsSIGA.CurrentRow.Cells[1].Value.ToString();
+                newItemMaterial.Unidad_Medida = dgvItemsSIGA.CurrentRow.Cells[2].Value.ToString();
+                newItemMaterial.cantidad = Convert.ToInt32(txtCantidadSelected.Text);
+                newItemMaterial.estado = "REQUERIDO";
+
+                
+                foreach (var item in lista_AddMateriales)
+                {
+                    if (item.Item_Nombre.Equals(newItemMaterial.Item_Nombre) || item.codSIGA.Equals(newItemMaterial.codSIGA))
+                        return;
+                }
+
+                lista_AddMateriales.Add(newItemMaterial);
+
+                dgvMaterialesAsignados.DataSource = lista_AddMateriales;
+                dgvMaterialesAsignados.Columns.Clear();
+                dgvMaterialesAsignados.AutoGenerateColumns = false;
+
+
+                /*DataGridViewTextBoxColumn numTicketString = new DataGridViewTextBoxColumn();
+                 numTicketString.HeaderText = "N° Atención";
+                 numTicketString.DataPropertyName = "numTicketString";
+                 numTicketString.Width = 150;
+                 dgvMaterialesAsignados.Columns.Add(numTicketString);*/
+
+
+                DataGridViewTextBoxColumn codSIGA = new DataGridViewTextBoxColumn();
+                codSIGA.HeaderText = "COD. SIGA";
+                codSIGA.DataPropertyName = "codSIGA";
+                codSIGA.Width = 90;
+                dgvMaterialesAsignados.Columns.Add(codSIGA);
+
+                DataGridViewTextBoxColumn Item_Nombre = new DataGridViewTextBoxColumn();
+                Item_Nombre.HeaderText = "ITEM";
+                Item_Nombre.DataPropertyName = "Item_Nombre";
+                Item_Nombre.Width = 550;
+                dgvMaterialesAsignados.Columns.Add(Item_Nombre);
+
+                DataGridViewTextBoxColumn Unidad_Medida = new DataGridViewTextBoxColumn();
+                Unidad_Medida.HeaderText = "U. MEDIDA";
+                Unidad_Medida.DataPropertyName = "Unidad_Medida";
+                Unidad_Medida.Width = 85;
+                dgvMaterialesAsignados.Columns.Add(Unidad_Medida);
+
+
+                DataGridViewTextBoxColumn cantidad = new DataGridViewTextBoxColumn();
+                cantidad.HeaderText = "CANTIDAD";
+                cantidad.DataPropertyName = "cantidad";
+                cantidad.Width = 80;
+                dgvMaterialesAsignados.Columns.Add(cantidad);
+
+                DataGridViewButtonColumn colBotones = new DataGridViewButtonColumn();
+                colBotones.Name = "colBtnDelete";
+                colBotones.HeaderText = "Eliminar Material";
+                colBotones.Width = 100;
+                this.dgvMaterialesAsignados.Columns.Add(colBotones);
+
+                lblMaterialesUtilziar.Visible = true;
+            }
+        }
+        private void dgvMaterialesAsignados_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.dgvMaterialesAsignados.Columns[e.ColumnIndex].Name == "colBtnDelete" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.dgvMaterialesAsignados.Rows[e.RowIndex].Cells["colBtnDelete"] as DataGridViewButtonCell;
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\deleteGrid.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 35, e.CellBounds.Top + 1);
+
+                this.dgvMaterialesAsignados.Rows[e.RowIndex].Height = icoAtomico.Height + 3;
+                //  this.dgvMaterialesAsignados.Columns[e.ColumnIndex].Width = icoAtomico.Width + 3;
+
+                e.Handled = true;
+            }
+        }
+
+        private void dgvMaterialesAsignados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvMaterialesAsignados.Rows.Count <= 0)
+                return;
+
+            if (this.dgvMaterialesAsignados.Columns[e.ColumnIndex].Name == "colBtnDelete")
+            {
+                eliminarInsumosDGV(dgvMaterialesAsignados.CurrentRow.Index);               
+            }
+        }
+
+        private void eliminarInsumosDGV(int index)
+        {
+            lista_AddMateriales = (List<MovMateriales>)dgvMaterialesAsignados.DataSource;
+            lista_AddMateriales.RemoveAt(index);
+            dgvMaterialesAsignados.DataSource = lista_AddMateriales;
+
+            dgvMaterialesAsignados.Columns.Clear();
+            dgvMaterialesAsignados.AutoGenerateColumns = false;
+
+
+            DataGridViewTextBoxColumn codSIGA = new DataGridViewTextBoxColumn();
+            codSIGA.HeaderText = "COD. SIGA";
+            codSIGA.DataPropertyName = "codSIGA";
+            codSIGA.Width = 90;
+            dgvMaterialesAsignados.Columns.Add(codSIGA);
+
+            DataGridViewTextBoxColumn Item_Nombre = new DataGridViewTextBoxColumn();
+            Item_Nombre.HeaderText = "ITEM";
+            Item_Nombre.DataPropertyName = "Item_Nombre";
+            Item_Nombre.Width = 550;
+            dgvMaterialesAsignados.Columns.Add(Item_Nombre);
+
+            DataGridViewTextBoxColumn Unidad_Medida = new DataGridViewTextBoxColumn();
+            Unidad_Medida.HeaderText = "U. MEDIDA";
+            Unidad_Medida.DataPropertyName = "Unidad_Medida";
+            Unidad_Medida.Width = 85;
+            dgvMaterialesAsignados.Columns.Add(Unidad_Medida);
+
+
+            DataGridViewTextBoxColumn cantidad = new DataGridViewTextBoxColumn();
+            cantidad.HeaderText = "CANTIDAD";
+            cantidad.DataPropertyName = "cantidad";
+            cantidad.Width = 80;
+            dgvMaterialesAsignados.Columns.Add(cantidad);
+
+            DataGridViewButtonColumn colBotones = new DataGridViewButtonColumn();
+            colBotones.Name = "colBtnDelete";
+            colBotones.HeaderText = "Eliminar Material";
+            colBotones.Width = 100;
+            this.dgvMaterialesAsignados.Columns.Add(colBotones);
         }
     }
 }

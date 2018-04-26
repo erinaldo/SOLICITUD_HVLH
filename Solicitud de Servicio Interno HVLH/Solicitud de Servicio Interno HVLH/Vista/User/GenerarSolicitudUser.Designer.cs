@@ -109,6 +109,7 @@
             // 
             // txtAreaSolicitante
             // 
+            this.txtAreaSolicitante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.txtAreaSolicitante.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAreaSolicitante.Location = new System.Drawing.Point(144, 104);
             this.txtAreaSolicitante.Name = "txtAreaSolicitante";
@@ -128,6 +129,7 @@
             // 
             // txtOficinaSolicitante
             // 
+            this.txtOficinaSolicitante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.txtOficinaSolicitante.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOficinaSolicitante.Location = new System.Drawing.Point(144, 75);
             this.txtOficinaSolicitante.Name = "txtOficinaSolicitante";
@@ -136,6 +138,7 @@
             // 
             // txtUsuarioSolicitante
             // 
+            this.txtUsuarioSolicitante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.txtUsuarioSolicitante.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuarioSolicitante.Location = new System.Drawing.Point(144, 47);
             this.txtUsuarioSolicitante.Name = "txtUsuarioSolicitante";
@@ -199,12 +202,13 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
-            this.button1.Text = "button1";
+            this.button1.Text = "C_XOP";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cboAreaDestino
             // 
+            this.cboAreaDestino.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.cboAreaDestino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAreaDestino.FormattingEnabled = true;
             this.cboAreaDestino.Location = new System.Drawing.Point(130, 223);
@@ -214,6 +218,7 @@
             // 
             // cboOficinaDestino
             // 
+            this.cboOficinaDestino.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.cboOficinaDestino.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboOficinaDestino.FormattingEnabled = true;
             this.cboOficinaDestino.Location = new System.Drawing.Point(130, 192);
@@ -257,6 +262,7 @@
             // 
             // txtMotivoSolicitud
             // 
+            this.txtMotivoSolicitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.txtMotivoSolicitud.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMotivoSolicitud.Location = new System.Drawing.Point(202, 59);
             this.txtMotivoSolicitud.Multiline = true;
@@ -266,6 +272,7 @@
             // 
             // txtNumTicket
             // 
+            this.txtNumTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.txtNumTicket.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumTicket.Location = new System.Drawing.Point(202, 28);
             this.txtNumTicket.Name = "txtNumTicket";
@@ -325,6 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(839, 566);
             this.Controls.Add(this.btnGenerarSolicitud);
             this.Controls.Add(this.panelInfoSolicitud);
