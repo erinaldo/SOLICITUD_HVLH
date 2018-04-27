@@ -28,9 +28,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
         }
 
         private void VerMaterialesUser_Load(object sender, EventArgs e)
-        {
-            MessageBox.Show(nroTicketMat);
-
+        {           
             llenarInsumosAsginados(nroTicketMat);
         }
 

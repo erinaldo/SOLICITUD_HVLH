@@ -41,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelInfoSolicitud = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.cboAreaDestino = new System.Windows.Forms.ComboBox();
             this.cboOficinaDestino = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,6 +52,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnGenerarSolicitud = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).BeginInit();
             this.Panel_DatosSolicitante.SuspendLayout();
@@ -61,20 +63,20 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.btnCerrarGenSolicitud);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(839, 40);
+            this.panel1.Size = new System.Drawing.Size(904, 40);
             this.panel1.TabIndex = 0;
             // 
             // btnCerrarGenSolicitud
             // 
             this.btnCerrarGenSolicitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarGenSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarGenSolicitud.Image")));
-            this.btnCerrarGenSolicitud.Location = new System.Drawing.Point(796, 4);
+            this.btnCerrarGenSolicitud.Location = new System.Drawing.Point(861, 4);
             this.btnCerrarGenSolicitud.Name = "btnCerrarGenSolicitud";
             this.btnCerrarGenSolicitud.Size = new System.Drawing.Size(31, 28);
             this.btnCerrarGenSolicitud.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -87,7 +89,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(334, 9);
+            this.label1.Location = new System.Drawing.Point(367, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 23);
             this.label1.TabIndex = 3;
@@ -102,7 +104,7 @@
             this.Panel_DatosSolicitante.Controls.Add(this.label4);
             this.Panel_DatosSolicitante.Controls.Add(this.label3);
             this.Panel_DatosSolicitante.Controls.Add(this.label2);
-            this.Panel_DatosSolicitante.Location = new System.Drawing.Point(12, 46);
+            this.Panel_DatosSolicitante.Location = new System.Drawing.Point(28, 46);
             this.Panel_DatosSolicitante.Name = "Panel_DatosSolicitante";
             this.Panel_DatosSolicitante.Size = new System.Drawing.Size(815, 145);
             this.Panel_DatosSolicitante.TabIndex = 1;
@@ -180,7 +182,6 @@
             // 
             // panelInfoSolicitud
             // 
-            this.panelInfoSolicitud.Controls.Add(this.button1);
             this.panelInfoSolicitud.Controls.Add(this.cboAreaDestino);
             this.panelInfoSolicitud.Controls.Add(this.cboOficinaDestino);
             this.panelInfoSolicitud.Controls.Add(this.label6);
@@ -191,20 +192,10 @@
             this.panelInfoSolicitud.Controls.Add(this.label7);
             this.panelInfoSolicitud.Controls.Add(this.label8);
             this.panelInfoSolicitud.Controls.Add(this.label9);
-            this.panelInfoSolicitud.Location = new System.Drawing.Point(12, 197);
+            this.panelInfoSolicitud.Location = new System.Drawing.Point(28, 197);
             this.panelInfoSolicitud.Name = "panelInfoSolicitud";
             this.panelInfoSolicitud.Size = new System.Drawing.Size(815, 292);
             this.panelInfoSolicitud.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(74, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "C_XOP";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cboAreaDestino
             // 
@@ -320,20 +311,50 @@
             this.btnGenerarSolicitud.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarSolicitud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.btnGenerarSolicitud.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGenerarSolicitud.Location = new System.Drawing.Point(693, 503);
+            this.btnGenerarSolicitud.Location = new System.Drawing.Point(738, 495);
             this.btnGenerarSolicitud.Name = "btnGenerarSolicitud";
-            this.btnGenerarSolicitud.Size = new System.Drawing.Size(134, 51);
+            this.btnGenerarSolicitud.Size = new System.Drawing.Size(105, 47);
             this.btnGenerarSolicitud.TabIndex = 3;
             this.btnGenerarSolicitud.Text = "Generar Solicitud";
             this.btnGenerarSolicitud.UseVisualStyleBackColor = true;
             this.btnGenerarSolicitud.Click += new System.EventHandler(this.btnGenerarSolicitud_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 593);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(904, 21);
+            this.panel2.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(894, 40);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 553);
+            this.panel3.TabIndex = 5;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 40);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 553);
+            this.panel4.TabIndex = 6;
             // 
             // GenerarSolicitudUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(839, 566);
+            this.ClientSize = new System.Drawing.Size(904, 614);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnGenerarSolicitud);
             this.Controls.Add(this.panelInfoSolicitud);
             this.Controls.Add(this.Panel_DatosSolicitante);
@@ -376,7 +397,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGenerarSolicitud;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

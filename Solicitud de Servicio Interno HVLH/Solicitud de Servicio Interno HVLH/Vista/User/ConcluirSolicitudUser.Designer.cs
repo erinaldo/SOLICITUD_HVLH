@@ -145,7 +145,7 @@
             this.tabPersonal.Location = new System.Drawing.Point(4, 26);
             this.tabPersonal.Name = "tabPersonal";
             this.tabPersonal.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPersonal.Size = new System.Drawing.Size(1045, 327);
+            this.tabPersonal.Size = new System.Drawing.Size(1045, 293);
             this.tabPersonal.TabIndex = 0;
             this.tabPersonal.Text = "Personal";
             // 

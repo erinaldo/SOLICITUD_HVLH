@@ -80,6 +80,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             {
                 lblBuscarMt.Enabled = true; txtBuscarMateriales.Enabled = true;
                 dgvItemsSIGA.Enabled = true; txtCantidadSelected.Enabled = true;
+                this.ActiveControl = txtBuscarMateriales;
                
                 
             }

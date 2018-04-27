@@ -31,18 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.BarraTitulo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCerrarLogin = new System.Windows.Forms.PictureBox();
             this.txtUserLogin = new System.Windows.Forms.TextBox();
             this.txtPasswordLogin = new System.Windows.Forms.TextBox();
             this.BarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // BarraTitulo
             // 
             this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(5)))), ((int)(((byte)(14)))));
             this.BarraTitulo.Controls.Add(this.label1);
-            this.BarraTitulo.Controls.Add(this.pictureBox1);
+            this.BarraTitulo.Controls.Add(this.btnCerrarLogin);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.BarraTitulo.Name = "BarraTitulo";
@@ -60,15 +60,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Acceder";
             // 
-            // pictureBox1
+            // btnCerrarLogin
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(569, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.btnCerrarLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarLogin.Image")));
+            this.btnCerrarLogin.Location = new System.Drawing.Point(569, 10);
+            this.btnCerrarLogin.Name = "btnCerrarLogin";
+            this.btnCerrarLogin.Size = new System.Drawing.Size(31, 28);
+            this.btnCerrarLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrarLogin.TabIndex = 1;
+            this.btnCerrarLogin.TabStop = false;
+            this.btnCerrarLogin.Click += new System.EventHandler(this.btnCerrarLogin_Click);
             // 
             // txtUserLogin
             // 
@@ -108,7 +109,7 @@
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +119,7 @@
 
         private System.Windows.Forms.Panel BarraTitulo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnCerrarLogin;
         private System.Windows.Forms.TextBox txtUserLogin;
         private System.Windows.Forms.TextBox txtPasswordLogin;
     }

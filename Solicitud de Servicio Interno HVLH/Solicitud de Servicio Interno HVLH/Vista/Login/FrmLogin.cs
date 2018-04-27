@@ -84,5 +84,10 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Login
             }
                                                               
         }
+
+        private void btnCerrarLogin_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

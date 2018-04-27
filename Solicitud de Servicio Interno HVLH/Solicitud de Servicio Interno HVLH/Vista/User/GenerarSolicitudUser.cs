@@ -112,22 +112,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             this.cboAreaDestino.DisplayMember = "NOMBRE_AREA";
             this.cboAreaDestino.ValueMember = "CODIGO_AREAESPECIFICA";
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            /* string localIP;
-            string localMAC="";
-            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
-            {
-                socket.Connect("190.12.72.226", 65530);
-                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
-                localIP = endPoint.Address.ToString();
-            }*/
-
-            MessageBox.Show(obtenerIP());
-            MessageBox.Show(obtenerMAC());
-        }
-
         public static string obtenerIP()
         {
             string localIP;           
@@ -147,7 +131,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             //string descrip = (from o in objects orderby o["IPConnectionMetric"] select o["Description"].ToString()).FirstOrDefault();
             return mac;
         }
-
         private void btnGenerarSolicitud_Click(object sender, EventArgs e)
         {
             //FALTA VALIDAR:
@@ -199,12 +182,9 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
             this.Close();
         }
-
         private void cboOficinaDestino_SelectionChangeCommitted(object sender, EventArgs e)
         {
             llenarAreaEspecXOficina(Convert.ToInt32(cboOficinaDestino.SelectedValue));
         }
-
-
     }
 }
