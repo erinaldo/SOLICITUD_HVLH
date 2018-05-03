@@ -263,26 +263,27 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
                 }
 
-                MessageBox.Show("SE CONCLUYÓ EL TRABAJO");
+                MessageBox.Show("Trabajo terminado.", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("ocurriò un error al concluir el trabajo");
+                MessageBox.Show("ocurriò un error al concluir el trabajo","Mensaje al Usuario",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             if (banderaMateriales)
-                MessageBox.Show("se agregaron los materiales correctamente");
+                MessageBox.Show("Se agregaron los materiales", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("no se agregaron los materiales correctamente");
+                MessageBox.Show("no se agregaron los materiales correctamente", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             if (solidao.actualizarEstadoSolicitud(nuevoMovSolici.Estado, prioridadConcluir, nroTicket))
-                MessageBox.Show("se actualizó la solicitud.....");
+                MessageBox.Show("Se actualizó la solicitud", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("no se pudo actualizar el estado.....");
+                MessageBox.Show("no se pudo actualizar el estado", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
+            
             Frm_Inf_SolicitudAtendida openInforme = new Frm_Inf_SolicitudAtendida();
             openInforme.ListaSolicitudAtendida = solidao.verInformeAtendido(nroTicket);
             openInforme.ShowDialog();
+            this.Close();
 
         }
         private void btnCerrarConcluirTrabajo_Click(object sender, EventArgs e)

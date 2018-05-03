@@ -189,29 +189,35 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
                 }
 
-                MessageBox.Show("SE EVALUÓ ESTA SOLICITUD");
+                MessageBox.Show("Se evaluó esta solicitud","Mensaje al Usuario",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("ocurriò un error al evaluar la solicitud");
+                MessageBox.Show("ocurriò un error al evaluar la solicitud", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if(banderaMateriales)
-                MessageBox.Show("se agregaron los materiales correctamente");
+                MessageBox.Show("Se agregaron los materiales", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("no se agregaron los materiales correctamente");
+                MessageBox.Show("No se agregaron los materiales","Mensaje al Usuario",MessageBoxButtons.OK,MessageBoxIcon.Error);
 
             if (solidao.actualizarEstadoSolicitud(nuevoMovSolici.Estado,prioridad, NumTicketInicial))
-                MessageBox.Show("se actualizó la solicitud.....");
+                MessageBox.Show("Se actualizó la solicitud", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("no se pudo actualizar el estado");
+                MessageBox.Show("no se pudo actualizar el estado", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-          /*  MessageBox.Show(NumTicketInicial);
-            MessageBox.Show(txtMotivoSolicitud_.Text.Trim());
-            MessageBox.Show(txtListaPersonal.Text.Trim());
-            MessageBox.Show(txtDiagnosticoPerso_.Text.Trim());
 
-            MessageBox.Show(chk_RequiereInsumos.Checked.ToString());*/
+            this.Close();
         }
+
+        private void VerMisSolicitudesUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Listar();
+        }
+
+
+
+
+
         private void txtBuscarPersonal__KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (int)Keys.Enter)
@@ -410,7 +416,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 e.Handled = true;
             }
         }
-
         private void dgvMaterialesAsignados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvMaterialesAsignados.Rows.Count <= 0)
@@ -421,7 +426,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 eliminarInsumosDGV(dgvMaterialesAsignados.CurrentRow.Index);               
             }
         }
-
         private void eliminarInsumosDGV(int index)
         {
             lista_AddMateriales = (List<MovMateriales>)dgvMaterialesAsignados.DataSource;

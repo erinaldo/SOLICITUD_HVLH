@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Solicitud_de_Servicio_Interno_HVLH.Class;
 using Solicitud_de_Servicio_Interno_HVLH.DAO;
 
-
+using Microsoft.VisualBasic;
 
 
 namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
@@ -293,9 +293,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             dgvMovSoliEntrante.Columns.Add(ReqInsumo);
 
         }
-
-
-
         private void btnSaliente_CambiarEstado_Click(object sender, EventArgs e)
         {
             if (btnSaliente_CambiarEstado.Text == "Evaluar Solicitud")
@@ -350,7 +347,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 openConcluirTrabajo.ShowDialog();
             }                               
         }
-
         private void btnCambiarEstadoSolicitudEntrante_Click(object sender, EventArgs e)
         {
             if (btnCambiarEstadoSolicitudEntrante.Text == "Evaluar Solicitud")
@@ -362,6 +358,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 openCambiarESTADO.NumTicketInicial = numTicketSelectedEntrante;
                 openCambiarESTADO.MotivoSolicitudInicial = motivoSolicitudEntrante;
                 openCambiarESTADO.prioridadSolicitudInicial = prioridadSolicitudSelectedEntrante;
+                openCambiarESTADO.FormClosed += new System.Windows.Forms.FormClosedEventHandler(openEvaluarSolicitud_FormClosed);
                 openCambiarESTADO.ShowDialog();
             }
             else if (btnCambiarEstadoSolicitudEntrante.Text == "Iniciar Trabajo")
@@ -381,17 +378,20 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
                 if (solidao.generarMovimientoSolicitud(nuevoMovSolici))
                 {
-                    MessageBox.Show("Trabajo Iniciado.");
+                    MessageBox.Show("Trabajo Iniciado.","Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                    
                 }
                 else
                 {
-                    MessageBox.Show("ocurriò un error al iniciar la solicitud");
+                    MessageBox.Show("Ocurriò un error al iniciar la solicitud","Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error); 
                 }
 
-                if (solidao.actualizarEstadoSolicitud(nuevoMovSolici.Estado, prioridadSolicitudSelectedEntrante, numTicketSelectedEntrante))
-                    MessageBox.Show("se actualizó la solicitud.....");
+                if (solidao.actualizarEstadoSolicitud(nuevoMovSolici.Estado, prioridadSolicitudSelectedEntrante, numTicketSelectedEntrante)){
+                    MessageBox.Show("Se actualizó la solicitud.", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                    listarMovimientoSolicitud_Entrantes(numTicketSelectedEntrante);
+                }                   
                 else
-                    MessageBox.Show("no se pudo actualizar el estado");
+                    MessageBox.Show("No se pudo actualizar el estado", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
             else if (btnCambiarEstadoSolicitudEntrante.Text == "Concluir Trabajo")
             {
@@ -403,10 +403,11 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 openConcluirTrabajo.diagnosticoPersonal = dgvMovSoliEntrante.Rows[filas].Cells[3].Value.ToString();
                 openConcluirTrabajo.personalDesignado = dgvMovSoliEntrante.Rows[filas].Cells[2].Value.ToString();
                 openConcluirTrabajo.prioridadConcluir = prioridadSolicitudSelectedEntrante;
+
+                openConcluirTrabajo.FormClosed += new System.Windows.Forms.FormClosedEventHandler(openEvaluarSolicitud_FormClosed);
                 openConcluirTrabajo.ShowDialog();
             }           
         }
-
         private void btnVerMaterialesEntrantes_Click(object sender, EventArgs e)
         {
             if (botonSeleccionado.Equals("Entrante"))
@@ -415,9 +416,9 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 openVerMateriales.nroTicketMat = numTicketSelectedEntrante;
                 openVerMateriales.estadoReq = estadoSolicitudSelectedEntrante;
                 openVerMateriales.ShowDialog();
+                
             }
         }
-
         private void btnVerMaterialesSalientes_Click(object sender, EventArgs e)
         {
             if (botonSeleccionado.Equals("Saliente"))
@@ -428,12 +429,10 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 openVerMateriales.ShowDialog();
             }
         }
-
         private void btnCerrarVerMisSolis_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void dgvMovimientoSolicitudSalientes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMotivoExtend.Text = dgvMovimientoSolicitudSalientes.CurrentRow.Cells[0].Value.ToString();
@@ -455,7 +454,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
 
         }
-
         private void dgvSolicitudesEntrantes_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             btnCambiarEstadoSolicitudEntrante.Visible = false;
@@ -468,7 +466,6 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
             listarMovimientoSolicitud_Entrantes(numTicketSelectedEntrante);
         }
-
         private void dgvMovSoliEntrante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             botonSeleccionado = "Entrante";
@@ -483,9 +480,75 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 btnVerMaterialesEntrantes.Visible = true;
             }
         }
+        //Cerrar Evaluar Solicitud- Entrante:
+        private void openEvaluarSolicitud_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            btnCambiarEstadoSolicitudEntrante.Visible = false;
+
+            numTicketSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[0].Value.ToString();
+            prioridadSolicitudSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[5].Value.ToString();
+            estadoSolicitudSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
+            //oficinaarea_solicitante:
+            oficinaAreaSolicitanteEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[2].Value.ToString() + " - " + dgvSolicitudesEntrantes.CurrentRow.Cells[3].Value.ToString();
+
+            listarMovimientoSolicitud_Entrantes(numTicketSelectedEntrante);
+        }
 
 
 
+        //Personalizando Celdas por estado:
+
+
+        private void dgvSolicitudesEntrantes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value != null && e.ColumnIndex == 4)
+            {
+
+                if (e.Value.ToString().Equals("Solicitado"))
+                {
+                    DataGridViewColumn col = dgvSolicitudesEntrantes.Columns[e.ColumnIndex];
+                    col.DefaultCellStyle.ForeColor = Color.DarkGreen;                    
+                }
+
+                if (e.Value.ToString().Equals("Evaluado"))
+                {
+                    DataGridViewColumn col = dgvSolicitudesEntrantes.Columns[e.ColumnIndex];
+                    col.DefaultCellStyle.ForeColor = Color.Olive;               
+                }
+
+                if (e.Value.ToString().Equals("En curso"))
+                {
+                    DataGridViewColumn col = dgvSolicitudesEntrantes.Columns[e.ColumnIndex];
+                    col.DefaultCellStyle.ForeColor = Color.DarkOrange;                   
+                }
+
+                if (e.Value.ToString().Equals("Atendido"))
+                {
+                    DataGridViewColumn col = dgvSolicitudesEntrantes.Columns[e.ColumnIndex];
+                    col.DefaultCellStyle.ForeColor = Color.Black;                   
+                }
+
+                SuspendLayout();
+                ResumeLayout();
+            }
+
+        }
+
+
+
+        private void dgvSolicitudesSalientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value != null && e.ColumnIndex == 0)
+            {
+                DataGridViewColumn col = dgvSolicitudesSalientes.Columns[e.ColumnIndex];
+                col.DefaultCellStyle.ForeColor = Color.Red;
+                col.DefaultCellStyle.BackColor = Color.Red;
+            }
+        }
+
+
+
+        
        
     }
 }
