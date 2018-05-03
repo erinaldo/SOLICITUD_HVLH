@@ -20,6 +20,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
         {
             InitializeComponent();
             LlenarDirOficina();
+          
         }
 
         private void txtBusquedaTrabajador_TextChanged(object sender, EventArgs e)
@@ -146,6 +147,28 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.Admin
             this.cboAreaEspec.ValueMember = "CODIGO_AREAESPECIFICA";
         }
 
+        private void dgvTrabajadores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+           /* if (e.Value != null && e.ColumnIndex == 2)
+            {
+                if (e.Value.ToString().Equals("OFICINA DE LOGISTICA"))
+                {
+                    e.CellStyle.ForeColor = Color.Red;
+                    e.CellStyle.BackColor = Color.Black;
+                }
+            }*/
+
+            if (this.dgvTrabajadores.Rows[e.RowIndex].Cells[2].Value.Equals("OFICINA DE LOGISTICA"))
+            {                
+                foreach (DataGridViewCell celda in
+                this.dgvTrabajadores.Rows[e.RowIndex].Cells)
+                {
+                    celda.Style.BackColor = Color.Lime;
+                    celda.Style.ForeColor = Color.Black;
+                }
+            }
+        }
 
     }
 }

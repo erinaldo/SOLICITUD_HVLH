@@ -80,7 +80,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
 
         private void btnVerMisSolicitudes_Click(object sender, EventArgs e)
         {
-            AbrirFrmPanel(new VerMisSolicitudesUser());
+            AbrirFrmPanel(new ShowSolicitudes_Users());
         }
 
         private void btnVerMiInfoUser_Click(object sender, EventArgs e)
