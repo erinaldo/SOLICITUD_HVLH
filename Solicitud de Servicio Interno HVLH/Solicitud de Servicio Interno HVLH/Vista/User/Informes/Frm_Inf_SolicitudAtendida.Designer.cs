@@ -31,15 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Inf_SolicitudAtendida));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.InformeAtendidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrarGenSolicitud = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.InformeAtendidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.InformeAtendidoBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InformeAtendidoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // InformeAtendidoBindingSource
+            // 
+            this.InformeAtendidoBindingSource.DataSource = typeof(Solicitud_de_Servicio_Interno_HVLH.Class.InformeAtendido);
             // 
             // panel1
             // 
@@ -88,10 +92,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(1046, 524);
             this.reportViewer1.TabIndex = 4;
             // 
-            // InformeAtendidoBindingSource
-            // 
-            this.InformeAtendidoBindingSource.DataSource = typeof(Solicitud_de_Servicio_Interno_HVLH.Class.InformeAtendido);
-            // 
             // Frm_Inf_SolicitudAtendida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,14 +100,15 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Inf_SolicitudAtendida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Inf_SolicitudAtendida";
             this.Load += new System.EventHandler(this.Frm_Inf_SolicitudAtendida_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.InformeAtendidoBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarGenSolicitud)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InformeAtendidoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

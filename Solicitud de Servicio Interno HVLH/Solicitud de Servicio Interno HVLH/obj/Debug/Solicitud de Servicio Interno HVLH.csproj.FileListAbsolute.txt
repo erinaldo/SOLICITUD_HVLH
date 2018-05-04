@@ -6,7 +6,6 @@ C:\Users\JF\Documents\Visual Studio 2013\Projects\Solicitud de Servicio Interno 
 C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\bin\Debug\Solicitud de Servicio Interno HVLH.exe.config
 C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\bin\Debug\Solicitud de Servicio Interno HVLH.exe
 C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\bin\Debug\Solicitud de Servicio Interno HVLH.pdb
-C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\obj\Debug\Solicitud de Servicio Interno HVLH.csprojResolveAssemblyReference.cache
 C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\obj\Debug\Solicitud_de_Servicio_Interno_HVLH.Properties.Resources.resources
 C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\obj\Debug\Solicitud_de_Servicio_Interno_HVLH.Vista.Admin.FrmAccesosPr.resources
 C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\obj\Debug\Solicitud_de_Servicio_Interno_HVLH.Vista.Admin.FrmMenuPr.resources
@@ -52,3 +51,4 @@ C:\Users\Navidad\Documents\Visual Studio 2013\Projects\GitHub\SOLICITUD_HVLH\Sol
 C:\Users\Navidad\Documents\Visual Studio 2013\Projects\GitHub\SOLICITUD_HVLH\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\obj\Debug\Solicitud de Servicio Interno HVLH.pdb
 C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\obj\Debug\Solicitud_de_Servicio_Interno_HVLH.Vista.User.Form1.resources
 C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\obj\Debug\Solicitud_de_Servicio_Interno_HVLH.Vista.User.ShowSolicitudes_Users.resources
+C:\Users\JF\Documents\Visual Studio 2013\Projects_GitHub\SOLICITUD\Solicitud de Servicio Interno HVLH\Solicitud de Servicio Interno HVLH\obj\Debug\Solicitud de Servicio Interno HVLH.csprojResolveAssemblyReference.cache

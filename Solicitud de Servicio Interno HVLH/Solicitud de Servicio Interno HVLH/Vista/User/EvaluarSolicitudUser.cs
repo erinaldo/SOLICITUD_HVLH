@@ -206,6 +206,8 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
                 MessageBox.Show("no se pudo actualizar el estado", "Mensaje al Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
+            ShowSolicitudes_Users frmAsignar = new ShowSolicitudes_Users();
+            frmAsignar.estadoSolicitudSelectedEntrante = nuevoMovSolici.Estado;
             this.Close();
         }
 

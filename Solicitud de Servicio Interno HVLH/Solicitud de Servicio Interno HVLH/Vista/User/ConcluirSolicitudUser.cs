@@ -283,6 +283,10 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             Frm_Inf_SolicitudAtendida openInforme = new Frm_Inf_SolicitudAtendida();
             openInforme.ListaSolicitudAtendida = solidao.verInformeAtendido(nroTicket);
             openInforme.ShowDialog();
+
+            ShowSolicitudes_Users frmAsignaR = new ShowSolicitudes_Users();
+
+            frmAsignaR.estadoSolicitudSelectedEntrante = nuevoMovSolici.Estado;
             this.Close();
 
         }

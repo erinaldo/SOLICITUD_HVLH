@@ -463,7 +463,7 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             estadoSolicitudSelectedEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[4].Value.ToString();
             //oficinaarea_solicitante:
             oficinaAreaSolicitanteEntrante = dgvSolicitudesEntrantes.CurrentRow.Cells[2].Value.ToString() + " - " + dgvSolicitudesEntrantes.CurrentRow.Cells[3].Value.ToString();
-
+            btnVerMaterialesEntrantes.Visible = false;
             listarMovimientoSolicitud_Entrantes(numTicketSelectedEntrante);
         }
         private void dgvMovSoliEntrante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -494,6 +494,17 @@ namespace Solicitud_de_Servicio_Interno_HVLH.Vista.User
             listarMovimientoSolicitud_Entrantes(numTicketSelectedEntrante);
         }
         //Personalizando Celdas por estado:
+
+
+
+
+
+
+
+
+
+
+
         private void dgvSolicitudesEntrantes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
     

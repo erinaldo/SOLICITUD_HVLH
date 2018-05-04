@@ -138,6 +138,7 @@
             this.btnCancelarSolicitud.Text = "Cancelar Solicitud";
             this.btnCancelarSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelarSolicitud.UseVisualStyleBackColor = true;
+            this.btnCancelarSolicitud.Visible = false;
             // 
             // btnVerMisSolicitudes
             // 
@@ -340,6 +341,7 @@
             this.Controls.Add(this.barraTitulo);
             this.Controls.Add(this.menuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuUser";
